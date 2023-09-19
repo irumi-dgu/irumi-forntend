@@ -5,8 +5,8 @@ function DetailLantern() {
     // get 해온거 -> 1이면 빨강
     const data = [{
         "id": 3,
-		"nickname": "김강민",
-		"content": "여친 사귀고 싶다",
+		"nickname": "20 김강민",
+		"content": "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자",
 		"likes": 23,
 		"lanternColor": 5,
 		"twinkle": true,
@@ -26,8 +26,8 @@ function DetailLantern() {
         {data.map((item) => (
             <S.DetailLanternWrapper key={item.id}>
                 <img src={getImageUrl(item.lanternColor, item.twinkle)} />
-                <S.TitleSec>광홍 20 윤혜정</S.TitleSec>
-                <S.ContentSec>올해 우리 가족 무탈하게<br/>잘 마무리 하길...</S.ContentSec>
+                <S.TitleSec>{item.nickname}</S.TitleSec>
+                <S.ContentSec>{item.content}</S.ContentSec>
             </S.DetailLanternWrapper>
         ))}
     </>

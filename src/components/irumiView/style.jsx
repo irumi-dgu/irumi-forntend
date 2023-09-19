@@ -23,5 +23,6 @@ export const ContentSec = styled(TitleSec)`
     top: 478px;
     font-size: 14px;
     line-height: normal;
+    padding: 0 98px;
     /* border: 2px solid pink; */
 `
