@@ -6,6 +6,7 @@ import Main from "./pages/main/Main";
 import Fortune from "./pages/fortune/Fortune";
 import IrumiWrite from "./pages/irumiWrite/IrumiWrite";
 import IrumiView from "./pages/irumiView/Irumi";
+import NotFound from "./NotFound";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,8 @@ const router = createBrowserRouter([
         path: "irumiView",
         element: <IrumiView />
       }
-    ]
+    ],
+    errorElement: <NotFound />,
   }
 ]);
 

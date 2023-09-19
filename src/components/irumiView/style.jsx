@@ -107,3 +107,57 @@ export const XBtn = styled(MoreBtnBox)`
     align-items: center;
     margin-bottom: 0;
 `
+
+// DeleteModal.jsx
+export const DeleteModalWrapper = styled.div`
+    position: fixed;
+    bottom: 0;
+    padding: 363px 74px;
+    z-index: 10;
+`
+export const DeleteBox = styled.div`
+    width: 282px;
+    height: 110px;
+    border-radius: 15px;
+    background-color: #F1F1F1;
+`
+export const Question = styled(DeleteBox)`
+    height: 64px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0.5px solid #3D4353;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const SelectBox = styled(DeleteBox)`
+    height: 46px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    display: flex;
+    flex-direction: row;
+`
+export const NoBtn = styled(DeleteBox)`
+    border-radius: 0;
+    border-bottom-left-radius: 15px;
+    width: 141px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    border-right: 0.5px solid #3D4353;
+    border-left: 0;
+`
+export const YesBtn = styled(NoBtn)`
+    color: #C31010;
+    border-radius: 0;
+    border-bottom-right-radius: 15px;
+    border-left: 0.5px solid #3D4353;
+    border-right: 0;
+`
