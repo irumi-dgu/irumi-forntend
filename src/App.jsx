@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   background-color: #202029;
 
   * {
-    border: 1px solid black;
+    /* border: 1px solid black; */
   }
 `;
 
