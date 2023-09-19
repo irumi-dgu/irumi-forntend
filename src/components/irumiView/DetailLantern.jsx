@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as S from "./style";
+import MoreModal from './MoreModal';
 
 function DetailLantern() {
-    // get 해온거 -> 1이면 빨강
+    // 더보기 버튼 클릭 시
+    const [modalOpen, setModalOpen] = useState(false);
+    const openModal = () => {
+        setModalOpen(true);
+    };
+    const closeModal = () => {
+        setModalOpen(false);
+    };
+
+    // get 해올거
     const data = [{
         "id": 3,
 		"nickname": "20 김강민",
@@ -28,13 +38,22 @@ function DetailLantern() {
                 <img src={getImageUrl(item.lanternColor, item.twinkle)} />
                 <S.TitleSec>{item.nickname}</S.TitleSec>
                 <S.ContentSec>{item.content}</S.ContentSec>
-                <S.MoreSec src="/moreBtn.png" />
+                <S.MoreSec
+                    src="/moreBtn.png"
+                    onClick={openModal}
+                />
                 <S.LikeBtn>
                     <img src="/detail_like.png" />
                     <p>{item.likes}</p>
                 </S.LikeBtn>
             </S.DetailLanternWrapper>
         ))}
+        
+        {modalOpen && (
+            <MoreModal
+                closeModal={closeModal}
+            />
+        )}
     </>
   )
 }
