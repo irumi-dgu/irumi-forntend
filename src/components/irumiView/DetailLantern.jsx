@@ -6,7 +6,7 @@ function DetailLantern() {
     const data = [{
         "id": 3,
 		"nickname": "20 김강민",
-		"content": "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자",
+		"content": "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
 		"likes": 23,
 		"lanternColor": 5,
 		"twinkle": true,
@@ -28,6 +28,11 @@ function DetailLantern() {
                 <img src={getImageUrl(item.lanternColor, item.twinkle)} />
                 <S.TitleSec>{item.nickname}</S.TitleSec>
                 <S.ContentSec>{item.content}</S.ContentSec>
+                <S.MoreSec src="/moreBtn.png" />
+                <S.LikeBtn>
+                    <img src="/detail_like.png" />
+                    <p>{item.likes}</p>
+                </S.LikeBtn>
             </S.DetailLanternWrapper>
         ))}
     </>
