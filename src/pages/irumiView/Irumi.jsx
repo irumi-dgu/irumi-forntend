@@ -1,8 +1,16 @@
 import React from "react";
 import * as S from "./style";
+import DetailLantern from "../../components/irumiView/detailLantern";
 
 function IrumiView() {
-  return <S.IrumiViewWrapper>민경이 화이팅!</S.IrumiViewWrapper>;
+  return (
+    <S.IrumiViewWrapper>
+      <S.BackBtnBox>
+        <img src="/backBtn.png" style={{width: "21px", height:"16px"}} />
+      </S.BackBtnBox>
+      <DetailLantern />
+    </S.IrumiViewWrapper>
+  );
 }
 
 export default IrumiView;
