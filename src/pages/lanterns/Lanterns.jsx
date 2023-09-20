@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./style";
 import Lantern from "../../components/lantern/Lantern";
+import BackBtn from "../../components/common/backBtn/BackBtn";
 
 function Lanterns() {
   // get 해올거
@@ -35,6 +36,13 @@ function Lanterns() {
 
   return (
     <S.LanternsWrapper>
+      <S.Header>
+        <BackBtn />
+        <S.Search>
+          <S.Input />
+          <img src="/icon_search.svg" style={{ width: "16px" }} />
+        </S.Search>
+      </S.Header>
       <S.LanternsList>
         {data.map(item => (
           <S.LanternBox key={item.id}>
