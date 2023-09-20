@@ -1,5 +1,6 @@
 import React from "react";
 import * as S from "./style";
+import Lantern from "../../components/lantern/Lantern";
 
 function Lanterns() {
   // get 해올거
@@ -23,7 +24,7 @@ function Lanterns() {
       twinkle: true
     },
     {
-      id: 2,
+      id: 1,
       nickname: "멀티_서현",
       content: "개발 빨리 끝났으면 좋겠습니다",
       likes: 23,
@@ -32,28 +33,12 @@ function Lanterns() {
     }
   ];
 
-  const getImageUrl = (lanternColor, twinkle) => {
-    if (lanternColor >= 1 && lanternColor <= 5) {
-      const twinkleToggle = twinkle ? "yes" : "no";
-      return `/lanterns_${lanternColor}_${twinkleToggle}.svg`;
-    }
-    return "/lanterns_1_yes.svg";
-  };
-
   return (
     <S.LanternsWrapper>
       <S.LanternsList>
         {data.map(item => (
           <S.LanternBox key={item.id}>
-            <S.Lantern>
-              <S.TitleSec>{item.nickname}</S.TitleSec>
-              <S.ContentSec>{item.content}</S.ContentSec>
-              <S.LikeBtn>
-                <img src="/detail_like_fill.png" />
-                <p>{item.likes}</p>
-              </S.LikeBtn>
-              <img src={getImageUrl(item.lanternColor, item.twinkle)} />
-            </S.Lantern>
+            <Lantern item={item} />
           </S.LanternBox>
         ))}
       </S.LanternsList>
