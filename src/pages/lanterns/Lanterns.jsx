@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./style";
 import Lantern from "../../components/lantern/Lantern";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 
 function Lanterns() {
+  const [sortBy, setSortBy] = useState("recent");
+
+  const selectorClick = () => {
+    console.log(sortBy);
+    sortBy == "recent" ? setSortBy("pop") : setSortBy("recent");
+  };
+
   // get 해올거
   const data = [
     {
@@ -39,10 +46,17 @@ function Lanterns() {
       <S.Header>
         <BackBtn />
         <S.Search>
-          <S.Input />
+          <S.Input placeholder="닉네임을 입력해주세요" />
           <img src="/icon_search.svg" style={{ width: "16px" }} />
         </S.Search>
       </S.Header>
+
+      <S.Selector onClick={selectorClick}>
+        <S.SelectorMenu $isActive={sortBy == "recent"}>최신순</S.SelectorMenu>
+        <S.SelectorMenu>|</S.SelectorMenu>
+        <S.SelectorMenu $isActive={sortBy == "pop"}>응원순</S.SelectorMenu>
+      </S.Selector>
+
       <S.LanternsList>
         {data.map(item => (
           <S.LanternBox key={item.id}>
