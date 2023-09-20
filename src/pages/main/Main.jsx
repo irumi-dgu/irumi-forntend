@@ -5,7 +5,9 @@ import * as S from "./style";
 function Main() {
   return (
     <S.MainWrapper>
-      <S.MainTitle>❤️ FrontEnd 파이팅 ❤️</S.MainTitle>
+      <Link to="/lanterns">
+        <S.MainTitle>렌턴둘러보기</S.MainTitle>
+      </Link>
       {/* 추후 삭제예정 */}
       <S.MainSection>
         <Link to="/fortune">
