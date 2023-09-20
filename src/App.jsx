@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  max-width: 820px;
+  max-width: 420px;
   background-color: #202029;
 
   * {
