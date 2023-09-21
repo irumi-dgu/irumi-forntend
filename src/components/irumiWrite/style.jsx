@@ -28,6 +28,7 @@ export const lanternColor = styled.div`
 
 export const lanternImage = styled.img`
   border: none;
+  cursor: pointer;
 `;
 
 //wishForm 스타일 컴포넌트
