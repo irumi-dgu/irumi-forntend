@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import * as S from "./style";
 import Lantern from "../../components/lantern/Lantern";
 import BackBtn from "../../components/common/backBtn/BackBtn";
+import { Link } from "react-router-dom";
 
 function Lanterns() {
   const [sortBy, setSortBy] = useState("recent");
 
   const selectorClick = () => {
-    console.log(sortBy);
     sortBy == "recent" ? setSortBy("pop") : setSortBy("recent");
   };
 
@@ -44,7 +44,10 @@ function Lanterns() {
   return (
     <S.LanternsWrapper>
       <S.Header>
-        <BackBtn />
+        <Link to="/">
+          <BackBtn />
+        </Link>
+
         <S.Search>
           <S.Input placeholder="닉네임을 입력해주세요" />
           <img src="/icon_search.svg" style={{ width: "16px" }} />
@@ -60,7 +63,9 @@ function Lanterns() {
       <S.LanternsList>
         {data.map(item => (
           <S.LanternBox key={item.id}>
-            <Lantern item={item} />
+            <Link to="/irumiView">
+              <Lantern item={item} />
+            </Link>
           </S.LanternBox>
         ))}
       </S.LanternsList>

@@ -45,9 +45,9 @@ export const Search = styled.div`
   align-items: center;
   padding: 10px 20px;
   background-color: #fbedd0b2;
-  /* opacity: 70%; */
+
   input::placeholder {
-    color: #744a21;
+    color: #745b45;
   }
 `;
 
