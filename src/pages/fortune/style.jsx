@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 export const StarWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
