@@ -34,7 +34,7 @@
 
 .swiper-slide-active .lantern {
   position: absolute;
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%);
   left: 50%;
   top: 45%;
 }

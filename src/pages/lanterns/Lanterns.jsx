@@ -46,31 +46,33 @@ function Lanterns() {
   ];
 
   return (
-    <S.LanternsWrapper>
-      <LanternsWriteBtn />
-      <S.Header>
-        <Link to="/">
-          <BackBtn />
-        </Link>
-        <LanternsSearchForm />
-      </S.Header>
-
-      <S.Selector onClick={selectorClick}>
-        <S.SelectorMenu $isActive={sortBy == "recent"}>최신순</S.SelectorMenu>
-        <S.SelectorMenu>|</S.SelectorMenu>
-        <S.SelectorMenu $isActive={sortBy == "pop"}>응원순</S.SelectorMenu>
-      </S.Selector>
-
-      <S.LanternsList>
-        {data.map(item => (
-          <Link to="/irumiView">
-            <S.LanternBox key={item.id}>
-              <Lantern item={item} size={170} />
-            </S.LanternBox>
+    <>
+      <S.LanternsWrapper>
+        <LanternsWriteBtn />
+        <S.Header>
+          <Link to="/">
+            <BackBtn />
           </Link>
-        ))}
-      </S.LanternsList>
-    </S.LanternsWrapper>
+          <LanternsSearchForm />
+        </S.Header>
+
+        <S.Selector onClick={selectorClick}>
+          <S.SelectorMenu $isActive={sortBy == "recent"}>최신순</S.SelectorMenu>
+          <S.SelectorMenu>|</S.SelectorMenu>
+          <S.SelectorMenu $isActive={sortBy == "pop"}>응원순</S.SelectorMenu>
+        </S.Selector>
+
+        <S.LanternsList>
+          {data.map((item, index) => (
+            <Link to="/irumiView" key={index}>
+              <S.LanternBox>
+                <Lantern item={item} size={180} />
+              </S.LanternBox>
+            </Link>
+          ))}
+        </S.LanternsList>
+      </S.LanternsWrapper>
+    </>
   );
 }
 

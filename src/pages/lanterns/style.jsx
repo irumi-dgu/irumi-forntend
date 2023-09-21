@@ -3,18 +3,18 @@ import { styled } from "styled-components";
 export const LanternsWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
-  height: 100vh;
-  @supports (-webkit-touch-callout: none) {
-    height: -webkit-fill-available;
-  }
+
   display: flex;
   align-items: center;
-  background-image: url("background_write.png");
-  background-size: 100% auto;
+
   flex-direction: column;
+  background-image: url("background_lanterns.png");
+
   background-size: cover;
   background-position: center;
+  background-repeat: repeat-y;
   color: ${props => props.theme.colors.font};
+  z-index: 2;
 `;
 
 export const Header = styled.div`
@@ -49,7 +49,7 @@ export const LanternsList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 30px;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 `;
 
 export const LanternBox = styled.div`

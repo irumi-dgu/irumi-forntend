@@ -12,11 +12,11 @@ export const MainWrapper = styled.div`
   display: flex;
 
   align-items: center;
-  background-image: url("background_write.png");
+  background-image: url("background_main.png");
   background-size: 100% auto;
   flex-direction: column;
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   color: ${props => props.theme.colors.font};
   overflow: hidden;
 `;
@@ -45,7 +45,8 @@ export const BtnWrapper = styled.div`
   left: 50%;
   display: flex;
 
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
 `;
 
 export const MainSection = styled.div`

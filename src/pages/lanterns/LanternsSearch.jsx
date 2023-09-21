@@ -48,14 +48,16 @@ function LanternsSearch() {
         <S.SelectorMenu>|</S.SelectorMenu>
         <S.SelectorMenu $isActive={sortBy == "pop"}>응원순</S.SelectorMenu>
       </S.Selector>
+
       <S.SubTitle>'{searchTerm}'에 대한 검색결과입니다.</S.SubTitle>
+
       <S.LanternsList>
-        {data.map(item => (
-          <S.LanternBox key={item.id}>
-            <Link to="/irumiView">
+        {data.map((item, index) => (
+          <Link to="/irumiView" key={index}>
+            <S.LanternBox>
               <Lantern item={item} size={170} />
-            </Link>
-          </S.LanternBox>
+            </S.LanternBox>
+          </Link>
         ))}
       </S.LanternsList>
     </S.LanternsWrapper>
