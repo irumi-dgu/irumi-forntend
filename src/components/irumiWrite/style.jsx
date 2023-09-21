@@ -5,13 +5,12 @@ import { styled } from "styled-components";
 export const LanternChoice = styled.div``;
 export const lantern = styled.div`
   width: 80%;
-  height: 20%;
+  margin-top: 5%;
   border: none;
   flex-direction: row;
   display: flex;
   align-items: center;
   border: none;
-  margin-top: 10%;
   justify-content: space-between;
 `;
 
