@@ -58,10 +58,6 @@ function Main() {
     }
   };
 
-  useEffect(() => {
-    console.log(data.length);
-  }, [nowData]);
-
   const onDragMove = e => {
     if (isDrag) {
       scrollRef.current.scrollLeft = startX - e.pageX;
@@ -78,7 +74,7 @@ function Main() {
       content:
         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
       likes: 23,
-      lanternColor: 5,
+      lanternColor: 1,
       twinkle: false
     },
     {
@@ -87,7 +83,7 @@ function Main() {
       content:
         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
       likes: 23,
-      lanternColor: 4,
+      lanternColor: 2,
       twinkle: true
     },
     {
@@ -95,8 +91,8 @@ function Main() {
       nickname: "멀티_서현",
       content: "개발 빨리 끝났으면 좋겠습니다",
       likes: 23,
-      lanternColor: 2,
-      twinkle: true
+      lanternColor: 3,
+      twinkle: false
     },
     {
       id: 4,
@@ -113,7 +109,7 @@ function Main() {
       content:
         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
       likes: 23,
-      lanternColor: 4,
+      lanternColor: 5,
       twinkle: true
     },
     {
@@ -122,7 +118,7 @@ function Main() {
       content:
         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
       likes: 23,
-      lanternColor: 4,
+      lanternColor: 1,
       twinkle: true
     },
     {
@@ -131,7 +127,7 @@ function Main() {
       content:
         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
       likes: 23,
-      lanternColor: 4,
+      lanternColor: 2,
       twinkle: true
     },
     {
@@ -140,7 +136,7 @@ function Main() {
       content:
         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
       likes: 23,
-      lanternColor: 4,
+      lanternColor: 3,
       twinkle: true
     },
     {
@@ -149,7 +145,7 @@ function Main() {
       content:
         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
       likes: 23,
-      lanternColor: 4,
+      lanternColor: 2,
       twinkle: true
     },
     {
@@ -165,6 +161,8 @@ function Main() {
 
   return (
     <S.MainWrapper>
+      <S.MainTitle>현재까지 "1073"개의 연등이 달렸어요!</S.MainTitle>
+      <S.SubTitle>좌우로 드래그 해보세요</S.SubTitle>
       <S.Swiper
         onMouseDown={onDragStart}
         onMouseMove={isDrag ? onThrottleDragMove : null}
@@ -172,13 +170,15 @@ function Main() {
         onMouseLeave={onDragEnd}
         ref={scrollRef}
       >
-        {nowData.map(item =>
-          item == nowData[2] ? (
-            <S.SwiperSlideActive>
-              <Lantern key={item} item={item} />
+        {nowData.map((item, index) =>
+          index == 2 ? (
+            <S.SwiperSlideActive key={item}>
+              <Lantern item={data[item]} size={230} />
             </S.SwiperSlideActive>
           ) : (
-            <S.SwiperSlide key={item}>{item}</S.SwiperSlide>
+            <S.SwiperSlide key={item} left={(100 / 5) * (index + 1)}>
+              <Lantern item={data[item]} size={180} />
+            </S.SwiperSlide>
           )
         )}
       </S.Swiper>

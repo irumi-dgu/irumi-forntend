@@ -4,6 +4,7 @@ export const MainWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-image: url("background_write.png");
   background-size: 100% auto;
@@ -13,16 +14,25 @@ export const MainWrapper = styled.div`
   color: ${props => props.theme.colors.font};
 `;
 
-export const BtnWrapper = styled.div`
-  display: flex;
-  width: 300px;
-  justify-content: space-between;
-`;
 export const MainTitle = styled.div`
   display: flex;
   justify-content: center;
 
-  margin: 10rem;
+  font-size: 18px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+`;
+
+export const SubTitle = styled.div`
+  display: flex;
+  justify-content: center;
+
+  font-size: 16px;
+`;
+export const BtnWrapper = styled.div`
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
 `;
 
 export const MainSection = styled.div`
@@ -36,6 +46,8 @@ export const MenuBtn = styled.div`
   padding: 10px 20px;
   background-color: #f0939e;
   border-radius: 50px;
+
+  margin-bottom: 60px;
 `;
 
 export const Swiper = styled.div`
@@ -43,18 +55,22 @@ export const Swiper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  overflow: scroll;
+  height: 492px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  position: relative;
 `;
-export const SwiperSlide = styled.div`
-  width: 150px;
-  height: 200px;
-  border: solid 1px white;
-  margin: 0px;
-  flex-shrink: 0;
+export const SwiperSlidePrev = styled.div`
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: ${props => props.left}%;
 `;
 
 export const SwiperSlideActive = styled.div`
-  border: solid 1px white;
-  margin: 20px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   flex-shrink: 0;
 `;

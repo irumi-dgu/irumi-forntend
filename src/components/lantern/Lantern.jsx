@@ -1,7 +1,10 @@
 import React from "react";
 import * as S from "./style";
 
-function Lantern({ item }) {
+function Lantern({ item, size }) {
+  let titleFontSize = size / 15;
+  let contentFontSize = size / 18;
+
   const getImageUrl = (lanternColor, twinkle) => {
     if (lanternColor >= 1 && lanternColor <= 5) {
       const twinkleToggle = twinkle ? "yes" : "no";
@@ -11,10 +14,10 @@ function Lantern({ item }) {
   };
 
   return (
-    <S.LanternWrapper>
-      <S.TitleSec>{item.nickname}</S.TitleSec>
-      <S.ContentSec>{item.content}</S.ContentSec>
-      <S.LikeBtn>
+    <S.LanternWrapper size={size}>
+      <S.TitleSec fontSize={titleFontSize}>{item.nickname}</S.TitleSec>
+      <S.ContentSec fontSize={contentFontSize}>{item.content}</S.ContentSec>
+      <S.LikeBtn fontSize={contentFontSize}>
         <img src="/detail_like_fill.png" />
         <p>{item.likes}</p>
       </S.LikeBtn>

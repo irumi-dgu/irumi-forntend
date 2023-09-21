@@ -1,9 +1,10 @@
 import { styled } from "styled-components";
 
 export const LanternWrapper = styled.div`
-  width: 180px;
+  width: ${props => props.size}px;
   position: relative;
   color: #5b3a1a;
+
   img {
     width: 100%;
   }
@@ -12,35 +13,36 @@ export const LanternWrapper = styled.div`
 export const TitleSec = styled.div`
   transform: translate(-50%, 0);
   position: absolute;
-  font-size: 12px;
+  font-size: ${props => props.fontSize}px;
 
-  width: 95px;
-  top: 235px;
-  left: 90px;
+  width: 52%;
+  top: 61%;
+  left: 50%;
 `;
 export const ContentSec = styled.div`
   transform: translate(-50%, 0);
   position: absolute;
-  font-size: 10px;
+
+  font-size: ${props => props.fontSize}px;
   line-height: 130%;
-  width: 95px;
-  top: 260px;
-  left: 90px;
+  width: 52%;
+  top: 67%;
+  left: 50%;
 `;
 
 export const LikeBtn = styled.div`
   position: absolute;
-  bottom: 15px;
-  right: 45px;
+  bottom: 5%;
+  right: 25%;
   display: flex;
   align-items: center;
 
   img {
-    width: 10px;
-    height: 10px;
+    width: ${props => props.fontSize}px;
+    height: ${props => props.fontSize}px;
     margin-right: 5px;
   }
   p {
-    font-size: 10px;
+    font-size: ${props => props.fontSize}px;
   }
 `;
