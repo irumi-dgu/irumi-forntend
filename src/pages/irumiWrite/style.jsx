@@ -14,6 +14,7 @@ export const IrumiWriteWrapper = styled.div`
   background-size: cover;
   background-position: center;
   color: ${props => props.theme.colors.font};
+  overflow: auto;
 `;
 
 export const backStyledImage = styled.img`
@@ -26,15 +27,18 @@ export const backStyledImage = styled.img`
 `;
 
 export const wishBgImg = styled.img`
-  width: 65%;
+  width: 115%;
   margin-top: 10%;
 `;
 
 export const wishContent = styled.div`
-  justify-content: center;
+  /* justify-content: center; */
   display: flex;
 
-  position: relative;
+  transform: translate(-50%, 25%);
+  position: absolute;
+  justify-content: center;
+  left: 50%;
 `;
 
 export const WriteName = styled.div`
@@ -43,16 +47,17 @@ export const WriteName = styled.div`
 
 export const Textarea = styled.div`
   position: absolute;
-  top: 260px;
-  width: 180px;
+  top: 45%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   font-size: 16px;
+  height: 330px;
 `;
 
 export const TextareaName = styled.div`
   color: black;
-  font-size: 0.3rem;
+  font-size: 12px;
 `;
 
 export const NameInput = styled.input`
@@ -62,6 +67,7 @@ export const NameInput = styled.input`
   border-radius: 5px;
   height: 24px;
   padding: 7px;
+  font-family: "DonggukFont";
 
   &::placeholder {
     font-size: 5px;
@@ -70,7 +76,7 @@ export const NameInput = styled.input`
 
 export const TextareaContent = styled.div`
   color: black;
-  font-size: 0.3rem;
+  font-size: 12px;
   margin-top: 13px;
 `;
 
@@ -79,7 +85,7 @@ export const ContentInput = styled.textarea`
   margin-top: 7px;
   background-color: whitesmoke;
   border-radius: 5px;
-  height: 190px;
+  height: 50%;
   padding: 7px;
   width: 100%;
   justify-content: center;
@@ -92,5 +98,49 @@ export const ContentInput = styled.textarea`
 
   &:focus {
     border-color: #898989;
+  }
+`;
+
+//비밀번호
+
+export const WritePw = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  transform: translate(0%, 770%);
+  display: flex;
+  align-items: center;
+`;
+
+export const WritePwLetter = styled.div`
+  text-align: left;
+  font-size: 12px;
+  color: black;
+  width: 75px;
+`;
+
+export const PasswordInput = styled.input`
+  border: 1px solid black;
+  background-color: whitesmoke;
+  border-radius: 7px;
+  width: 90%;
+  height: 30px;
+  margin-left: 5px;
+  padding: 5px 6px;
+  font-family: "DonggukFont";
+
+  /* font-size: 40px; */
+
+  &::placeholder {
+    font-size: xx-small;
+  }
+`;
+
+export const ShowPasswordIcon = styled.div`
+  margin-left: 7px;
+  font-size: 5px;
+
+  img {
+    width: 130%;
   }
 `;
