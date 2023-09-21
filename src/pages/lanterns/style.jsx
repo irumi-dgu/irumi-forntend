@@ -19,7 +19,7 @@ export const Header = styled.div`
   height: 38px;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 40px;
+  padding: 0px 20px;
   margin: 20px 0px;
 `;
 
@@ -35,7 +35,7 @@ export const SelectorMenu = styled.div`
   color: ${props => (props.$isActive ? "white" : "#898989")};
 `;
 
-export const Search = styled.div`
+export const Search = styled.form`
   flex-grow: 1;
   /* border: solid 1px white; */
   border-radius: 19px;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as S from "./style";
 
 function Lantern({ item, size }) {
@@ -14,7 +14,7 @@ function Lantern({ item, size }) {
   };
 
   return (
-    <S.LanternWrapper size={size}>
+    <S.LanternWrapper className="lantern" size={size}>
       <S.TitleSec fontSize={titleFontSize}>{item.nickname}</S.TitleSec>
       <S.ContentSec fontSize={contentFontSize}>{item.content}</S.ContentSec>
       <S.LikeBtn fontSize={contentFontSize}>

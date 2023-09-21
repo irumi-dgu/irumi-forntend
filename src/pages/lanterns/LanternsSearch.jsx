@@ -4,7 +4,7 @@ import Lantern from "../../components/lantern/Lantern";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 import { Link } from "react-router-dom";
 
-function Lanterns() {
+function LanternsSearch() {
   const [sortBy, setSortBy] = useState("recent");
 
   const selectorClick = () => {
@@ -73,4 +73,4 @@ function Lanterns() {
   );
 }
 
-export default Lanterns;
+export default LanternsSearch;

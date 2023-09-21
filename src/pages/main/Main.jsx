@@ -1,71 +1,28 @@
-import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+import "./swiper.css";
+
+// import required modules
+import { EffectCoverflow, Pagination } from "swiper/modules";
+
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import * as S from "./style";
 
-import { set, throttle } from "lodash";
 import Lantern from "../../components/lantern/Lantern";
 
 function Main() {
-  const scrollRef = useRef(null);
   const [isDrag, setIsDrag] = useState(false);
 
-  const [startX, setStartX] = useState();
   const [nowData, setNowData] = useState([0, 1, 2, 3, 4]);
 
   const [dragStart, setDragStart] = useState([0, 0]);
   const [dragEnd, setDragEnd] = useState([0, 0]);
-
-  // 드래그하기
-  const onDragStart = e => {
-    e.preventDefault();
-    setDragStart([e.clientX, e.clientY]);
-    setIsDrag(true);
-  };
-
-  //드래그 끝내기
-  //is
-  const onDragEnd = e => {
-    e.preventDefault();
-    if (isDrag) {
-      setDragEnd([e.clientX, e.clientY]);
-      setIsDrag(false);
-
-      let newData = [];
-
-      if (dragStart[0] - dragEnd[0] > 10) {
-        //오른쪽으로 스와이프
-        newData = nowData.map(item => {
-          //데이터가 가장 오른쪽 끝일경우는 1번데이터를 불러온다
-          if (item + 1 == data.length) {
-            return 1;
-          }
-          return item + 1;
-        });
-      } else if (dragStart[0] - dragEnd[0] < -10) {
-        //왼쪽으로 스와이프
-
-        newData = nowData.map(item => {
-          //데이터가 가장 왼쪽 끝일경우는 마지막 데이터를 불러온다
-          if (item - 1 == 0) {
-            return data.length - 1;
-          }
-          return item - 1;
-        });
-      } else {
-        return;
-      }
-      setNowData(newData);
-    }
-  };
-
-  const onDragMove = e => {
-    if (isDrag) {
-      scrollRef.current.scrollLeft = startX - e.pageX;
-    }
-  };
-  const delay = 100;
-  const onThrottleDragMove = throttle(onDragMove, delay);
-  // get 해올거
 
   const data = [
     {
@@ -163,25 +120,28 @@ function Main() {
     <S.MainWrapper>
       <S.MainTitle>현재까지 "1073"개의 연등이 달렸어요!</S.MainTitle>
       <S.SubTitle>좌우로 드래그 해보세요</S.SubTitle>
-      <S.Swiper
-        onMouseDown={onDragStart}
-        onMouseMove={isDrag ? onThrottleDragMove : null}
-        onMouseUp={onDragEnd}
-        onMouseLeave={onDragEnd}
-        ref={scrollRef}
+
+      <Swiper
+        effect={"coverflow"}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+          slideShadows: false
+        }}
+        slidesPerView={3}
+        centeredSlides={true}
+        loop={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
       >
-        {nowData.map((item, index) =>
-          index == 2 ? (
-            <S.SwiperSlideActive key={item}>
-              <Lantern item={data[item]} size={230} />
-            </S.SwiperSlideActive>
-          ) : (
-            <S.SwiperSlide key={item} left={(100 / 5) * (index + 1)}>
-              <Lantern item={data[item]} size={180} />
-            </S.SwiperSlide>
-          )
-        )}
-      </S.Swiper>
+        {data.map(item => (
+          <SwiperSlide>
+            <Lantern item={item} size={180} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       <S.BtnWrapper>
         <Link to="/lanterns">
