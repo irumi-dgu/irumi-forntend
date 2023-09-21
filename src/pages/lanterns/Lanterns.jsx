@@ -3,11 +3,15 @@ import * as S from "./style";
 import Lantern from "../../components/lantern/Lantern";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 import { Link } from "react-router-dom";
+import LanternsSearchForm from "../../components/lanterns/lanternsSearchForm/LanternsSearchFrom";
+
+import LanternsWriteBtn from "../../components/lanterns/laternsWriteBtn/LanternsWriteBtn";
 
 function Lanterns() {
   const [sortBy, setSortBy] = useState("recent");
 
   const selectorClick = () => {
+    console.log(sortBy);
     sortBy == "recent" ? setSortBy("pop") : setSortBy("recent");
   };
 
@@ -42,34 +46,33 @@ function Lanterns() {
   ];
 
   return (
-    <S.LanternsWrapper>
-      <S.Header>
-        <Link to="/">
-          <BackBtn />
-        </Link>
+    <>
+      <S.LanternsWrapper>
+        <LanternsWriteBtn />
+        <S.Header>
+          <Link to="/">
+            <BackBtn />
+          </Link>
+          <LanternsSearchForm />
+        </S.Header>
 
-        <S.Search>
-          <S.Input placeholder="닉네임을 입력해주세요" />
-          <img src="/icon_search.svg" style={{ width: "16px" }} />
-        </S.Search>
-      </S.Header>
+        <S.Selector onClick={selectorClick}>
+          <S.SelectorMenu $isActive={sortBy == "recent"}>최신순</S.SelectorMenu>
+          <S.SelectorMenu>|</S.SelectorMenu>
+          <S.SelectorMenu $isActive={sortBy == "pop"}>응원순</S.SelectorMenu>
+        </S.Selector>
 
-      <S.Selector onClick={selectorClick}>
-        <S.SelectorMenu $isActive={sortBy == "recent"}>최신순</S.SelectorMenu>
-        <S.SelectorMenu>|</S.SelectorMenu>
-        <S.SelectorMenu $isActive={sortBy == "pop"}>응원순</S.SelectorMenu>
-      </S.Selector>
-
-      <S.LanternsList>
-        {data.map(item => (
-          <S.LanternBox key={item.id}>
-            <Link to="/irumiView">
-              <Lantern item={item} size={170} />
+        <S.LanternsList>
+          {data.map((item, index) => (
+            <Link to="/irumiView" key={index}>
+              <S.LanternBox>
+                <Lantern item={item} size={180} />
+              </S.LanternBox>
             </Link>
-          </S.LanternBox>
-        ))}
-      </S.LanternsList>
-    </S.LanternsWrapper>
+          ))}
+        </S.LanternsList>
+      </S.LanternsWrapper>
+    </>
   );
 }
 

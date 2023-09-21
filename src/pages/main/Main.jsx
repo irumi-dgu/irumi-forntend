@@ -7,38 +7,30 @@ import "swiper/css/pagination";
 
 import "./swiper.css";
 
+import "../../assets/animation/animation.css";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 
-import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import * as S from "./style";
 
 import Lantern from "../../components/lantern/Lantern";
 
 function Main() {
-  const [isDrag, setIsDrag] = useState(false);
-
-  const [nowData, setNowData] = useState([0, 1, 2, 3, 4]);
-
-  const [dragStart, setDragStart] = useState([0, 0]);
-  const [dragEnd, setDragEnd] = useState([0, 0]);
-
   const data = [
     {
       id: 3,
-      nickname: "일이삼사오육칠팔",
+      nickname: "김민수",
       content:
-        "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
       likes: 23,
       lanternColor: 1,
       twinkle: false
     },
     {
       id: 2,
-      nickname: "20_김강민",
-      content:
-        "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
+      nickname: "이은서",
+      content: "동국대 축제도 파이팅!",
       likes: 23,
       lanternColor: 2,
       twinkle: true
@@ -107,9 +99,8 @@ function Main() {
     },
     {
       id: 10,
-      nickname: "20_김강민",
-      content:
-        "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
+      nickname: "박민지",
+      content: "이루미 잘되게해주세요!",
       likes: 23,
       lanternColor: 4,
       twinkle: true
@@ -119,7 +110,7 @@ function Main() {
   return (
     <S.MainWrapper>
       <S.MainTitle>현재까지 "1073"개의 연등이 달렸어요!</S.MainTitle>
-      <S.SubTitle>좌우로 드래그 해보세요</S.SubTitle>
+      <S.SubTitle className="shine">좌우로 드래그 해보세요</S.SubTitle>
 
       <Swiper
         effect={"coverflow"}
@@ -143,14 +134,19 @@ function Main() {
         ))}
       </Swiper>
 
-      <S.BtnWrapper>
-        <Link to="/lanterns">
-          <S.MenuBtn>연등 둘러보기</S.MenuBtn>
+      <S.Btns>
+        <S.BtnWrapper>
+          <Link to="/lanterns">
+            <S.MenuBtn>연등 둘러보기</S.MenuBtn>
+          </Link>
+          <Link to="/irumiWrite">
+            <S.MenuBtn>연등 작상하기</S.MenuBtn>
+          </Link>
+        </S.BtnWrapper>
+        <Link to="/intro">
+          <S.MinTitle>이용약관</S.MinTitle>
         </Link>
-        <Link to="/irumiWrite">
-          <S.MenuBtn>연등 작상하기</S.MenuBtn>
-        </Link>
-      </S.BtnWrapper>
+      </S.Btns>
     </S.MainWrapper>
   );
 }

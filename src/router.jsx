@@ -10,6 +10,8 @@ import IrumiWrite from "./pages/irumiWrite/IrumiWrite";
 import IrumiView from "./pages/irumiView/Irumi";
 import NotFound from "./NotFound";
 import Lanterns from "./pages/lanterns/Lanterns";
+import LanternsSearch from "./pages/lanterns/LanternsSearch";
+import Intro from "./pages/intro/Irumi";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +19,20 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: "/intro",
+        element: <Intro />
+      },
+      {
         path: "",
         element: <Main />
       },
       {
         path: "lanterns",
         element: <Lanterns />
+      },
+      {
+        path: "lanternsSearch",
+        element: <LanternsSearch />
       },
       {
         path: "fortune",

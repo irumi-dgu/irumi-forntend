@@ -6,20 +6,15 @@ import { Outlet } from "react-router-dom";
 
 const BackGroundColor = styled.div`
   width: 100vw;
-  min-height: 100vh;
-  @supports (-webkit-touch-callout: none) {
-    height: -webkit-fill-available;
-  }
+
   background-color: black;
 `;
 
 const Wrapper = styled.div`
   margin: 0 auto;
   width: 100%;
+  min-height: 100vh;
 
-  @supports (-webkit-touch-callout: none) {
-    height: -webkit-fill-available;
-  }
   display: flex;
   flex-direction: column;
   align-items: center;
