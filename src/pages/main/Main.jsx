@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 
 import "./swiper.css";
 
+import "../../assets/animation/animation.css";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 
@@ -109,7 +110,7 @@ function Main() {
   return (
     <S.MainWrapper>
       <S.MainTitle>현재까지 "1073"개의 연등이 달렸어요!</S.MainTitle>
-      <S.SubTitle>좌우로 드래그 해보세요</S.SubTitle>
+      <S.SubTitle className="shine">좌우로 드래그 해보세요</S.SubTitle>
 
       <Swiper
         effect={"coverflow"}
@@ -133,14 +134,19 @@ function Main() {
         ))}
       </Swiper>
 
-      <S.BtnWrapper>
-        <Link to="/lanterns">
-          <S.MenuBtn>연등 둘러보기</S.MenuBtn>
+      <S.Btns>
+        <S.BtnWrapper>
+          <Link to="/lanterns">
+            <S.MenuBtn>연등 둘러보기</S.MenuBtn>
+          </Link>
+          <Link to="/irumiWrite">
+            <S.MenuBtn>연등 작상하기</S.MenuBtn>
+          </Link>
+        </S.BtnWrapper>
+        <Link to="/intro">
+          <S.MinTitle>이용약관</S.MinTitle>
         </Link>
-        <Link to="/irumiWrite">
-          <S.MenuBtn>연등 작상하기</S.MenuBtn>
-        </Link>
-      </S.BtnWrapper>
+      </S.Btns>
     </S.MainWrapper>
   );
 }

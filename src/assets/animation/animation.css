@@ -1,0 +1,35 @@
+.shine {
+  animation: shine 2s linear infinite;
+  -moz-animation: shine 3s linear infinite;
+  -webkit-animation: shine 3s linear infinite;
+  -o-animation: shine 3s linear infinite;
+}
+@keyframes shine {
+  0%,
+  100% {
+    text-shadow: 0 0 20px;
+    opacity: 100%;
+  }
+  50% {
+    text-shadow: 0 0 5px;
+    opacity: 80%;
+  }
+}
+
+.fadein {
+  animation: fadein 3s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.popupModal {
+  animation: fadein 0.1s forwards;
+  animation-delay: 3.2s;
+}
