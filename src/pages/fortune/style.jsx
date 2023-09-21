@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 export const StarWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,25 +67,34 @@ export const FortuneTitle = styled.div`
 //포춘 연꽃잎
 export const LotusLeaf = styled.div`
   flex-grow: 1;
-  border: 3px solid red;
   background-image: url(/leaf.png);
   position: absolute;
-  width: 30%;
+  width: 70%;
   height: 63%;
   top: 35px;
   margin: 5rem;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  p {
-    writing-mode: vertical-rl; /* 텍스트의 쓰기 모드를 세로로 (우에서 좌로) 설정 */
-    text-orientation: mixed; /* 텍스트 방향 설정 */
-    white-space: nowrap;
-    color: #5f3a16;
-    font-size: 16px;
-    text-align: center; /* 텍스트를 수직으로 중앙에 정렬 */
-    line-height: 100%; /* 텍스트의 라인 높이를 조절하여 중앙에 정렬 */
-  }
+`;
+
+//포춘쿠키 내용 - 지금 모바일에선 줄바꿈이 안되는 중..ㅜㅜ 얼른 해결해볼게요
+export const FortuneContents = styled.p`
+  display: flex;
+  position: relative;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  flex-wrap: wrap;
+  white-space: normal;
+  color: #5f3a16;
+  font-size: 16px;
+  text-align: center;
+  line-height: 100%;
+  padding: 7%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.3;
 `;
 
 export const ClosedButton = styled.div`
@@ -97,5 +107,4 @@ export const ClosedButton = styled.div`
   height: 46px;
   top: 336px;
   position: relative;
-  /* border: 3px solid yellow; */
 `;
