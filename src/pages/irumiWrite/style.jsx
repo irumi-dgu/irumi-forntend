@@ -139,8 +139,30 @@ export const PasswordInput = styled.input`
 export const ShowPasswordIcon = styled.div`
   margin-left: 7px;
   font-size: 5px;
+  cursor: pointer;
 
   img {
     width: 130%;
   }
+`;
+
+export const Submit = styled.div`
+  position: relative;
+  /* transform: translateX(-70%); */
+  margin-top: 170%;
+  margin-bottom: 10%;
+
+  height: 40px;
+  border-radius: 20px;
+  background-color: #f0939e;
+  justify-content: center;
+  display: flex;
+`;
+
+export const SubmitBtn = styled.button`
+  height: 30px;
+  width: 200px;
+  font-family: "DonggukFont";
+  color: white;
+  font-size: 12px;
 `;
