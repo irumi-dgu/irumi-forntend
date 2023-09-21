@@ -31,11 +31,11 @@ export const GlobalStyle = createGlobalStyle`
         src: url(${DonggukFont}) format('WOFF');
     }
 
-    @media (max-width: 420px) {
+    /* @media (max-width: 420px) {
         font-size: 10px;
-    }
+    } */
 
-    font-size: 20px;
+    font-size: 10px;
     font-family: "DonggukFont";
 
   }
