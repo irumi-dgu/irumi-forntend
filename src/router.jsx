@@ -8,6 +8,7 @@ import IrumiWrite from "./pages/irumiWrite/IrumiWrite";
 import IrumiView from "./pages/irumiView/Irumi";
 import NotFound from "./NotFound";
 import Lanterns from "./pages/lanterns/Lanterns";
+import LanternsSearch from "./pages/lanterns/LanternsSearch";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "lanterns",
         element: <Lanterns />
+      },
+      {
+        path: "lanternsSearch",
+        element: <LanternsSearch />
       },
       {
         path: "fortune",

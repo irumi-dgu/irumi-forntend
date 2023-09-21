@@ -30,33 +30,16 @@ export const Selector = styled.div`
   margin: 20px;
 `;
 
+export const SubTitle = styled.div`
+  margin: 20px;
+  color: #898989;
+`;
+
 export const SelectorMenu = styled.div`
   font-size: 20px;
   color: ${props => (props.$isActive ? "white" : "#898989")};
 `;
 
-export const Search = styled.form`
-  flex-grow: 1;
-  /* border: solid 1px white; */
-  border-radius: 19px;
-  margin-left: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #fbedd0b2;
-
-  input::placeholder {
-    color: #745b45;
-  }
-`;
-
-export const Input = styled.input`
-  flex-grow: 1;
-  font-size: 16px;
-  color: #5b3a1a;
-  margin-right: 5px;
-`;
 export const LanternsList = styled.div`
   width: 100%;
   display: grid;

@@ -19,4 +19,4 @@ export const BackBtnBox = styled.div`
   margin-top: 31px;
   margin-bottom: 3px;
   display: flex;
-`
+`;
