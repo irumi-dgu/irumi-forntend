@@ -3,6 +3,10 @@ import { styled } from "styled-components";
 export const LanternsWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
+  height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
   display: flex;
   align-items: center;
   background-image: url("background_write.png");

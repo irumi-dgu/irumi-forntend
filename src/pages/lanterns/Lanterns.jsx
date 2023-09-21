@@ -5,6 +5,8 @@ import BackBtn from "../../components/common/backBtn/BackBtn";
 import { Link } from "react-router-dom";
 import LanternsSearchForm from "../../components/lanterns/lanternsSearchForm/LanternsSearchFrom";
 
+import LanternsWriteBtn from "../../components/lanterns/laternsWriteBtn/LanternsWriteBtn";
+
 function Lanterns() {
   const [sortBy, setSortBy] = useState("recent");
 
@@ -45,6 +47,7 @@ function Lanterns() {
 
   return (
     <S.LanternsWrapper>
+      <LanternsWriteBtn />
       <S.Header>
         <Link to="/">
           <BackBtn />

@@ -8,4 +8,11 @@ export const WriteBtn = styled.div`
   position: fixed;
   right: 20px;
   bottom: 20px;
+
+  img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
 `;

@@ -4,6 +4,7 @@ import Lantern from "../../components/lantern/Lantern";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 import { Link, useLocation } from "react-router-dom";
 import LanternsSearchForm from "../../components/lanterns/lanternsSearchForm/LanternsSearchFrom";
+import LanternsWriteBtn from "../../components/lanterns/laternsWriteBtn/LanternsWriteBtn";
 
 function LanternsSearch() {
   const [sortBy, setSortBy] = useState("recent");
@@ -34,6 +35,7 @@ function LanternsSearch() {
 
   return (
     <S.LanternsWrapper>
+      <LanternsWriteBtn />
       <S.Header>
         <Link to="/">
           <BackBtn />
@@ -41,14 +43,12 @@ function LanternsSearch() {
 
         <LanternsSearchForm />
       </S.Header>
-
       <S.Selector onClick={selectorClick}>
         <S.SelectorMenu $isActive={sortBy == "recent"}>최신순</S.SelectorMenu>
         <S.SelectorMenu>|</S.SelectorMenu>
         <S.SelectorMenu $isActive={sortBy == "pop"}>응원순</S.SelectorMenu>
       </S.Selector>
       <S.SubTitle>'{searchTerm}'에 대한 검색결과입니다.</S.SubTitle>
-
       <S.LanternsList>
         {data.map(item => (
           <S.LanternBox key={item.id}>

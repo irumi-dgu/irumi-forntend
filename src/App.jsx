@@ -6,9 +6,9 @@ import { Outlet } from "react-router-dom";
 
 const BackGroundColor = styled.div`
   width: 100vw;
-  min-height: 100vh;
+
   @supports (-webkit-touch-callout: none) {
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
   }
   background-color: black;
 `;
@@ -16,7 +16,7 @@ const BackGroundColor = styled.div`
 const Wrapper = styled.div`
   margin: 0 auto;
   width: 100%;
-
+  min-height: 100vh;
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
