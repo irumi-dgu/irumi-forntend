@@ -21,3 +21,8 @@ export const backStyledImage = styled.img`
   align-self: flex-start;
   margin-left: 10%;
 `;
+
+export const wishBgImg = styled.img`
+  width: 55%;
+  margin-top: 10%;
+`;
