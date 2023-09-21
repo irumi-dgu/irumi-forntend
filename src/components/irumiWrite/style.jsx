@@ -30,3 +30,12 @@ export const lanternColor = styled.div`
 export const lanternImage = styled.img`
   border: none;
 `;
+
+//wishForm 스타일 컴포넌트
+
+export const WishForm = styled.div``;
+export const wishContent = styled.div``;
+
+export const wishBgImage = styled.div`
+  z-index: 999;
+`;

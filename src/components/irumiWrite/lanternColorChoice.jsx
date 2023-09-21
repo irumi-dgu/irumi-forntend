@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import purple from "../../../public/s_lantern_purple.png";
-import blue from "../../../public/s_lantern_blue.png";
-import green from "../../../public/s_lantern_green.png";
-import yellow from "../../../public/s_lantern_yellow.png";
-import pink from "../../../public/s_lantern_pink.png";
 
-function LanternChoice() {
+function LanternChoice({ setSelectedColor }) {
   // 각 색상에 대한 상태를 추가합니다.
   const [pinkActive, setPinkActive] = useState(true);
-  const [yellowActive, setYellowActive] = useState(true);
-  const [greenActive, setGreenActive] = useState(true);
-  const [blueActive, setBlueActive] = useState(true);
-  const [purpleActive, setPurpleActive] = useState(true);
+  const [yellowActive, setYellowActive] = useState(false);
+  const [greenActive, setGreenActive] = useState(false);
+  const [blueActive, setBlueActive] = useState(false);
+  const [purpleActive, setPurpleActive] = useState(false);
 
   // 이미지를 클릭 시 호출 함수
   const handleImageClick = color => {
@@ -24,6 +19,7 @@ function LanternChoice() {
         setGreenActive(false);
         setBlueActive(false);
         setPurpleActive(false);
+        setSelectedColor("pink"); // 선택된 색상을 업데이트
         break;
       case "yellow":
         setPinkActive(false);
@@ -31,6 +27,7 @@ function LanternChoice() {
         setGreenActive(false);
         setBlueActive(false);
         setPurpleActive(false);
+        setSelectedColor("yellow"); // 선택된 색상을 업데이트
         break;
       case "green":
         setPinkActive(false);
@@ -38,6 +35,7 @@ function LanternChoice() {
         setGreenActive(true);
         setBlueActive(false);
         setPurpleActive(false);
+        setSelectedColor("green"); // 선택된 색상을 업데이트
         break;
       case "blue":
         setPinkActive(false);
@@ -45,6 +43,7 @@ function LanternChoice() {
         setGreenActive(false);
         setBlueActive(true);
         setPurpleActive(false);
+        setSelectedColor("blue"); // 선택된 색상을 업데이트
         break;
       case "purple":
         setPinkActive(false);
@@ -52,6 +51,7 @@ function LanternChoice() {
         setGreenActive(false);
         setBlueActive(false);
         setPurpleActive(true);
+        setSelectedColor("purple"); // 선택된 색상을 업데이트
         break;
       default:
         break;
@@ -62,31 +62,36 @@ function LanternChoice() {
     <S.lantern>
       <S.lanternLetter>연등</S.lanternLetter>
       <S.lanternImage
-        src={pink}
+        img
+        src="/s_lantern_pink.png"
         alt="분홍색"
         onClick={() => handleImageClick("pink")}
         style={{ opacity: pinkActive ? 1 : 0.5 }}
       />
       <S.lanternImage
-        src={yellow}
+        img
+        src="/s_lantern_yellow.png"
         alt="노란색"
         onClick={() => handleImageClick("yellow")}
         style={{ opacity: yellowActive ? 1 : 0.5 }}
       />
       <S.lanternImage
-        src={green}
+        img
+        src="s_lantern_green.png"
         alt="연두색"
         onClick={() => handleImageClick("green")}
         style={{ opacity: greenActive ? 1 : 0.5 }}
       />
       <S.lanternImage
-        src={blue}
+        img
+        src="s_lantern_blue.png"
         alt="파란색"
         onClick={() => handleImageClick("blue")}
         style={{ opacity: blueActive ? 1 : 0.5 }}
       />
       <S.lanternImage
-        src={purple}
+        img
+        src="s_lantern_purple.png"
         alt="보라색"
         onClick={() => handleImageClick("purple")}
         style={{ opacity: purpleActive ? 1 : 0.5 }}
