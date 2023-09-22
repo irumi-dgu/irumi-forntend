@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./style";
-import DetailLantern from "../../components/irumiView/detailLantern";
+import DetailLantern from "../../components/irumiView/DetailLantern";
 
 function IrumiView() {
   return (
