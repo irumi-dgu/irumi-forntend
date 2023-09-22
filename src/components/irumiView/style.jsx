@@ -158,6 +158,54 @@ export const YesBtn = styled(NoBtn)`
     color: #C31010;
     border-radius: 0;
     border-bottom-right-radius: 15px;
-    border-left: 0.5px solid #3D4353;
     border-right: 0;
+`
+
+// PwModal.jsx
+export const PwModalWrapper = styled(DeleteModalWrapper)`
+    
+`
+export const PwBox = styled(DeleteBox)`
+    
+`
+export const PwInputBox = styled(Question)`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+    p {
+        padding-left: 8px;
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    input {
+        width: 100px;
+        height: 34px;
+        background-color: #D9D9D9;
+        border: 1px solid #898989;
+        border-radius: 5px;
+        outline: none;
+        padding: 0 10px;
+        font-size: 20px;
+    }
+`
+
+// YesModal.jsx
+export const YesModalWrapper = styled.div`
+    position: fixed;
+    bottom: 0;
+    padding: 386px 74px;
+    z-index: 10;
+`
+export const AlertBox = styled(DeleteBox)`
+    width: 282px;
+    height: 64px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
