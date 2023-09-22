@@ -4,7 +4,6 @@ import { styled } from "styled-components";
 export const StarWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,6 +66,7 @@ export const FortuneTitle = styled.div`
 //포춘 연꽃잎
 export const LotusLeaf = styled.div`
   flex-grow: 1;
+  display: flex;
   background-image: url(/leaf.png);
   position: absolute;
   width: 70%;
@@ -76,27 +76,30 @@ export const LotusLeaf = styled.div`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  justify-content: center;
 `;
 
-//포춘쿠키 내용 - 지금 모바일에선 줄바꿈이 안되는 중..ㅜㅜ 얼른 해결해볼게요
+//포춘쿠키 내용
 export const FortuneContents = styled.p`
   display: flex;
   position: relative;
   writing-mode: vertical-lr;
   text-orientation: mixed;
   flex-wrap: wrap;
+  word-wrap: break-word;
   white-space: normal;
   color: #5f3a16;
   font-size: 16px;
   text-align: center;
   line-height: 100%;
-  padding: 7%;
+  padding: 82px 30px;
   width: 100%;
   justify-content: center;
   align-items: center;
-  line-height: 1.3;
+  line-height: 1.5;
 `;
 
+//닫기 버튼 -> 요거 누르면 MyDetail로 감
 export const ClosedButton = styled.div`
   display: flex;
   background-image: url(/closedbutton.png);

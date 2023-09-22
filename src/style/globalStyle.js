@@ -35,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 10px;
     } */
 
-    font-size: 10px;
+    /* font-size: 10px; */
     font-family: "DonggukFont";
 
   }
