@@ -1,12 +1,14 @@
 import React from "react";
 import * as S from "./style";
 import DetailLantern from "../../components/irumiView/DetailLantern";
+import { Link } from "react-router-dom";
+import BackBtn from "../../components/common/backBtn/BackBtn";
 
 function IrumiView() {
   return (
     <S.IrumiViewWrapper>
-      <S.BackBtnBox>
-        <img src="/backBtn.png" style={{width: "21px", height:"16px"}} />
+      <S.BackBtnBox to="/lanterns">
+        <BackBtn />
       </S.BackBtnBox>
       <DetailLantern />
     </S.IrumiViewWrapper>
