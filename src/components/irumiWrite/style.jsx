@@ -5,13 +5,12 @@ import { styled } from "styled-components";
 export const LanternChoice = styled.div``;
 export const lantern = styled.div`
   width: 80%;
-  height: 20%;
+  margin-top: 5%;
   border: none;
   flex-direction: row;
   display: flex;
   align-items: center;
   border: none;
-  margin-top: 10%;
   justify-content: space-between;
 `;
 
@@ -29,4 +28,14 @@ export const lanternColor = styled.div`
 
 export const lanternImage = styled.img`
   border: none;
+  cursor: pointer;
+`;
+
+//wishForm 스타일 컴포넌트
+
+export const WishForm = styled.div``;
+export const wishContent = styled.div``;
+
+export const wishBgImage = styled.div`
+  z-index: 999;
 `;

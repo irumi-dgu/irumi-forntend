@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 
 const BackGroundColor = styled.div`
   width: 100vw;
-  height: 100vh;
+
   background-color: black;
 `;
 
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  max-width: 820px;
+  max-width: 420px;
   background-color: #202029;
 
   * {
