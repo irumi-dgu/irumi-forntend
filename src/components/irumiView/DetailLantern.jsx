@@ -64,16 +64,24 @@ function DetailLantern() {
         return "/detail_1_yes.png";
     }
 
-    //   // 연등 -> 이미지로 매핑
-    //   const getImageUrl = (lanternColor, twinkle) => {
-    //     if (lanternColor >= 1 && lanternColor <= 5) {
-    //       const twinkleToggle = twinkle ? "yes" : "no";
-    //       return `/detail_${lanternColor}_${twinkleToggle}.svg`;
-    //     }
-    //     return "/detail_1_yes.svg";
-    //   };
     return (
         <>
+            {data.map((item) => (
+                <S.DetailLanternWrapper key={item.id}>
+                    <img src={getImageUrl(item.lanternColor, item.twinkle)} />
+                    <S.TitleSec>{item.nickname}</S.TitleSec>
+                    <S.ContentSec>{item.content}</S.ContentSec>
+                    <S.MoreSec
+                        src="/moreBtn.png"
+                        onClick={openModal}
+                    />
+                    <S.LikeBtn>
+                        <img src="/detail_like.png" />
+                        <p>{item.likes}</p>
+                    </S.LikeBtn>
+                </S.DetailLanternWrapper>
+            ))}
+
             {/* 더보기 모달 */}
             {modalOpen && (
                 <MoreModal
@@ -93,8 +101,8 @@ function DetailLantern() {
                 <PwModal
                     openPwModal={openPwModal}
                     closePwModal={closePwModal}
-                // openAlert={openAlert}
-                // closeAlert={closeAlert}
+                    // openAlert={openAlert}
+                    // closeAlert={closeAlert}
                 />
             )}
             {/* 비번 일치 alert 모달 */}

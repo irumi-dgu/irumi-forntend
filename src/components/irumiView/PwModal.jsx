@@ -1,11 +1,15 @@
+// PwModal.jsx
+
 import React, { useState } from 'react';
 import * as S from "./style";
 import AlertModal from './AlertModal';
+import { useNavigate } from 'react-router-dom';
 
 function PwModal({ openPwModal, closePwModal }) {
     const [password, setPassword] = useState("");
-    const [alertOpen, setAlertOpen] = useState(false);
     const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
+    const [alertOpen, setAlertOpen] = useState(false);
+    const navigate = useNavigate();
 
     const openAlert = () => {
         setAlertOpen(true);
@@ -15,32 +19,35 @@ function PwModal({ openPwModal, closePwModal }) {
         setAlertOpen(false);
     }
 
-    const handleDelete = () => {
-        // 실제로는 서버로 비밀번호를 보내고 일치 여부를 확인하는 POST 요청을 보냅니다.
-        // 아래의 코드는 시뮬레이션을 위한 가상 코드입니다.
+    // 비밀번호 일치 -> alert 띄워주고,
+    // 2초 뒤에 alert 꺼짐과 동시에 lanterns 페이지로
 
-        // 비밀번호가 일치하는 경우
+    // 비밀번호 불일치 -> alert 띄워주고,
+    // 2초 뒤에 alert 꺼짐과 동시에 다시 비밀번호 입력 모달로
+    const handleDelete = () => {
+        // POST 요청 보내기
+
+        // 비밀번호 일치
         if (password === "1111") {
             setIsPasswordCorrect(true);
+            // openAlert();
             setAlertOpen(true);
             // closePwModal();
-            // openAlert();
 
-            // 1초 뒤에 모달을 닫습니다.
+            // 2초 뒤 둘러보기 페이지로
             setTimeout(() => {
-                closePwModal();
-                setAlertOpen(false);
+                closeAlert();
+                navigate("/lanterns")
             }, 2000);
         } else {
-            // 비밀번호가 일치하지 않는 경우
+            // 비밀번호 불일치
             setIsPasswordCorrect(false);
-            setAlertOpen(true);
             // openAlert();
-            // setAlertOpen(true);
+            setAlertOpen(true);
 
-            // 1초 뒤에 다시 비밀번호 입력 모달을 엽니다.
+            // 2초 뒤 다시 입력
             setTimeout(() => {
-                setAlertOpen(false);
+                closeAlert();
                 openPwModal();
             }, 2000);
         }
@@ -66,7 +73,7 @@ function PwModal({ openPwModal, closePwModal }) {
             </S.PwModalWrapper>
 
             {alertOpen && (
-                <AlertModal isPasswordCorrect={isPasswordCorrect} closeAlert={closeAlert} />
+                <AlertModal isPasswordCorrect={isPasswordCorrect} />
             )}
         </>
     )
