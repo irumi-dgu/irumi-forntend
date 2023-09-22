@@ -6,6 +6,7 @@ export const DetailLanternWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 `
 export const TitleSec = styled.div`
     position: absolute;
@@ -60,7 +61,6 @@ export const MoreModalWrapper = styled.div`
     width: 100%;
     height: 100vh;
     padding: 0 7% 2.2rem 7%; // 0 632px 31px 22px
-    border: 2px solid yellow;
     display: flex;
     flex-direction: column;
     justify-content: end;

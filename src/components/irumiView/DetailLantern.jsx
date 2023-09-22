@@ -90,7 +90,7 @@ function DetailLantern() {
     return (
         <>
             {data.map((item) => (
-                <S.DetailLanternWrapper key={item.id}>
+                <S.DetailLanternWrapper key={item.id} >
                     <img src={getImageUrl(item.lanternColor, item.twinkle)} />
                     <S.TitleSec>{item.nickname}</S.TitleSec>
                     <S.ContentSec>{item.content}</S.ContentSec>
