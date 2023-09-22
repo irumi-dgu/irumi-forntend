@@ -2,7 +2,6 @@ import { styled } from "styled-components";
 
 // DetailLantern.jsx
 export const DetailLanternWrapper = styled.div`
-    /* border: 1px solid red; */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,7 +15,6 @@ export const TitleSec = styled.div`
     color: #5B3A1A;
     font-size: 16px;
     font-weight: 400;
-    /* border: 2px solid pink; */
     display: flex;
     justify-content: center;
 `
@@ -33,7 +31,6 @@ export const MoreSec = styled.img`
     width: 25px;
     height: 20px;
     padding: 0 10px;
-    /* border: 1px solid blue; */
 `
 export const LikeBtn = styled.div`
     position: absolute;
@@ -41,7 +38,6 @@ export const LikeBtn = styled.div`
     right: 86px;
     width: 50px;
     height: 21px;
-    /* border: 1px solid orange; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -60,18 +56,24 @@ export const LikeBtn = styled.div`
 // MoreModal.jsx
 export const MoreModalWrapper = styled.div`
     position: fixed;
-    bottom: 0;
-    padding: 632px 31px 22px 31px;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0 7% 2.2rem 7%; // 0 632px 31px 22px
+    border: 2px solid yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 `
 export const MoreBtnBox = styled.div`
-    width: 368px;
+    width: 100%; // 368px
     height: 163px;
     border-radius: 15px;
     background-color: #F1F1F1;
     margin-bottom: 8px;
 `
 export const DeleteBtn = styled.div`
-    width: 368px;
+    width: 100%;
     height: 58px;
     border-bottom: 0.5px solid #3D4353;
     background-color: #F1F1F1;
@@ -79,7 +81,7 @@ export const DeleteBtn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     line-height: 26px; /* 162.5% */
 `
@@ -88,7 +90,7 @@ export const MoreTitle = styled(DeleteBtn)`
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     color: #3D4353;
-    font-size: 12px;
+    font-size: 1.2rem;
 `
 export const ReportBtn = styled(DeleteBtn)`
     height: 58px;
@@ -100,7 +102,7 @@ export const XBtn = styled(MoreBtnBox)`
     height: 59px;
     background-color: #FFF;
     color: #C31010;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -111,8 +113,9 @@ export const XBtn = styled(MoreBtnBox)`
 // DeleteModal.jsx
 export const DeleteModalWrapper = styled.div`
     position: fixed;
-    bottom: 0;
-    padding: 363px 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
 `
 export const DeleteBox = styled.div`
@@ -127,7 +130,7 @@ export const Question = styled(DeleteBox)`
     border-bottom-right-radius: 0;
     border-bottom: 0.5px solid #3D4353;
     color: #000;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -149,7 +152,7 @@ export const NoBtn = styled(DeleteBox)`
     justify-content: center;
     align-items: center;
     color: #000;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     border-right: 0.5px solid #3D4353;
     border-left: 0;
@@ -177,7 +180,7 @@ export const PwInputBox = styled(Question)`
     p {
         padding-left: 8px;
         color: #000;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 400;
     }
     input {
@@ -188,22 +191,19 @@ export const PwInputBox = styled(Question)`
         border-radius: 5px;
         outline: none;
         padding: 0 10px;
-        font-size: 20px;
+        font-size: 2rem;
     }
 `
 
 // YesModal.jsx
-export const YesModalWrapper = styled.div`
-    position: fixed;
-    bottom: 0;
-    padding: 386px 74px;
-    z-index: 10;
+export const YesModalWrapper = styled(DeleteModalWrapper)`
+
 `
 export const AlertBox = styled(DeleteBox)`
     width: 282px;
     height: 64px;
     color: #000;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -211,15 +211,12 @@ export const AlertBox = styled(DeleteBox)`
 `
 
 // ReportModal.jsx
-export const ReportModalWrapper = styled.div`
+export const ReportModalWrapper = styled(DeleteModalWrapper)`
     position: fixed;
-    bottom: 0;
-    padding: 148px 48px;
     z-index: 10;
 `
 export const ReportBox = styled.div`
     width: 333px;
-    /* height: 541px; */
     border-radius: 15px;
     background-color: #FFF;
 `
@@ -228,7 +225,7 @@ export const ReportTitle = styled.div`
     height: 130px;
     padding: 44px;
     color: #000;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 400;
     line-height: 116.523%;
     display: flex;
@@ -254,20 +251,19 @@ export const CheckBox = styled.div`
     }
     p {
         color: #000;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 400;
     }
 `
 export const Explain = styled.div`
     width: 100%;
-    /* height: 134px; */
     padding-top: 27px;
     padding-bottom: 47px;
     display: flex;
     justify-content: center;
     color: #000;
     text-align: center;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 400;
     line-height: 18px; /* 128.571% */
 `
@@ -293,13 +289,13 @@ export const ReportYesBtn = styled(ReportNoBtn)`
 
 // ReportAlertModal.jsx
 export const ReportAlertWrapper = styled(DeleteModalWrapper)`
-    padding: 386px 74px;
+    
 `
 export const ReportAlertBox = styled(DeleteBox)`
     width: 282px;
     height: 64px;
     color: #000;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     display: flex;
     justify-content: center;
