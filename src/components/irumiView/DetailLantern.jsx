@@ -5,13 +5,19 @@ import * as S from "./style";
 import MoreModal from './MoreModal';
 import DeleteModal from './DeleteModal';
 import PwModal from './PwModal';
-import AlertModal from './AlertModal';
+// import AlertModal from './AlertModal';
+import ReportModal from "./ReportModal";
+import ReportAlertModal from "./ReportAlertModal";
 
 function DetailLantern() {
     const [modalOpen, setModalOpen] = useState(false);
+    // 삭제
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const [pwModalOpen, setPwModalOpen] = useState(false);
     // const [alertOpen, setAlertOpen] = useState(false);
+    // 신고
+    const [reportModalOpen, setReportModalOpen] = useState(false);
+    const [reportedModalOpen, setReportedModalOpen] = useState(false);
 
     // 더보기 모달
     const openModal = () => {
@@ -44,6 +50,23 @@ function DetailLantern() {
     // const closeAlert = () => {
     //     setAlertOpen(false);
     // }
+
+    // 신고 체크박스 모달
+    const openReportModal = () => {
+        setReportModalOpen(true);
+        closeModal();
+    }
+    const closeReportModal = () => {
+        setReportModalOpen(false);
+    }
+    // 신고 완료 모달
+    const openReportedModal = () => {
+        setReportedModalOpen(true);
+        closeReportModal();
+        setTimeout(() => {
+            setReportedModalOpen(false);
+        }, 1500)
+    }
 
     // get 해올거
     const data = [{
@@ -87,6 +110,7 @@ function DetailLantern() {
                 <MoreModal
                     closeModal={closeModal}
                     openDeleteModal={openDeleteModal}
+                    openReportModal={openReportModal}
                 />
             )}
             {/* 연등을 삭제하시겠습니까? 모달*/}
@@ -109,8 +133,21 @@ function DetailLantern() {
             {/* {alertOpen && (
                 <AlertModal />
             )} */}
+
+            {/* 신고 모달 */}
+            {reportModalOpen && (
+                <ReportModal
+                    closeReportModal={closeReportModal}
+                    openReportedModal={openReportedModal}
+                />
+            )}
+            {/* 신고 완료 모달 */}
+            {reportedModalOpen && (
+                <ReportAlertModal />
+            )}
+
             {/* 뒷 배경 어둡게 */}
-            {(deleteModalOpen || pwModalOpen) && (
+            {(deleteModalOpen || pwModalOpen || reportModalOpen || reportedModalOpen) && (
                 <div
                     style={{
                         position: 'fixed',

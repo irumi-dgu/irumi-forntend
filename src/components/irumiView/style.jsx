@@ -209,3 +209,99 @@ export const AlertBox = styled(DeleteBox)`
     justify-content: center;
     align-items: center;
 `
+
+// ReportModal.jsx
+export const ReportModalWrapper = styled.div`
+    position: fixed;
+    bottom: 0;
+    padding: 148px 48px;
+    z-index: 10;
+`
+export const ReportBox = styled.div`
+    width: 333px;
+    /* height: 541px; */
+    border-radius: 15px;
+    background-color: #FFF;
+`
+export const ReportTitle = styled.div`
+    width: 100%;
+    height: 130px;
+    padding: 44px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 116.523%;
+    display: flex;
+    justify-content: center;
+`
+export const ReportCheckBoxs = styled.div`
+    width: 100%;
+`
+export const CheckBox = styled.div`
+    padding: 11px 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    input {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+    margin-right: 14px;
+    }
+    input:checked {
+        background-image: url("/checked.png");
+    }
+    p {
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+    }
+`
+export const Explain = styled.div`
+    width: 100%;
+    /* height: 134px; */
+    padding-top: 27px;
+    padding-bottom: 47px;
+    display: flex;
+    justify-content: center;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+`
+export const ReportBtnBox = styled.div`
+    width: 100%;
+    height: 75px;
+    border-top: 1px solid #B0B0B0;
+    display: flex;
+    flex-direction: row;
+`
+export const ReportNoBtn = styled(NoBtn)`
+    border-right: 1px solid #B0B0B0;
+    width: 166px;
+    height: 100%;
+    background-color: transparent;
+`
+export const ReportYesBtn = styled(ReportNoBtn)`
+    color: #C31010;
+    border-radius: 0;
+    border-bottom-right-radius: 15px;
+    border-right: 0;
+`
+
+// ReportAlertModal.jsx
+export const ReportAlertWrapper = styled(DeleteModalWrapper)`
+    padding: 386px 74px;
+`
+export const ReportAlertBox = styled(DeleteBox)`
+    width: 282px;
+    height: 64px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
