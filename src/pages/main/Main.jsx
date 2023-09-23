@@ -128,8 +128,10 @@ function Main() {
         className="mySwiper"
       >
         {data.map(item => (
-          <SwiperSlide>
-            <Lantern item={item} size={180} />
+          <SwiperSlide key={item.id}>
+            <Link to="/irumiView">
+              <Lantern item={item} size={180} />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

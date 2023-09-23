@@ -36,7 +36,7 @@ export const Selector = styled.div`
 
 export const SubTitle = styled.div`
   margin: 20px;
-  color: #898989;
+  color: white;
 `;
 
 export const SelectorMenu = styled.div`
