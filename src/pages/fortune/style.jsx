@@ -129,8 +129,8 @@ export const LotusLeaf = styled.div`
   background-image: url(/leaf.png);
   position: fixed;
   width: 260px;
-  height: 545px;
-  top: 35px;
+  height: 505px;
+  top: 15px;
   margin: 5rem;
   background-size: contain;
   background-position: center;
@@ -152,7 +152,7 @@ export const FortuneContents = styled.p`
   font-size: 19px;
   text-align: center;
   line-height: 100%;
-  padding: 104px 30px;
+  padding: 68px 30px;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -168,7 +168,7 @@ export const ClosedButton = styled.div`
   background-repeat: no-repeat;
   width: 46px;
   height: 46px;
-  top: 1550%;
+  top: 675px;
   position: relative;
 
   /* @media (max-height: 667px) {
