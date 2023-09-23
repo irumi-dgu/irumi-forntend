@@ -24,24 +24,22 @@ const FortuneLotus = () => {
   }, []);
 
   return (
-    <S.StarWrapper>
-      <S.SparkleWrapper>
-        <S.LotusLeaf>
-          <S.FortuneContents>
-            {fortuneMessage ? (
-              <p>{fortuneMessage}</p>
-            ) : (
-              <p>
-                오지 않은 미래를 걱정하는 것 보다 마주한 현재에 최선을 다하세요
-              </p> //더미 텍스트
-            )}
-          </S.FortuneContents>
-        </S.LotusLeaf>
-        <Link to="/MyDetail">
-          <S.ClosedButton />
-        </Link>
-      </S.SparkleWrapper>
-    </S.StarWrapper>
+    <S.MainWrapper>
+      <S.LotusLeaf>
+        <S.FortuneContents>
+          {fortuneMessage ? (
+            <p>{fortuneMessage}</p>
+          ) : (
+            <p>
+              오지 않은 미래를 걱정하는 것 보다 마주한 현재에 최선을 다하세요
+            </p> //더미 텍스트
+          )}
+        </S.FortuneContents>
+      </S.LotusLeaf>
+      <Link to="/MyDetail">
+        <S.ClosedButton />
+      </Link>
+    </S.MainWrapper>
   );
 };
 

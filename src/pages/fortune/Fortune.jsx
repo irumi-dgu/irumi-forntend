@@ -27,28 +27,26 @@ function Fortune() {
   }, [isLotusLightVisible]);
 
   return (
-    <S.StarWrapper>
-      <S.SparkleWrapper>
-        <S.FortuneTitle>행운의 연꽃잎을 뽑아보세요</S.FortuneTitle>
-        <S.LotusWhole className="lotus-whole">
-          {isAnimationCompleted ? (
-            <Link to="/fortuneLotus">
-              <S.LotusTop />
-            </Link>
-          ) : (
-            <>
-              {isLotusLightVisible && (
-                <S.LotusLight
-                  className="fadeinshort"
-                  onClick={handleLotusTopClick}
-                />
-              )}
-              <S.LotusTop onClick={handleLotusTopClick} />
-            </>
-          )}
-        </S.LotusWhole>
-      </S.SparkleWrapper>
-    </S.StarWrapper>
+    <S.MainWrapper>
+      <S.FortuneTitle>행운의 연꽃잎을 뽑아보세요</S.FortuneTitle>
+      <S.LotusWhole className="lotus-whole">
+        {isAnimationCompleted ? (
+          <Link to="/fortuneLotus">
+            <S.LotusTop />
+          </Link>
+        ) : (
+          <>
+            {isLotusLightVisible && (
+              <S.LotusLight
+                className="fadeinshort"
+                onClick={handleLotusTopClick}
+              />
+            )}
+            <S.LotusTop onClick={handleLotusTopClick} />
+          </>
+        )}
+      </S.LotusWhole>
+    </S.MainWrapper>
   );
 }
 
