@@ -1,11 +1,37 @@
 import React, { useState } from 'react'
 import * as S from "./style";
+import { API } from "../../api/axios";
 
 function ReportModal({closeReportModal, openReportedModal}) {
-    const [check1, setCheck1] = useState(false);
-    const [check2, setCheck2] = useState(false);
-    const [check3, setCheck3] = useState(false);
-    const [check4, setCheck4] = useState(false);
+    // const [abuse, setAbuse] = useState(false);
+    // const [fraud, setFraud] = useState(false);
+    // const [explicit, setExplicit] = useState(false);
+    // const [promotion, setPromotion] = useState(false);
+
+    const [selectedCategories, setSelectedCategories] = useState([]);
+
+    const toggleCategory = (category) => {
+        if (selectedCategories.includes(category)) {
+            setSelectedCategories(selectedCategories.filter((c) => c!== category));
+        } else {
+            setSelectedCategories([...selectedCategories, category])
+        }
+    }
+
+    const handleReport = async () => {
+        try {
+            const response = await API.post(
+                `/api/lanterns/${1}/report`,
+                {
+                    categories: selectedCategories
+                }
+            );
+            console.log(response.data);
+            openReportedModal();
+        } catch (error) {
+            console.log("연등 신고 시 오류 발생", error);
+        }
+    }
 
     return (
         <>
@@ -18,9 +44,12 @@ function ReportModal({closeReportModal, openReportedModal}) {
                         <S.CheckBox>
                         <input
                             type="checkbox"
-                            name="1"
-                            checked={check1}
-                            onChange={() => setCheck1((prevCheck1) => !prevCheck1)}
+                            name="abuse"
+                            // value={abuse}
+                            // checked={abuse}
+                            checked={selectedCategories.includes("abuse")}
+                            // onChange={() => setAbuse((prevCheck1) => !prevCheck1)}
+                            onChange={() => toggleCategory("abuse")}
                             required
                         />
                         <p>욕설 및 비하</p>
@@ -28,9 +57,12 @@ function ReportModal({closeReportModal, openReportedModal}) {
                         <S.CheckBox>
                         <input
                             type="checkbox"
-                            name="2"
-                            checked={check2}
-                            onChange={() => setCheck2((prevCheck2) => !prevCheck2)}
+                            name="fraud"
+                            // value={fraud}
+                            // checked={fraud}
+                            checked={selectedCategories.includes("fraud")}
+                            // onChange={() => setFraud((prevCheck2) => !prevCheck2)}
+                            onChange={() => toggleCategory("fraud")}
                             required
                         />
                         <p>개인정보 유출 사칭, 사기</p>
@@ -38,9 +70,12 @@ function ReportModal({closeReportModal, openReportedModal}) {
                         <S.CheckBox>
                         <input
                             type="checkbox"
-                            name="3"
-                            checked={check3}
-                            onChange={() => setCheck3((prevCheck3) => !prevCheck3)}
+                            name="explicit"
+                            // value={explicit}
+                            // checked={explicit}
+                            checked={selectedCategories.includes("explicit")}
+                            // onChange={() => setExplicit((prevCheck3) => !prevCheck3)}
+                            onChange={() => toggleCategory("explicit")}
                             required
                         />
                         <p>음란물 또는 불건전한 대화</p>
@@ -48,9 +83,12 @@ function ReportModal({closeReportModal, openReportedModal}) {
                         <S.CheckBox>
                         <input
                             type="checkbox"
-                            name="4"
-                            checked={check4}
-                            onChange={() => setCheck4((prevCheck4) => !prevCheck4)}
+                            name="promotion"
+                            // value={promotion}
+                            // checked={promotion}
+                            checked={selectedCategories.includes("promotion")}
+                            // onChange={() => setPromotion((prevCheck4) => !prevCheck4)}
+                            onChange={() => toggleCategory("promotion")}
                             required
                         />
                         <p>영리목적이나 홍보성 게시글</p>
@@ -63,7 +101,7 @@ function ReportModal({closeReportModal, openReportedModal}) {
                     </S.Explain>
                     <S.ReportBtnBox>
                         <S.ReportNoBtn onClick={closeReportModal}>취소</S.ReportNoBtn>
-                        <S.ReportYesBtn onClick={openReportedModal}>신고</S.ReportYesBtn>
+                        <S.ReportYesBtn onClick={handleReport}>신고</S.ReportYesBtn>
                     </S.ReportBtnBox>
                 </S.ReportBox>
             </S.ReportModalWrapper>

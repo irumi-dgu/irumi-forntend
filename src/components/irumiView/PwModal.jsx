@@ -27,7 +27,6 @@ function PwModal({ openPwModal, closePwModal }) {
     // 비밀번호 불일치 -> alert 띄워주고,
     // 2초 뒤에 alert 꺼짐과 동시에 다시 비밀번호 입력 모달로
     const handleDelete = async () => {
-        // POST 요청 보내기
         try {
             const response = await API.post(
                 `/api/lanterns/${1}/delete`,

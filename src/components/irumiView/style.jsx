@@ -246,12 +246,16 @@ export const AlertBox = styled(DeleteBox)`
 `
 
 // ReportModal.jsx
-export const ReportModalWrapper = styled(DeleteModalWrapper)`
+export const ReportModalWrapper = styled.div`
     position: fixed;
     z-index: 10;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 `
 export const ReportBox = styled.div`
-    width: 333px;
+    width: 333px; // 100%
     border-radius: 15px;
     background-color: #FFF;
 `
