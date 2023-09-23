@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const IrumiWriteWrapper = styled.div`
   position: fixed;
@@ -17,24 +18,23 @@ export const IrumiWriteWrapper = styled.div`
   overflow: auto;
 `;
 
-export const backStyledImage = styled.img`
-  border: none;
+export const BackBtnBox = styled(Link)`
+  width: 100%;
+  max-width: 420px;
+  padding-left: 23px;
+  margin-top: 31px;
+  margin-bottom: 3px;
   display: flex;
-  cursor: pointer;
-  margin-top: 10%;
-  align-self: flex-start;
-  margin-left: 10%;
+  position: absolute;
+  top: 0;
 `;
 
 export const wishBgImg = styled.img`
   width: 115%;
-  margin-top: 10%;
 `;
 
 export const wishContent = styled.div`
-  /* justify-content: center; */
   display: flex;
-
   transform: translate(-50%, 25%);
   position: absolute;
   justify-content: center;
@@ -152,7 +152,7 @@ export const ShowPasswordIcon = styled.div`
 export const Submit = styled.div`
   position: relative;
   /* transform: translateX(-70%); */
-  margin-top: 170%;
+  margin-top: 162%;
   margin-bottom: 10%;
 
   height: 40px;
@@ -163,7 +163,7 @@ export const Submit = styled.div`
 `;
 
 export const SubmitBtn = styled.button`
-  height: 30px;
+  height: 40px;
   width: 200px;
   font-family: "DonggukFont";
   color: white;

@@ -1,16 +1,23 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
-import Back from "../../../public/back.png";
 import LanternChoice from "../../components/irumiWrite/lanternColorChoice";
-import { Link } from "react-router-dom";
 import { API } from "../../api/axios";
+import BackBtn from "../../components/common/backBtn/BackBtn";
 
 function IrumiWrite() {
+  // const location = useLocation();
+  const navigate = useNavigate();
   const [selectedColor, setSelectedColor] = useState("pink");
   const [userWish, setUserWish] = useState("");
   const [userWishContent, setUserWishContent] = useState(""); // 사용자의 소원을 저장할 상태 변수
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  // 뒤로 가기 버튼 클릭 핸들러
+  const handleBackClick = () => {
+    navigate(-1);
+  };
 
   // 상태 변수 추가: 폼 데이터 저장
   const [formData, setFormData] = useState({
@@ -93,7 +100,9 @@ function IrumiWrite() {
 
   return (
     <S.IrumiWriteWrapper>
-      <S.backStyledImage src={Back} alt="이전" />
+      <S.BackBtnBox onClick={handleBackClick}>
+        <BackBtn />
+      </S.BackBtnBox>
       <LanternChoice setSelectedColor={setSelectedColor} />
       <S.wishContent>
         <S.wishBgImg img src={`/write_${selectedColor}.png`} />
