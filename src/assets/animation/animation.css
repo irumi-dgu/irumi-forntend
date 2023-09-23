@@ -44,6 +44,19 @@
   }
 }
 
+.fadeinshort {
+  animation: fadein 1.5s;
+}
+
+@keyframes fadeinshort {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
 .popupModal {
   animation: fadein 0.1s forwards;
   animation-delay: 3.2s;

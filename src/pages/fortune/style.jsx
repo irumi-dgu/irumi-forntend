@@ -1,13 +1,4 @@
-import { styled, keyframes } from "styled-components";
-
-const lightSpread = keyframes`
-  0% {
-    box-shadow: 0 0 0 0 #f2be5c;
-  }
-  100% {
-    box-shadow: 0 0 50px 50px #f2be5c;
-  }
-`;
+import { styled } from "styled-components";
 
 //별만 있는 배경
 export const StarWrapper = styled.div`
@@ -46,17 +37,20 @@ export const LotusWhole = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  &:hover::after {
-    content: "";
-    position: absolute;
-    top: 400px;
-    left: 50px;
-    right: 50px;
-    bottom: -20px;
-    /* border: 1px solid yellow; */
-    box-shadow: 0 0 0 0 #f2be5c;
-    animation: ${lightSpread} 1.2s ease; /* lightSpread 애니메이션 적용 */
-  }
+`;
+
+export const LotusLight = styled.div`
+  flex-grow: 1;
+  z-index: 20;
+  background-image: url(/lightlotus.png);
+  position: relative;
+  top: 125px;
+  width: 110000px;
+  height: 300px;
+  justify-content: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const LotusTop = styled.div`
@@ -107,12 +101,13 @@ export const FortuneContents = styled.p`
   text-orientation: mixed;
   flex-wrap: wrap;
   word-wrap: break-word;
+  word-break: keep-all;
   white-space: normal;
   color: #5f3a16;
   font-size: 16px;
   text-align: center;
   line-height: 100%;
-  padding: 82px 30px;
+  padding: 104px 30px;
   width: 100%;
   justify-content: center;
   align-items: center;
