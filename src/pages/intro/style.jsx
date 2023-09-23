@@ -24,8 +24,8 @@ export const IntroWrapper = styled.div`
 export const SubTitle = styled.div`
   display: flex;
   justify-content: center;
-
-  font-size: 24px;
+  height: 20px;
+  font-size: 20px;
   margin-top: 100px;
   margin-bottom: 40px;
   color: white;
@@ -34,7 +34,7 @@ export const SubTitle = styled.div`
 export const MinTitle = styled.div`
   display: flex;
   justify-content: center;
-  font-size: 10px;
+  font-size: 12px;
   color: white;
   margin: 10px;
 `;
@@ -44,7 +44,7 @@ export const intro1 = styled.img`
 `;
 export const intro1_box = styled.div`
   height: 200px;
-  width: 180px;
+  width: 200px;
   position: relative;
 `;
 export const introBox = styled.div`
@@ -63,8 +63,8 @@ export const intro2_box = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100px;
-  height: 160px;
+  width: 110px;
+  height: 183px;
   /* border: 1px solid red; */
 `;
 
@@ -80,6 +80,8 @@ export const intro2_div = styled.div`
 `;
 export const intro2_img = styled.img`
   z-index: 1;
+  position: absolute;
+  top: -1%;
 `;
 
 export const intro_line = styled.img`
@@ -87,6 +89,15 @@ export const intro_line = styled.img`
   position: absolute;
   width: 20px;
   left: 10%;
+`;
+
+export const intro_hand = styled.img`
+  transform: translate(-50%, 0);
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 10%;
+  top: 90%;
 `;
 
 export const Modal = styled.div`

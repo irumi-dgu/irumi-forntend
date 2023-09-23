@@ -33,3 +33,30 @@
   animation: fadein 0.1s forwards;
   animation-delay: 3.2s;
 }
+
+@keyframes handMove {
+  0% {
+    top: 90%;
+  }
+  10% {
+    opacity: 100%;
+  }
+  80% {
+    top: 0%;
+    opacity: 0%;
+  }
+  99% {
+    top: 0%;
+  }
+  100% {
+    top: 90%;
+    opacity: 0%;
+  }
+}
+
+.handMove {
+  animation: handMove 2s infinite ease;
+  -moz-animation: handMove 2s infinite ease;
+  -webkit-animation: handMove 2s infinite ease;
+  -o-animation: handMove 2s infinite ease;
+}
