@@ -86,7 +86,7 @@ function DetailLantern() {
         }
         return "/detail_1_yes.png";
     }
-    console.log(getImageUrl());
+    // console.log(getImageUrl());
     const backgroundIamge = getImageUrl();
 
     return (

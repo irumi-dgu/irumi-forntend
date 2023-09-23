@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 import * as S from "./style";
 import AlertModal from './AlertModal';
 import { useNavigate } from 'react-router-dom';
+import { API } from "../../api/axios";
+// import axiosInstance from "../../api/axios";
 
 function PwModal({ openPwModal, closePwModal }) {
-    const [password, setPassword] = useState("");
+    const [password, setPassword] = useState();
     const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
     const [alertOpen, setAlertOpen] = useState(false);
     const navigate = useNavigate();
@@ -24,32 +26,42 @@ function PwModal({ openPwModal, closePwModal }) {
 
     // 비밀번호 불일치 -> alert 띄워주고,
     // 2초 뒤에 alert 꺼짐과 동시에 다시 비밀번호 입력 모달로
-    const handleDelete = () => {
+    const handleDelete = async () => {
         // POST 요청 보내기
+        try {
+            const response = await API.post(
+                `/api/lanterns/${1}/delete`,
+                {
+                    password: password,
+                }
+            );
+            console.log(response.status);
 
-        // 비밀번호 일치
-        if (password === "1111") {
-            setIsPasswordCorrect(true);
-            // openAlert();
-            setAlertOpen(true);
-            // closePwModal();
+            if (response.status === 200) {
+                // 비밀번호 일치
+                setIsPasswordCorrect(true);
+                setAlertOpen(true);
 
-            // 2초 뒤 둘러보기 페이지로
-            setTimeout(() => {
-                closeAlert();
-                navigate("/lanterns")
-            }, 2000);
-        } else {
-            // 비밀번호 불일치
-            setIsPasswordCorrect(false);
-            // openAlert();
-            setAlertOpen(true);
+                // 2초 뒤 둘러보기 페이지로
+                setTimeout(() => {
+                    closeAlert();
+                    navigate("/lanterns");
+                }, 2000);
+            } else if (response.status === 400) {
+                // 비밀번호 불일치
+                setIsPasswordCorrect(false);
+                setAlertOpen(true);
 
-            // 2초 뒤 다시 입력
-            setTimeout(() => {
-                closeAlert();
-                openPwModal();
-            }, 2000);
+                // 2초 뒤 다시 입력
+                setTimeout(() => {
+                    closeAlert();
+                    openPwModal();
+                }, 2000);
+            } else {
+                console.log(`HTTP 상태 코드: ${response.status}`);
+            }
+        } catch (error) {
+            console.log("연등 삭제 중 오류 발생", error);
         }
     };
 
