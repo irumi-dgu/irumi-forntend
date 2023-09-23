@@ -1,4 +1,13 @@
-import { styled } from "styled-components";
+import { styled, keyframes } from "styled-components";
+
+const lightSpread = keyframes`
+  0% {
+    box-shadow: 0 0 0 0 #f2be5c;
+  }
+  100% {
+    box-shadow: 0 0 50px 50px #f2be5c;
+  }
+`;
 
 //별만 있는 배경
 export const StarWrapper = styled.div`
@@ -37,6 +46,17 @@ export const LotusWhole = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  &:hover::after {
+    content: "";
+    position: absolute;
+    top: 400px;
+    left: 50px;
+    right: 50px;
+    bottom: -20px;
+    /* border: 1px solid yellow; */
+    box-shadow: 0 0 0 0 #f2be5c;
+    animation: ${lightSpread} 1.2s ease; /* lightSpread 애니메이션 적용 */
+  }
 `;
 
 export const LotusTop = styled.div`

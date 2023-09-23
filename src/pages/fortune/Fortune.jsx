@@ -1,3 +1,5 @@
+// Fortune.jsx
+
 import React from "react";
 import * as S from "./style";
 import { Link } from "react-router-dom";
@@ -7,7 +9,7 @@ function Fortune() {
     <S.StarWrapper>
       <S.SparkleWrapper>
         <S.FortuneTitle>행운의 연꽃잎을 뽑아보세요</S.FortuneTitle>
-        <S.LotusWhole>
+        <S.LotusWhole className="lotus-whole">
           <Link to="/fortuneLotus">
             <S.LotusTop />
           </Link>
