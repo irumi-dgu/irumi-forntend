@@ -132,7 +132,6 @@ function Main() {
             <Link to="/irumiView">
               <Lantern item={item} size={180} />
             </Link>
-            `
           </SwiperSlide>
         ))}
       </Swiper>

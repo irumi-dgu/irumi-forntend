@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import LanternsSearchForm from "../../components/lanterns/lanternsSearchForm/LanternsSearchFrom";
 
 import LanternsWriteBtn from "../../components/lanterns/laternsWriteBtn/LanternsWriteBtn";
+import "../../assets/animation/animation.css";
 
 function Lanterns() {
   const [sortBy, setSortBy] = useState("recent");
@@ -65,7 +66,7 @@ function Lanterns() {
         <S.LanternsList>
           {data.map((item, index) => (
             <Link to="/irumiView" key={index}>
-              <S.LanternBox>
+              <S.LanternBox className="fadein_slidein">
                 <Lantern item={item} size={180} />
               </S.LanternBox>
             </Link>
