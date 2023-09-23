@@ -77,6 +77,12 @@ function IrumiWrite() {
       return;
     }
 
+    // 비밀번호가 4자리가 아닌 경우 제출을 중지하고 경고 메시지를 표시
+    if (password.length !== 4) {
+      alert("비밀번호를 4자리로 입력해주세요!");
+      return;
+    }
+
     console.log("전송하는 데이터:", formData);
 
     // 상태 변수 formData를 서버로 전송
