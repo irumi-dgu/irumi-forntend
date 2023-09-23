@@ -37,6 +37,8 @@ export const MinTitle = styled.div`
   font-size: 12px;
   color: white;
   margin: 10px;
+  position: absolute;
+  left: -60%;
 `;
 
 export const intro1 = styled.img`
@@ -87,8 +89,8 @@ export const intro2_img = styled.img`
 export const intro_line = styled.img`
   transform: translate(-50%, 0);
   position: absolute;
-  width: 20px;
-  left: 10%;
+  width: 17px;
+  left: 35%;
 `;
 
 export const intro_hand = styled.img`

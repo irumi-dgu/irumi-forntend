@@ -26,13 +26,12 @@ function Intro() {
     <S.IntroWrapper>
       {isDragMode ? (
         <>
-          <S.SubTitle style={{ opacity: "0%" }} className="shine" />
+          <S.SubTitle className="shine">연등에 소원을 달아보세요</S.SubTitle>
           <S.intro1_box>
             <S.intro1 src={"intro_before_lantern.svg"} />
           </S.intro1_box>
 
           <S.introBox>
-            {/* <S.MinTitle className="shine">연등에 소원을 달아보세요!</S.MinTitle> */}
             <S.intro_line src={"intro_line.svg"} />
             <S.intro_hand className="handMove" src={"icon_hand.png"} />
           </S.introBox>
@@ -106,7 +105,9 @@ function Intro() {
             </S.ModalInner>
           </S.Modal>
 
-          <S.SubTitle className="fadein">이루미</S.SubTitle>
+          <S.SubTitle className="fadein">
+            이루미에 오신것을 환영합니다
+          </S.SubTitle>
           <S.intro1_box>
             <S.intro1 className="fadein" src={"intro_after_lantern.svg"} />
             <S.intro1 src={"intro_before_lantern.svg"} />
