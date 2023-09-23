@@ -62,15 +62,16 @@ export const TextareaName = styled.div`
 
 export const NameInput = styled.input`
   border: 1px solid #898989;
+  outline: none;
   margin-top: 7px;
-  background-color: whitesmoke;
+  background-color: #f1f1f1;
   border-radius: 5px;
   height: 24px;
   padding: 7px;
   font-family: "DonggukFont";
 
   &::placeholder {
-    font-size: 5px;
+    font-size: 10px;
   }
 `;
 
@@ -82,8 +83,9 @@ export const TextareaContent = styled.div`
 
 export const ContentInput = styled.textarea`
   border: 1px solid #898989;
+  outline: none;
   margin-top: 7px;
-  background-color: whitesmoke;
+  background-color: #f1f1f1;
   border-radius: 5px;
   height: 50%;
   padding: 7px;
@@ -97,7 +99,7 @@ export const ContentInput = styled.textarea`
   }
 
   &:focus {
-    border-color: #898989;
+    /* border-color: #898989; */
   }
 `;
 
@@ -120,8 +122,9 @@ export const WritePwLetter = styled.div`
 `;
 
 export const PasswordInput = styled.input`
-  border: 1px solid black;
-  background-color: whitesmoke;
+  border: 1px solid #898989;
+  outline: none;
+  background-color: #f1f1f1;
   border-radius: 7px;
   width: 90%;
   height: 30px;
@@ -132,7 +135,7 @@ export const PasswordInput = styled.input`
   /* font-size: 40px; */
 
   &::placeholder {
-    font-size: xx-small;
+    font-size: 10px;
   }
 `;
 
