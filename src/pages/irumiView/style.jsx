@@ -4,7 +4,8 @@ import { styled } from "styled-components";
 export const IrumiViewWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
-  max-width: 420px;
+  height: 100%;
+  /* max-width: 420px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,13 +16,15 @@ export const IrumiViewWrapper = styled.div`
   background-position: center;
 `;
 
-export const BackBtnBox = styled(Link)`
+export const BackBtnBox = styled.div`
   width: 100%;
   max-width: 420px;
-  padding-left: 23px;
-  margin-top: 31px;
+  height: 38px;
+  margin-top: 20px;
   margin-bottom: 3px;
   display: flex;
+  align-items: center;
   position: absolute;
   top: 0;
+  padding: 0px 20px;
 `;

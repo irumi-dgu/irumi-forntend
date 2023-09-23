@@ -2,41 +2,76 @@ import { styled } from "styled-components";
 
 // DetailLantern.jsx
 export const DetailLanternWrapper = styled.div`
+    width: 87%;
+
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin: 40px 0;
+
+    background-image: url(${(props) => props.imageUrl});
+    background-size: cover;
+    background-position: center;
+`
+export const LanternBox = styled.div`
+    /* width: 63%; */
+    /* height: auto; */
+
+    width: 100%;
+    /* height: 700px; */
+    height: 45rem;
+
+    display: flex;
+    justify-content: center;
+`
+export const DetailLanternImg = styled.img`
+    /* width: 344px; */
+    /* height: 735.32px; */
+    max-width: 82%;
+    height: auto;
 `
 export const TitleSec = styled.div`
     position: absolute;
-    top: 445px;
-    width: 344px;
-    padding: 0 63.26px;
+    top: 60%;
+    /* top: 445px; */
+    /* width: 344px; */
+    width: 44%;
+    /* padding: 0 63.26px; */
     color: #5B3A1A;
     font-size: 16px;
     font-weight: 400;
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    /* border: 1px solid orange; */
 `
 export const ContentSec = styled(TitleSec)`
-    top: 478px;
+    top: 65%;
+    /* top: 478px; */
     font-size: 14px;
-    padding: 0 98px;
+    /* padding: 0 98px; */
     line-height: 130%;
 `
 export const MoreSec = styled.img`
     position: absolute;
-    top: 410px;
-    right: 76px;
+    /* top: 410px; */
+    top: 56%;
+    /* right: 76px; */
+    right: 22%;
     width: 25px;
     height: 20px;
     padding: 0 10px;
 `
 export const LikeBtn = styled.div`
     position: absolute;
-    bottom: 15.32px;
-    right: 86px;
+    /* bottom: 15.32px; */
+    top: 95%;
+    /* right: 86px; */
+    right: 24%;
     width: 50px;
     height: 21px;
     display: flex;
@@ -81,7 +116,7 @@ export const DeleteBtn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     line-height: 26px; /* 162.5% */
 `
@@ -90,7 +125,7 @@ export const MoreTitle = styled(DeleteBtn)`
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     color: #3D4353;
-    font-size: 1.2rem;
+    font-size: 12px;
 `
 export const ReportBtn = styled(DeleteBtn)`
     height: 58px;
@@ -102,7 +137,7 @@ export const XBtn = styled(MoreBtnBox)`
     height: 59px;
     background-color: #FFF;
     color: #C31010;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -130,7 +165,7 @@ export const Question = styled(DeleteBox)`
     border-bottom-right-radius: 0;
     border-bottom: 0.5px solid #3D4353;
     color: #000;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -152,7 +187,7 @@ export const NoBtn = styled(DeleteBox)`
     justify-content: center;
     align-items: center;
     color: #000;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     border-right: 0.5px solid #3D4353;
     border-left: 0;
@@ -180,7 +215,7 @@ export const PwInputBox = styled(Question)`
     p {
         padding-left: 8px;
         color: #000;
-        font-size: 1.6rem;
+        font-size: 16px;
         font-weight: 400;
     }
     input {
@@ -191,7 +226,7 @@ export const PwInputBox = styled(Question)`
         border-radius: 5px;
         outline: none;
         padding: 0 10px;
-        font-size: 2rem;
+        font-size: 20px;
     }
 `
 
@@ -203,7 +238,7 @@ export const AlertBox = styled(DeleteBox)`
     width: 282px;
     height: 64px;
     color: #000;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -225,7 +260,7 @@ export const ReportTitle = styled.div`
     height: 130px;
     padding: 44px;
     color: #000;
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 400;
     line-height: 116.523%;
     display: flex;
@@ -240,18 +275,18 @@ export const CheckBox = styled.div`
     flex-direction: row;
     align-items: center;
     input {
-    width: 28px;
-    height: 28px;
-    border-radius: 5px;
-    background-color: #D9D9D9;
-    margin-right: 14px;
+        width: 28px;
+        height: 28px;
+        border-radius: 5px;
+        background-color: #D9D9D9;
+        margin-right: 14px;
     }
     input:checked {
         background-image: url("/checked.png");
     }
     p {
         color: #000;
-        font-size: 1.6rem;
+        font-size: 16px;
         font-weight: 400;
     }
 `
@@ -263,7 +298,7 @@ export const Explain = styled.div`
     justify-content: center;
     color: #000;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 14px;
     font-weight: 400;
     line-height: 18px; /* 128.571% */
 `
@@ -295,7 +330,7 @@ export const ReportAlertBox = styled(DeleteBox)`
     width: 282px;
     height: 64px;
     color: #000;
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     display: flex;
     justify-content: center;

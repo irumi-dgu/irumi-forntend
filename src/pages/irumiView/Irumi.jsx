@@ -7,8 +7,10 @@ import BackBtn from "../../components/common/backBtn/BackBtn";
 function IrumiView() {
   return (
     <S.IrumiViewWrapper>
-      <S.BackBtnBox to="/lanterns">
-        <BackBtn />
+      <S.BackBtnBox>
+        <Link to="/lanterns">
+          <BackBtn />
+        </Link>
       </S.BackBtnBox>
       <DetailLantern />
     </S.IrumiViewWrapper>

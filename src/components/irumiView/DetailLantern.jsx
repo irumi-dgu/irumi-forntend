@@ -86,22 +86,26 @@ function DetailLantern() {
         }
         return "/detail_1_yes.png";
     }
+    console.log(getImageUrl());
+    const backgroundIamge = getImageUrl();
 
     return (
         <>
             {data.map((item) => (
-                <S.DetailLanternWrapper key={item.id} >
-                    <img src={getImageUrl(item.lanternColor, item.twinkle)} />
-                    <S.TitleSec>{item.nickname}</S.TitleSec>
-                    <S.ContentSec>{item.content}</S.ContentSec>
-                    <S.MoreSec
-                        src="/moreBtn.png"
-                        onClick={openModal}
-                    />
-                    <S.LikeBtn>
-                        <img src="/detail_like.png" />
-                        <p>{item.likes}</p>
-                    </S.LikeBtn>
+                <S.DetailLanternWrapper key={item.id} imageUrl={backgroundIamge} >
+                    <S.LanternBox>
+                        {/* <S.DetailLanternImg src={getImageUrl(item.lanternColor, item.twinkle)} /> */}
+                        <S.TitleSec>{item.nickname}</S.TitleSec>
+                        <S.ContentSec>{item.content}</S.ContentSec>
+                        <S.MoreSec
+                            src="/moreBtn.png"
+                            onClick={openModal}
+                        />
+                        <S.LikeBtn>
+                            <img src="/detail_like.png" />
+                            <p>{item.likes}</p>
+                        </S.LikeBtn>
+                    </S.LanternBox>
                 </S.DetailLanternWrapper>
             ))}
 
@@ -125,8 +129,8 @@ function DetailLantern() {
                 <PwModal
                     openPwModal={openPwModal}
                     closePwModal={closePwModal}
-                    // openAlert={openAlert}
-                    // closeAlert={closeAlert}
+                // openAlert={openAlert}
+                // closeAlert={closeAlert}
                 />
             )}
             {/* 비번 일치 alert 모달 */}
