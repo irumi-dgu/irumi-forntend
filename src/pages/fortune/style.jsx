@@ -2,28 +2,56 @@ import { styled } from "styled-components";
 
 //별만 있는 배경
 export const StarWrapper = styled.div`
-  flex-grow: 1;
+  /* flex-grow: 1;
   width: 100%;
   display: flex;
+  position: fixed;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-image: url("/starbg.png");
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+
+  position: fixed;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("/starbg.png");
+  background-size: 100% auto;
+  flex-direction: column;
+  background-size: cover;
+  color: #ffffff;
+  overflow: hidden;
 `;
 
 //반짝이 배경 - 모션 추가 예정
 export const SparkleWrapper = styled.div`
-  flex-grow: 1;
+  /* flex-grow: 1;
   width: 100%;
   display: flex;
+  position: fixed;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-image: url("/sparkle.png");
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+
+  position: fixed;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("/sparkle.png");
+  background-size: 100% auto;
+  flex-direction: column;
+  background-size: cover;
+  color: #ffffff;
+  overflow: hidden;
 `;
 
 export const LotusWhole = styled.div`
@@ -82,7 +110,7 @@ export const LotusLeaf = styled.div`
   flex-grow: 1;
   display: flex;
   background-image: url(/leaf.png);
-  position: absolute;
+  position: fixed;
   width: 70%;
   height: 63%;
   top: 35px;
@@ -123,6 +151,24 @@ export const ClosedButton = styled.div`
   background-repeat: no-repeat;
   width: 46px;
   height: 46px;
-  top: 336px;
+  top: 720px;
   position: relative;
+
+  @media (max-height: 667px) {
+    top: 570px; /* 세로 비율이 667 이하인 경우 top 값을 100px로 조절 */
+  }
+
+  /* 
+  flex-grow: 1;
+  display: flex;
+  background-image: url(/leaf.png);
+  position: fixed;
+  width: 70%;
+  height: 63%;
+  top: 35px;
+  margin: 5rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center; */
 `;

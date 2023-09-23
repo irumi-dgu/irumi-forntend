@@ -15,7 +15,7 @@ function Fortune() {
   // 애니메이션 종료 후 페이지 이동
   useEffect(() => {
     if (isLotusLightVisible) {
-      const animationDuration = 1400; // 페이드인 애니메이션 보다 0.1초 빠르게 이동
+      const animationDuration = 2000;
 
       setTimeout(() => {
         setIsAnimationCompleted(true);
