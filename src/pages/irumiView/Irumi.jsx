@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./style";
-import DetailLantern from "../../components/irumiView/detailLantern";
+import DetailLantern from "../../components/irumiView/DetailLantern";
 import { Link } from "react-router-dom";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 
