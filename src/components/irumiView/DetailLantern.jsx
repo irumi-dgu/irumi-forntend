@@ -148,9 +148,10 @@ function DetailLantern() {
     return (
         <>
             {lanternDetail.map((item) => (
-                <S.DetailLanternWrapper key={item.id} imageUrl={`/detail_${item.lantern_color}_${item.light_bool}.png`} >
-                    <S.LanternBox>
-                        {/* <S.DetailLanternImg src={getImageUrl(item.lanternColor, item.twinkle)} /> */}
+                // <S.DetailLanternWrapper key={item.id} imageUrl={`/detail_${item.lantern_color}_${item.light_bool}.png`} >
+                <S.DetailLanternWrapper key={item.id}>
+                    {/* <S.LanternBox> */}
+                        <S.DetailLanternImg src={`/detail_${item.lantern_color}_${item.light_bool}.png`} />
                         <S.TitleSec>{item.nickname}</S.TitleSec>
                         <S.ContentSec>{item.content}</S.ContentSec>
                         <S.MoreSec
@@ -164,7 +165,7 @@ function DetailLantern() {
                             />
                             <p>{item.like_cnt}</p>
                         </S.LikeBtn>
-                    </S.LanternBox>
+                    {/* </S.LanternBox> */}
                 </S.DetailLanternWrapper>
             ))}
 
