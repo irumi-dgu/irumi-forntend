@@ -43,8 +43,6 @@ export const DetailLanternImg = styled.img`
 export const TitleSec = styled.div`
     position: absolute;
     top: 60%;
-    /* top: 445px; */
-    /* width: 344px; */
     width: 44%;
     /* padding: 0 63.26px; */
     color: #5B3A1A;
@@ -53,34 +51,27 @@ export const TitleSec = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* border: 1px solid orange; */
 `
 export const ContentSec = styled(TitleSec)`
     top: 65%;
-    /* top: 478px; */
     font-size: 14px;
     /* padding: 0 98px; */
     line-height: 130%;
 `
 export const MoreSec = styled.img`
     position: absolute;
-    /* top: 410px; */
     top: 56%;
     /* right: 76px; */
-    right: 22%;
+    right: 26%;
     width: 25px;
     height: 20px;
     padding: 0 10px;
 `
 export const LikeBtn = styled.div`
     position: absolute;
-    /* bottom: 15.32px; */
-    top: 95%;
+    top: 94.5%;
     /* right: 86px; */
-    right: 24%;
-    width: 50px;
-    height: 21px;
+    right: 30%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -88,6 +79,7 @@ export const LikeBtn = styled.div`
     img {
         width: 24px;
         height: 21px;
+        margin-right: 4px;
     }
     p {
         color: #5B3A1A;
