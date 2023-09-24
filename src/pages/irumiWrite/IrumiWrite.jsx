@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import LanternChoice from "../../components/irumiWrite/lanternColorChoice";
-import { API } from "../../api/axios";
+import axios from "axios";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 
 function IrumiWrite() {
@@ -23,7 +23,7 @@ function IrumiWrite() {
   const [formData, setFormData] = useState({
     nickname: "",
     content: "",
-    lanternColor: "",
+    lanternColor: "1",
     password: ""
   });
 
@@ -64,6 +64,12 @@ function IrumiWrite() {
     setShowPassword(!showPassword);
   };
 
+  // 색상 선택 핸들러
+  const handleColorChange = color => {
+    setSelectedColor(color); // 선택한 숫자로 업데이트
+    setFormData({ ...formData, lanternColor: color }); // 숫자로 업데이트
+  };
+
   // 제출 버튼 클릭 핸들러
   const handleSubmit = () => {
     // 모든 필수 입력 필드가 채워져 있는지 확인
@@ -83,13 +89,12 @@ function IrumiWrite() {
       return;
     }
 
-    console.log("전송하는 데이터:", formData);
-
-    // 상태 변수 formData를 서버로 전송
-    API.post("URL_서버_API_ENDPOINT", formData)
+    // axios를 사용하여 백엔드 API에 데이터를 전송
+    axios
+      .post("/api/lanterns", formData)
       .then(response => {
         // 서버 응답 처리
-        if (response.status === 200) {
+        if (response.status === 201) {
           // 성공적으로 제출되면 메인 페이지로 이동
           window.location.href = "/fortune";
         } else {
@@ -104,12 +109,17 @@ function IrumiWrite() {
       });
   };
 
+  console.log("전송하는 데이터:", formData);
+
   return (
     <S.IrumiWriteWrapper>
       <S.BackBtnBox onClick={handleBackClick}>
         <BackBtn />
       </S.BackBtnBox>
-      <LanternChoice setSelectedColor={setSelectedColor} />
+      <LanternChoice
+        selectedColor={selectedColor}
+        setSelectedColor={handleColorChange} // 컬러 선택 핸들러 전달
+      />
       <S.wishContent>
         <S.wishBgImg img src={`/write_${selectedColor}.png`} />
 
