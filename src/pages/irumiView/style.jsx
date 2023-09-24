@@ -9,8 +9,8 @@ export const IrumiViewWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   align-items: center;
-  color: ${props => props.theme.colors.font};
   background-image: url("/background_detail.png");
   background-size: cover;
   background-position: center;
@@ -21,10 +21,13 @@ export const BackBtnBox = styled.div`
   max-width: 420px;
   height: 38px;
   margin-top: 20px;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
-  position: absolute;
-  top: 0;
+
   padding: 0px 20px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 `;

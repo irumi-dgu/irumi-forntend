@@ -2,7 +2,9 @@ import { styled } from "styled-components";
 
 // DetailLantern.jsx
 export const DetailLanternWrapper = styled.div`
-    width: 87%;
+    /* width: 87%; */
+    width: 90%;
+    height: auto;
 
     position: relative;
     display: flex;
@@ -10,11 +12,13 @@ export const DetailLanternWrapper = styled.div`
     justify-content: center;
     align-items: center;
 
-    margin: 40px 0;
+    top: 20px;
 
-    background-image: url(${(props) => props.imageUrl});
+    /* margin: 40px 0; */
+
+    /* background-image: url(${(props) => props.imageUrl});
     background-size: cover;
-    background-position: center;
+    background-position: center; */
 `
 export const LanternBox = styled.div`
     /* width: 63%; */
@@ -22,7 +26,8 @@ export const LanternBox = styled.div`
 
     width: 100%;
     /* height: 700px; */
-    height: 45rem;
+    /* height: 45rem; */
+    height: auto;
 
     display: flex;
     justify-content: center;
@@ -30,7 +35,9 @@ export const LanternBox = styled.div`
 export const DetailLanternImg = styled.img`
     /* width: 344px; */
     /* height: 735.32px; */
-    max-width: 82%;
+
+    /* max-width: 82%; */
+    width: 82%;
     height: auto;
 `
 export const TitleSec = styled.div`
