@@ -18,6 +18,9 @@ export const TitleSec = styled.div`
   width: 52%;
   top: 61%;
   left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export const ContentSec = styled.div`
   transform: translate(-50%, 0);

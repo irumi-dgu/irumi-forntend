@@ -1,3 +1,18 @@
+.fadein_slidein {
+  animation: fadein_slidein 0.5s;
+}
+
+@keyframes fadein_slidein {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .shine {
   animation: shine 2s linear infinite;
   -moz-animation: shine 3s linear infinite;
@@ -29,7 +44,47 @@
   }
 }
 
+.fadeinshort {
+  animation: fadein 1.5s;
+}
+
+@keyframes fadeinshort {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
 .popupModal {
   animation: fadein 0.1s forwards;
   animation-delay: 3.2s;
+}
+
+@keyframes handMove {
+  0% {
+    top: 90%;
+  }
+  10% {
+    opacity: 100%;
+  }
+  80% {
+    top: 0%;
+    opacity: 0%;
+  }
+  99% {
+    top: 0%;
+  }
+  100% {
+    top: 90%;
+    opacity: 0%;
+  }
+}
+
+.handMove {
+  animation: handMove 2s infinite ease;
+  -moz-animation: handMove 2s infinite ease;
+  -webkit-animation: handMove 2s infinite ease;
+  -o-animation: handMove 2s infinite ease;
 }

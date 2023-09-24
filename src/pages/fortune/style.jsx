@@ -1,29 +1,21 @@
 import { styled } from "styled-components";
 
-//별만 있는 배경
-export const StarWrapper = styled.div`
-  flex-grow: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-image: url("/starbg.png");
-  background-size: cover;
-  background-position: center;
-`;
+export const MainWrapper = styled.div`
+  position: fixed;
 
-//반짝이 배경 - 모션 추가 예정
-export const SparkleWrapper = styled.div`
-  flex-grow: 1;
   width: 100%;
+  max-width: 420px;
+  height: 100vh;
+
   display: flex;
-  justify-content: center;
+
   align-items: center;
+  background-image: url("/background_main.png");
+  background-size: 100% auto;
   flex-direction: column;
-  background-image: url("/sparkle.png");
   background-size: cover;
-  background-position: center;
+
+  overflow: hidden;
 `;
 
 export const LotusWhole = styled.div`
@@ -37,6 +29,20 @@ export const LotusWhole = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+`;
+
+export const LotusLight = styled.div`
+  flex-grow: 1;
+  z-index: 20;
+  background-image: url(/lightlotus.png);
+  position: relative;
+  top: 125px;
+  width: 110000px;
+  height: 300px;
+  justify-content: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const LotusTop = styled.div`
@@ -68,10 +74,10 @@ export const LotusLeaf = styled.div`
   flex-grow: 1;
   display: flex;
   background-image: url(/leaf.png);
-  position: absolute;
-  width: 70%;
-  height: 63%;
-  top: 35px;
+  position: fixed;
+  width: 260px;
+  height: 505px;
+  top: 15px;
   margin: 5rem;
   background-size: contain;
   background-position: center;
@@ -87,12 +93,13 @@ export const FortuneContents = styled.p`
   text-orientation: mixed;
   flex-wrap: wrap;
   word-wrap: break-word;
+  word-break: keep-all;
   white-space: normal;
   color: #5f3a16;
-  font-size: 16px;
+  font-size: 19px;
   text-align: center;
   line-height: 100%;
-  padding: 82px 30px;
+  padding: 68px 30px;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -108,6 +115,20 @@ export const ClosedButton = styled.div`
   background-repeat: no-repeat;
   width: 46px;
   height: 46px;
-  top: 336px;
+  top: 675px;
   position: relative;
+`;
+
+export const IrumiViewWrapper = styled.div`
+  flex-grow: 1;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: ${props => props.theme.colors.font};
+  background-image: url("/background_detail.png");
+  background-size: cover;
+  background-position: center;
 `;

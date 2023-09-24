@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const IrumiWriteWrapper = styled.div`
   position: fixed;
@@ -17,24 +18,23 @@ export const IrumiWriteWrapper = styled.div`
   overflow: auto;
 `;
 
-export const backStyledImage = styled.img`
-  border: none;
+export const BackBtnBox = styled(Link)`
+  width: 100%;
+  max-width: 420px;
+  padding-left: 23px;
+  margin-top: 31px;
+  margin-bottom: 3px;
   display: flex;
-  cursor: pointer;
-  margin-top: 10%;
-  align-self: flex-start;
-  margin-left: 10%;
+  position: absolute;
+  top: 0;
 `;
 
 export const wishBgImg = styled.img`
   width: 115%;
-  margin-top: 10%;
 `;
 
 export const wishContent = styled.div`
-  /* justify-content: center; */
   display: flex;
-
   transform: translate(-50%, 25%);
   position: absolute;
   justify-content: center;
@@ -62,15 +62,16 @@ export const TextareaName = styled.div`
 
 export const NameInput = styled.input`
   border: 1px solid #898989;
+  outline: none;
   margin-top: 7px;
-  background-color: whitesmoke;
+  background-color: #f1f1f1;
   border-radius: 5px;
   height: 24px;
   padding: 7px;
   font-family: "DonggukFont";
 
   &::placeholder {
-    font-size: 5px;
+    font-size: 10px;
   }
 `;
 
@@ -82,8 +83,9 @@ export const TextareaContent = styled.div`
 
 export const ContentInput = styled.textarea`
   border: 1px solid #898989;
+  outline: none;
   margin-top: 7px;
-  background-color: whitesmoke;
+  background-color: #f1f1f1;
   border-radius: 5px;
   height: 50%;
   padding: 7px;
@@ -97,7 +99,7 @@ export const ContentInput = styled.textarea`
   }
 
   &:focus {
-    border-color: #898989;
+    /* border-color: #898989; */
   }
 `;
 
@@ -120,8 +122,9 @@ export const WritePwLetter = styled.div`
 `;
 
 export const PasswordInput = styled.input`
-  border: 1px solid black;
-  background-color: whitesmoke;
+  border: 1px solid #898989;
+  outline: none;
+  background-color: #f1f1f1;
   border-radius: 7px;
   width: 90%;
   height: 30px;
@@ -132,7 +135,7 @@ export const PasswordInput = styled.input`
   /* font-size: 40px; */
 
   &::placeholder {
-    font-size: xx-small;
+    font-size: 10px;
   }
 `;
 
@@ -149,7 +152,7 @@ export const ShowPasswordIcon = styled.div`
 export const Submit = styled.div`
   position: relative;
   /* transform: translateX(-70%); */
-  margin-top: 170%;
+  margin-top: 162%;
   margin-bottom: 10%;
 
   height: 40px;
@@ -160,7 +163,7 @@ export const Submit = styled.div`
 `;
 
 export const SubmitBtn = styled.button`
-  height: 30px;
+  height: 40px;
   width: 200px;
   font-family: "DonggukFont";
   color: white;

@@ -37,7 +37,7 @@ function LanternsSearch() {
     <S.LanternsWrapper>
       <LanternsWriteBtn />
       <S.Header>
-        <Link to="/">
+        <Link to="/lanterns">
           <BackBtn />
         </Link>
 
@@ -54,8 +54,8 @@ function LanternsSearch() {
       <S.LanternsList>
         {data.map((item, index) => (
           <Link to="/irumiView" key={index}>
-            <S.LanternBox>
-              <Lantern item={item} size={170} />
+            <S.LanternBox className="fadein_slide">
+              <Lantern item={item} size={180} />
             </S.LanternBox>
           </Link>
         ))}

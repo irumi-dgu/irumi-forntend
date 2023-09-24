@@ -1,22 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
-import Back from "../../../public/back.png";
 import LanternChoice from "../../components/irumiWrite/lanternColorChoice";
-import { Link } from "react-router-dom";
-import { API } from "../../api/axios";
+import axios from "axios";
+import BackBtn from "../../components/common/backBtn/BackBtn";
 
 function IrumiWrite() {
-  const [selectedColor, setSelectedColor] = useState("pink");
+  // const location = useLocation();
+  const navigate = useNavigate();
+  const [selectedColor, setSelectedColor] = useState("1");
   const [userWish, setUserWish] = useState("");
   const [userWishContent, setUserWishContent] = useState(""); // 사용자의 소원을 저장할 상태 변수
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  // 뒤로 가기 버튼 클릭 핸들러
+  const handleBackClick = () => {
+    navigate(-1);
+  };
+
   // 상태 변수 추가: 폼 데이터 저장
   const [formData, setFormData] = useState({
     nickname: "",
     content: "",
-    lanternColor: "",
+    lanternColor: "1",
     password: ""
   });
 
@@ -57,6 +64,12 @@ function IrumiWrite() {
     setShowPassword(!showPassword);
   };
 
+  // 색상 선택 핸들러
+  const handleColorChange = color => {
+    setSelectedColor(color); // 선택한 숫자로 업데이트
+    setFormData({ ...formData, lanternColor: color }); // 숫자로 업데이트
+  };
+
   // 제출 버튼 클릭 핸들러
   const handleSubmit = () => {
     // 모든 필수 입력 필드가 채워져 있는지 확인
@@ -70,13 +83,18 @@ function IrumiWrite() {
       return;
     }
 
-    console.log("전송하는 데이터:", formData);
+    // 비밀번호가 4자리가 아닌 경우 제출을 중지하고 경고 메시지를 표시
+    if (password.length !== 4) {
+      alert("비밀번호를 4자리로 입력해주세요!");
+      return;
+    }
 
-    // 상태 변수 formData를 서버로 전송
-    API.post("URL_서버_API_ENDPOINT", formData)
+    // axios를 사용하여 백엔드 API에 데이터를 전송
+    axios
+      .post("/api/lanterns", formData)
       .then(response => {
         // 서버 응답 처리
-        if (response.status === 200) {
+        if (response.status === 201) {
           // 성공적으로 제출되면 메인 페이지로 이동
           window.location.href = "/fortune";
         } else {
@@ -91,10 +109,17 @@ function IrumiWrite() {
       });
   };
 
+  console.log("전송하는 데이터:", formData);
+
   return (
     <S.IrumiWriteWrapper>
-      <S.backStyledImage src={Back} alt="이전" />
-      <LanternChoice setSelectedColor={setSelectedColor} />
+      <S.BackBtnBox onClick={handleBackClick}>
+        <BackBtn />
+      </S.BackBtnBox>
+      <LanternChoice
+        selectedColor={selectedColor}
+        setSelectedColor={handleColorChange} // 컬러 선택 핸들러 전달
+      />
       <S.wishContent>
         <S.wishBgImg img src={`/write_${selectedColor}.png`} />
 

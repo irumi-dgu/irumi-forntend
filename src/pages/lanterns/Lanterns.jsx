@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import LanternsSearchForm from "../../components/lanterns/lanternsSearchForm/LanternsSearchFrom";
 
 import LanternsWriteBtn from "../../components/lanterns/laternsWriteBtn/LanternsWriteBtn";
+import "../../assets/animation/animation.css";
 
 function Lanterns() {
   const [sortBy, setSortBy] = useState("recent");
