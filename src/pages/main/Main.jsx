@@ -23,84 +23,84 @@ function Main() {
       nickname: "아코",
       content:
         "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
-      likes: 23,
-      lanternColor: 1,
-      twinkle: false
+      like_cnt: 23,
+      lantern_color: 1,
+      light_bool: false
     },
     {
       id: 2,
       nickname: "이은서",
       content: "동국대 축제도 파이팅!",
-      likes: 23,
-      lanternColor: 2,
-      twinkle: true
+      like_cnt: 23,
+      lantern_color: 2,
+      light_bool: true
     },
     {
       id: 1,
       nickname: "멀티_서현",
       content: "개발 빨리 끝났으면 좋겠습니다",
-      likes: 23,
-      lanternColor: 3,
-      twinkle: false
+      like_cnt: 23,
+      lantern_color: 3,
+      light_bool: false
     },
     {
       id: 4,
       nickname: "20_김강민",
       content:
         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
-      likes: 23,
-      lanternColor: 4,
-      twinkle: true
+      like_cnt: 23,
+      lantern_color: 4,
+      light_bool: true
     },
     {
       id: 5,
       nickname: "디디차",
       content: "재입학 하고 싶어요! 총장님 포카 만들자!",
-      likes: 23,
-      lanternColor: 5,
-      twinkle: true
+      like_cnt: 23,
+      lantern_color: 5,
+      light_bool: true
     },
     {
       id: 6,
       nickname: "이상해준",
       content: "이상해씨도 울고 갈 이상해준",
-      likes: 23,
-      lanternColor: 1,
-      twinkle: true
+      like_cnt: 23,
+      lantern_color: 1,
+      light_bool: true
     },
     {
       id: 7,
       nickname: "밍꼬",
       content:
         "피곤하지만 잠은 절대 자지 않을 꼬야 커밋할꼬야 코딩할꼬야 운영진할꼬야",
-      likes: 23,
-      lanternColor: 2,
-      twinkle: true
+      like_cnt: 23,
+      lantern_color: 2,
+      light_bool: true
     },
     {
       id: 8,
       nickname: "황금막내찬주",
       content: "나는나는야 황금 막내 오찬주이올시다",
-      likes: 23,
-      lanternColor: 3,
-      twinkle: true
+      like_cnt: 23,
+      lantern_color: 3,
+      light_bool: true
     },
     {
       id: 9,
       nickname: "kickcha",
       content: "english neun eo ddeo hal gga? han beon hae bo get seom me da",
-      likes: 23,
-      lanternColor: 2,
-      twinkle: true
+      like_cnt: 23,
+      lantern_color: 2,
+      light_bool: true
     },
     {
       id: 10,
       nickname: "윤재웅",
       content:
         "안녕하세요 동국대 총장 윤재웅입니다. 이루미 서비스 폼 미츠따이! 바로 1천만원 후원하겠습니다!",
-      likes: 23,
-      lanternColor: 4,
-      twinkle: true
+      like_cnt: 23,
+      lantern_color: 4,
+      light_bool: true
     }
   ];
 
