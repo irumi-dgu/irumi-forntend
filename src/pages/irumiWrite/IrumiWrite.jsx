@@ -8,7 +8,7 @@ import BackBtn from "../../components/common/backBtn/BackBtn";
 function IrumiWrite() {
   // const location = useLocation();
   const navigate = useNavigate();
-  const [selectedColor, setSelectedColor] = useState("pink");
+  const [selectedColor, setSelectedColor] = useState("1");
   const [userWish, setUserWish] = useState("");
   const [userWishContent, setUserWishContent] = useState(""); // 사용자의 소원을 저장할 상태 변수
   const [password, setPassword] = useState("");
