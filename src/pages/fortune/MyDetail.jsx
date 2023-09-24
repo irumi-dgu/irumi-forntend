@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./style";
+import { API } from "../../api/axios";
+import { useParams } from "react-router-dom";
 
 function MyDetail() {
+  const [lanternDetail, setLanternDetail] = useState([]);
+  const { detailId } = useParams();
+
+  const fetchLanternDetailData = async () => {
+    try {
+      const response = await API.get(`/api/lanterns/${detailId}`);
+      setLanternDetail(response.data.results);
+    } catch (error) {
+      console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchLanternDetailData();
+  }, [detailId]);
+
   return (
     <S.IrumiViewWrapper>
-      <h1>DetailLantern을 불러오는 순간 배포가 안되네용..</h1>
-      <h2>
-        근데 이건 디테일이랑도 조금 다른 로직인 것 같아서 다시 생각을 해봐야할
-        것 같습니다 + 우리 이미지 저장기능도 해내야함..
-      </h2>
+      {lanternDetail.map(item => (
+        <S.DetailLanternWrapper key={item.id}>
+          <S.DetailLanternImg
+            src={`/detail_${item.lantern_color}_${item.light_bool}.png`}
+          />
+          <S.TitleSec>{item.nickname}</S.TitleSec>
+          <S.ContentSec>{item.content}</S.ContentSec>
+        </S.DetailLanternWrapper>
+      ))}
     </S.IrumiViewWrapper>
   );
 }

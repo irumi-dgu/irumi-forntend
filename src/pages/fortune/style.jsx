@@ -22,8 +22,9 @@ export const LotusWhole = styled.div`
   flex-grow: 1;
   display: flex;
   background-image: url(/lotus.png);
-  position: relative;
-  width: 100%;
+  position: fixed;
+  width: 390px;
+  height: 900px;
   justify-content: center;
   align-items: center;
   background-size: contain;
@@ -36,7 +37,7 @@ export const LotusLight = styled.div`
   z-index: 20;
   background-image: url(/lightlotus.png);
   position: relative;
-  top: 125px;
+  top: 127px;
   width: 110000px;
   height: 300px;
   justify-content: center;
@@ -86,7 +87,7 @@ export const LotusLeaf = styled.div`
 `;
 
 //포춘쿠키 내용
-export const FortuneContents = styled.p`
+export const FortuneContents = styled.div`
   display: flex;
   position: relative;
   writing-mode: vertical-lr;
@@ -131,4 +132,43 @@ export const IrumiViewWrapper = styled.div`
   background-image: url("/background_detail.png");
   background-size: cover;
   background-position: center;
+`;
+
+export const DetailLanternWrapper = styled.div`
+  width: 90%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+`;
+
+export const DetailLanternImg = styled.img`
+  /* width: 344px; */
+  /* height: 735.32px; */
+
+  /* max-width: 82%; */
+  width: 82%;
+  height: auto;
+`;
+
+export const TitleSec = styled.div`
+  position: absolute;
+  top: 60%;
+  width: 44%;
+  /* padding: 0 63.26px; */
+  color: #5b3a1a;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const ContentSec = styled(TitleSec)`
+  top: 65%;
+  font-size: 14px;
+  /* padding: 0 98px; */
+  line-height: 130%;
 `;

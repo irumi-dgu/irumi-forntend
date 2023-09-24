@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
 import * as S from "./style";
 import { Link } from "react-router-dom";
+import { API } from "../../api/axios";
 
 const FortuneLotus = () => {
-  const [fortuneMessage, setFortuneMessage] = useState(""); // 데이터를 저장할 상태 변수
+  const [fortuneMessage, setFortuneMessage] = useState("");
 
   useEffect(() => {
-    // API 요청을 보내고 데이터를 가져오는 함수
+    // API 요청
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/lanterns/cookie");
-        if (!response.ok) {
-          throw new Error("API 요청이 실패했습니다.");
-        }
-        const data = await response.json();
-        setFortuneMessage(data.message);
+        const response = await API.get("/api/lanterns/cookie");
+        setFortuneMessage(response.data.fortune);
       } catch (error) {
-        console.error("API 오류:", error);
+        console.error("포춘쿠키 내용 불러오기에 실패해버림:", error);
       }
     };
 
@@ -28,11 +25,11 @@ const FortuneLotus = () => {
       <S.LotusLeaf>
         <S.FortuneContents>
           {fortuneMessage ? (
-            <p>{fortuneMessage}</p>
+            <div>{fortuneMessage}</div>
           ) : (
-            <p>
+            <div>
               오지 않은 미래를 걱정하는 것 보다 마주한 현재에 최선을 다하세요
-            </p> //더미 텍스트
+            </div> //더미 텍스트
           )}
         </S.FortuneContents>
       </S.LotusLeaf>
