@@ -12,7 +12,7 @@ export const MainWrapper = styled.div`
   display: flex;
 
   align-items: center;
-  background-image: url("background_main.png");
+  background-image: url("/background_main.png");
   background-size: 100% auto;
   flex-direction: column;
   background-size: cover;
