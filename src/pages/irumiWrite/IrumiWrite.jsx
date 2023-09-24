@@ -4,6 +4,7 @@ import * as S from "./style";
 import LanternChoice from "../../components/irumiWrite/lanternColorChoice";
 import axios from "axios";
 import BackBtn from "../../components/common/backBtn/BackBtn";
+import { API } from "../../api/axios";
 
 function IrumiWrite() {
   // const location = useLocation();
@@ -19,13 +20,13 @@ function IrumiWrite() {
     navigate(-1);
   };
 
-  // 상태 변수 추가: 폼 데이터 저장
-  const [formData, setFormData] = useState({
-    nickname: "",
-    content: "",
-    lanternColor: "1",
-    password: ""
-  });
+  // // 상태 변수 추가: 폼 데이터 저장
+  // const [formData, setFormData] = useState({
+  //   nickname: "",
+  //   content: "",
+  //   lanternColor: "1",
+  //   password: ""
+  // });
 
   // 사용자가 입력한 닉네임 관련 함수
   const handleUserWishChange = event => {
@@ -35,7 +36,7 @@ function IrumiWrite() {
     if (trimmedContent.length <= 10) {
       setUserWish(trimmedContent);
       // 상태 변수 업데이트
-      setFormData({ ...formData, nickname: trimmedContent });
+      // setFormData({ ...formData, nickname: trimmedContent });
     }
   };
 
@@ -46,7 +47,7 @@ function IrumiWrite() {
     if (content.length <= 100) {
       setUserWishContent(content);
       // 상태 변수 업데이트
-      setFormData({ ...formData, content: content });
+      // setFormData({ ...formData, content: content });
     }
   };
 
@@ -55,7 +56,7 @@ function IrumiWrite() {
     const inputValue = event.target.value;
     if (/^[0-9]*$/.test(inputValue)) {
       setPassword(inputValue);
-      setFormData({ ...formData, password: inputValue });
+      // setFormData({ ...formData, password: inputValue });
     }
   };
 
@@ -67,11 +68,11 @@ function IrumiWrite() {
   // 색상 선택 핸들러
   const handleColorChange = color => {
     setSelectedColor(color); // 선택한 숫자로 업데이트
-    setFormData({ ...formData, lanternColor: color }); // 숫자로 업데이트
+    // setFormData({ ...formData, lanternColor: color }); // 숫자로 업데이트
   };
 
   // 제출 버튼 클릭 핸들러
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // 모든 필수 입력 필드가 채워져 있는지 확인
     if (
       userWish.trim() === "" ||
@@ -89,27 +90,38 @@ function IrumiWrite() {
       return;
     }
 
-    // axios를 사용하여 백엔드 API에 데이터를 전송
-    axios
-      .post("/api/lanterns", formData)
-      .then(response => {
-        // 서버 응답 처리
-        if (response.status === 201) {
-          // 성공적으로 제출되면 메인 페이지로 이동
-          window.location.href = "/fortune";
-        } else {
-          // 서버 응답에 따른 처리
-          // 오류 처리 로직 추가
-        }
-      })
-      .catch(error => {
-        // 오류 처리
-        console.error("Error:", error);
-        window.location.href = "/fortune";
+    // 콘솔에 데이터 출력
+    console.log("보내는 데이터:", {
+      nickname: userWish,
+      content: userWishContent,
+      password: password,
+      lanternColor: selectedColor
+    });
+
+    try {
+      // axios를 사용하여 백엔드 API에 데이터를 전송
+      const response = await API.post("/api/lanterns", {
+        nickname: userWish,
+        content: userWishContent,
+        lanternColor: selectedColor,
+        password: password
       });
+
+      // 서버 응답 처리
+      if (response.status === 201) {
+        // 성공적으로 제출되면 메인 페이지로 이동
+        window.location.href = "/fortune";
+        console.log("됐닥");
+      } else {
+        console.error("데이터가 안넘어가짐:", response.nickname);
+      }
+    } catch (error) {
+      // 오류 처리
+      console.error("안됐단다", error);
+    }
   };
 
-  console.log("전송하는 데이터:", formData);
+  // console.log("전송하는 데이터:", formData);
 
   return (
     <S.IrumiWriteWrapper>
@@ -119,6 +131,7 @@ function IrumiWrite() {
       <LanternChoice
         selectedColor={selectedColor}
         setSelectedColor={handleColorChange} // 컬러 선택 핸들러 전달
+        value={selectedColor}
       />
       <S.wishContent>
         <S.wishBgImg img src={`/write_${selectedColor}.png`} />
