@@ -29,8 +29,8 @@ function Main() {
     },
     {
       id: 2,
-      nickname: "이은서",
-      content: "동국대 축제도 파이팅!",
+      nickname: "혜정이다옹",
+      content: "안-녕-하-세-요-혜-정-입-니-닭! 멋사 일동",
       like_cnt: 23,
       lantern_color: 2,
       light_bool: true
