@@ -64,7 +64,7 @@ function Lanterns() {
 
         <S.LanternsList>
           {data.map((item, index) => (
-            <Link to="/irumiView" key={index}>
+            <Link to="/irumi/1" key={index}>
               <S.LanternBox>
                 <Lantern item={item} size={180} />
               </S.LanternBox>

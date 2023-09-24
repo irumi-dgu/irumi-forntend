@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         element: <IrumiWrite />
       },
       {
-        path: "irumiView",
+        path: "irumi/:detailId",
         element: <IrumiView />
       }
     ],
