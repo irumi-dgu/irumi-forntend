@@ -121,7 +121,7 @@ function DetailLantern({ data }) {
     const handleLike = async () => {
         // 경로 부분 수정 필요
         // const detailId = data.id;
-        if (lanternDetail.is_liked) {
+        if (data.is_liked) {
             try {
                 setIsLiked(i => !i);
                 const response = await API.delete(`/api/lanterns/${detailId}/likes`);
@@ -139,6 +139,8 @@ function DetailLantern({ data }) {
                 const response = await API.post(`/api/lanterns/${detailId}/likes`);
                 if (response.status === 200) {
                     setIsLiked(i => !i);
+                    console.log("좋아요 눌림");
+                    console.log(isLiked);
                 } else {
                     console.log("200 ok 아님, 좋아요 오류");
                 }
