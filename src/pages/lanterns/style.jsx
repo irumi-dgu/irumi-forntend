@@ -8,7 +8,7 @@ export const LanternsWrapper = styled.div`
   align-items: center;
 
   flex-direction: column;
-  background-image: url("background_lanterns.png");
+  background-image: url("/background_lanterns.png");
 
   background-size: cover;
   background-position: center;

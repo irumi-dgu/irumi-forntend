@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import * as S from "./style";
 import { API } from "../../api/axios";
 
-function ReportModal({closeReportModal, openReportedModal}) {
+function ReportModal({closeReportModal, openReportedModal, detailId}) {
     // const [abuse, setAbuse] = useState(false);
     // const [fraud, setFraud] = useState(false);
     // const [explicit, setExplicit] = useState(false);
@@ -13,6 +13,7 @@ function ReportModal({closeReportModal, openReportedModal}) {
     const toggleCategory = (category) => {
         if (selectedCategories.includes(category)) {
             setSelectedCategories(selectedCategories.filter((c) => c!== category));
+            console.log(selectedCategories);
         } else {
             setSelectedCategories([...selectedCategories, category])
         }
@@ -21,7 +22,7 @@ function ReportModal({closeReportModal, openReportedModal}) {
     const handleReport = async () => {
         try {
             const response = await API.post(
-                `/api/lanterns/${1}/report`,
+                `/api/lanterns/${detailId}/report`,
                 {
                     categories: selectedCategories
                 }

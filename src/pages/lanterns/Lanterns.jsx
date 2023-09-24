@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import Lantern from "../../components/lantern/Lantern";
 import BackBtn from "../../components/common/backBtn/BackBtn";
@@ -7,14 +7,30 @@ import LanternsSearchForm from "../../components/lanterns/lanternsSearchForm/Lan
 
 import LanternsWriteBtn from "../../components/lanterns/laternsWriteBtn/LanternsWriteBtn";
 import "../../assets/animation/animation.css";
+import { API } from "../../api/axios";
 
 function Lanterns() {
   const [sortBy, setSortBy] = useState("recent");
+  const [lanternsData, setLanternsData] = useState([]);
 
   const selectorClick = () => {
     console.log(sortBy);
     sortBy == "recent" ? setSortBy("pop") : setSortBy("recent");
   };
+
+  const fetchLanternsData = async () => {
+    try {
+      const response = await API.get("/api/lanterns")
+      setLanternsData(response.data.results);
+      // console.log(response.data.results);
+      // console.log(lanternDetail);
+    } catch (error) {
+      console.log("연등 가져오는 중 에러 발생", error);
+    }
+  }
+  useEffect(() => {
+    fetchLanternsData();
+  }, [])
 
   // get 해올거
   const data = [
@@ -64,12 +80,12 @@ function Lanterns() {
         </S.Selector>
 
         <S.LanternsList>
-          {data.map((item, index) => (
-            <Link to="/irumi/1" key={index}>
+          {lanternsData.map((item, index) => (
+            // <Link to="/irumi/1" key={index}>
               <S.LanternBox>
                 <Lantern item={item} size={180} />
               </S.LanternBox>
-            </Link>
+            // </Link>
           ))}
         </S.LanternsList>
       </S.LanternsWrapper>

@@ -11,7 +11,7 @@ import ReportAlertModal from "./ReportAlertModal";
 import { useParams } from "react-router-dom";
 import { API } from "../../api/axios";
 
-function DetailLantern() {
+function DetailLantern({ data }) {
     const [modalOpen, setModalOpen] = useState(false);
     // 삭제
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -21,7 +21,7 @@ function DetailLantern() {
     const [reportModalOpen, setReportModalOpen] = useState(false);
     const [reportedModalOpen, setReportedModalOpen] = useState(false);
     // 내용
-    const [lanternDetail, setLanternDetail] = useState([]);
+    // const [lanternDetail, setLanternDetail] = useState([]);
     // 좋아요
     const [isLiked, setIsLiked] = useState(false);
 
@@ -78,30 +78,21 @@ function DetailLantern() {
     }
 
     // get 해올거
-    const fetchLanternDetailData = async () => {
-        try {
-            const response = await API.get("/api/lanterns")
-            // const response = await API.get(`/api/lanterns/${detailId}`)
-            setLanternDetail(response.data.results);
-            // results
-            console.log(lanternDetail);
-        } catch (error) {
-            console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
-        }
-    }
-    useEffect(() => {
-        fetchLanternDetailData();
-    }, [detailId])
-
-    const data = [{
-        "id": 3,
-        "nickname": "20 김강민",
-        "content": "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
-        "like_cnt": 23,
-        "lantern_color": 1,
-        "light_bool": false,
-        "is_liked": true,
-    }]
+    // const fetchLanternDetailData = async () => {
+    //     try {
+    //         const response = await API.get("/api/lanterns")
+    //         // const response = await API.get(`/api/lanterns/${detailId}`)
+    //         setLanternDetail(response.data.results);
+    //         // results
+    //         console.log(response.data.results);
+    //         console.log(lanternDetail);
+    //     } catch (error) {
+    //         console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
+    //     }
+    // }
+    // useEffect(() => {
+    //     fetchLanternDetailData();
+    // }, [detailId])
 
     // 연등 -> 이미지로 매핑
     // const getImageUrl = (lantern_color, light_bool) => {
@@ -118,7 +109,7 @@ function DetailLantern() {
     const handleLike = async () => {
         // 경로 부분 수정 필요
         // const detailId = data.id;
-        if (lanternDetail.is_liked) {
+        if (data.is_liked) {
             try {
                 setIsLiked((i) => !i);
                 const response = await API.delete(`/api/lanterns/${detailId}/likes`);
@@ -147,27 +138,27 @@ function DetailLantern() {
 
     return (
         <>
-            {lanternDetail.map((item) => (
-                // <S.DetailLanternWrapper key={item.id} imageUrl={`/detail_${item.lantern_color}_${item.light_bool}.png`} >
-                <S.DetailLanternWrapper key={item.id}>
+            {/* {lanternDetail.map((item) => ( */}
+                {/* <S.DetailLanternWrapper key={item.id} imageUrl={`/detail_${item.lantern_color}_${item.light_bool}.png`} > */}
+                <S.DetailLanternWrapper key={data.id}>
                     {/* <S.LanternBox> */}
-                        <S.DetailLanternImg src={`/detail_${item.lantern_color}_${item.light_bool}.png`} />
-                        <S.TitleSec>{item.nickname}</S.TitleSec>
-                        <S.ContentSec>{item.content}</S.ContentSec>
+                        <S.DetailLanternImg src={`/detail_${data.lantern_color}_${data.light_bool}.png`} />
+                        <S.TitleSec>{data.nickname}</S.TitleSec>
+                        <S.ContentSec>{data.content}</S.ContentSec>
                         <S.MoreSec
                             src="/moreBtn.png"
                             onClick={openModal}
                         />
                         <S.LikeBtn>
                             <img
-                                src={item.is_liked ? "/detail_like_fill.png" : "/detail_like.png"}
+                                src={data.is_liked ? "/detail_like_fill.png" : "/detail_like.png"}
                                 onClick={handleLike}
                             />
-                            <p>{item.like_cnt}</p>
+                            <p>{data.like_cnt}</p>
                         </S.LikeBtn>
                     {/* </S.LanternBox> */}
                 </S.DetailLanternWrapper>
-            ))}
+            {/* ))} */}
 
             {/* 더보기 모달 */}
             {modalOpen && (
@@ -203,6 +194,7 @@ function DetailLantern() {
                 <ReportModal
                     closeReportModal={closeReportModal}
                     openReportedModal={openReportedModal}
+                    detailId={detailId}
                 />
             )}
             {/* 신고 완료 모달 */}
