@@ -10,7 +10,7 @@ import Lantern from "../../components/lantern/Lantern";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 
 import "../../assets/animation/animation.css";
-import Loading from "../../components/common/Loading/Loading";
+import Loading from "../../components/common/loading/Loading";
 
 function Lanterns() {
   const useQuery = () => {
