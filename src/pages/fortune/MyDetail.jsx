@@ -55,10 +55,11 @@ function MyDetail() {
   };
 
   //   링크복사
-  // const handleCopyLink = () => {
-  //   navigator.clipboard.writeText(window.location.href);
-  //   alert("현재 페이지의 링크가 복사되었습니다.");
-  // };
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    // navigator.clipboard.writeText("http://iirumi.com");
+    alert("현재 페이지의 링크가 복사되었습니다.");
+  };
 
   return (
     <>
@@ -91,7 +92,9 @@ function MyDetail() {
         </S.MyBtn>
         <S.MyBtn>
           <img
-            src="/my_copyUrl.png"/>
+            src="/my_copyUrl.png"
+            onClick={() => handleCopyLink()}
+          />
           <p>이루미 링크복사</p>
         </S.MyBtn>
       </S.MyBtnsBox>
