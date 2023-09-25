@@ -99,42 +99,54 @@ function IrumiWrite() {
     });
 
     try {
-      // axios를 사용하여 백엔드 API에 데이터를 전송
       const response = await API.post("/api/lanterns", {
         nickname: userWish,
         content: userWishContent,
         lanternColor: selectedColor,
-        password: password
+        password: password,
+        light_bool: false
       });
 
       // 서버 응답 처리
-      if (response.status === 201) {
-        // 성공적으로 제출되면 메인 페이지로 이동
+      if (response.status === 200) {
+        // 성공적으로 제출되면 포춘 페이지로 이동
         window.location.href = "/fortune";
         console.log("됐닥");
       } else {
-        console.error("데이터가 안넘어가짐:", response.nickname);
+        window.location.href = "/fortune";
+        console.log("됐닥");
       }
     } catch (error) {
       // 오류 처리
-      console.error("안됐단다", error);
+      console.log("안됐단다", error);
+
+      if (error.response) {
+        // 서버에서 응답이 왔지만 오류 응답인 경우
+        console.log("오류 응답 데이터:", error);
+      } else if (error.request) {
+        // 서버로 요청을 보냈지만 응답을 받지 못한 경우
+        console.log("요청이 응답을 받지 못했습니다.");
+      } else {
+        // 요청을 보내기 전에 발생한 오류
+        console.error("오류 메시지:", error.message);
+      }
     }
   };
-
-  // console.log("전송하는 데이터:", formData);
 
   return (
     <S.IrumiWriteWrapper>
       <S.BackBtnBox onClick={handleBackClick}>
         <BackBtn />
       </S.BackBtnBox>
-      <LanternChoice
-        selectedColor={selectedColor}
-        setSelectedColor={handleColorChange} // 컬러 선택 핸들러 전달
-        value={selectedColor}
-      />
+      <S.LanternChoiceSection>
+        <LanternChoice
+          selectedColor={selectedColor}
+          setSelectedColor={handleColorChange} // 컬러 선택 핸들러 전달
+          value={selectedColor}
+        />
+      </S.LanternChoiceSection>
       <S.wishContent>
-        <S.wishBgImg img src={`/write_${selectedColor}.png`} />
+        <S.wishBgImg img src={`/write_${selectedColor}.svg`} />
 
         <S.Textarea>
           <S.TextareaName>닉네임</S.TextareaName>
