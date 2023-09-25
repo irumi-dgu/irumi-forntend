@@ -103,7 +103,8 @@ function IrumiWrite() {
         nickname: userWish,
         content: userWishContent,
         lanternColor: selectedColor,
-        password: password
+        password: password,
+        light_bool: false
       });
 
       // 서버 응답 처리
@@ -112,7 +113,8 @@ function IrumiWrite() {
         window.location.href = "/fortune";
         console.log("됐닥");
       } else {
-        console.log("데이터가 안넘어가짐:", response.data);
+        window.location.href = "/fortune";
+        console.log("됐닥");
       }
     } catch (error) {
       // 오류 처리
@@ -120,7 +122,7 @@ function IrumiWrite() {
 
       if (error.response) {
         // 서버에서 응답이 왔지만 오류 응답인 경우
-        console.log("오류 응답 데이터:", error.response.data);
+        console.log("오류 응답 데이터:", error);
       } else if (error.request) {
         // 서버로 요청을 보냈지만 응답을 받지 못한 경우
         console.log("요청이 응답을 받지 못했습니다.");
