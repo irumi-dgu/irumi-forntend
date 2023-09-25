@@ -5,7 +5,8 @@ import { styled } from "styled-components";
 export const LanternChoice = styled.div``;
 export const lantern = styled.div`
   width: 80%;
-  margin-top: 20%;
+  margin-top: 15%;
+  /* 90px */
   border: none;
   flex-direction: row;
   display: flex;
