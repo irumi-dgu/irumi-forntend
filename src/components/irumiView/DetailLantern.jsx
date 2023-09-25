@@ -194,6 +194,7 @@ function DetailLantern({ data }) {
                     <PwModal
                         openPwModal={openPwModal}
                         closePwModal={closePwModal}
+                        data={data}
                     // openAlert={openAlert}
                     // closeAlert={closeAlert}
                     />
