@@ -19,7 +19,7 @@ export const MainWrapper = styled.div`
 `;
 
 export const LotusWhole = styled.div`
-  flex-grow: 1;
+  /* flex-grow: 1;
   display: flex;
   background-image: url(/lotus.png);
   position: absolute;
@@ -28,9 +28,24 @@ export const LotusWhole = styled.div`
   justify-content: center;
   align-items: center;
   /* background-size: contain; */
+  /* background-repeat: no-repeat;
+  background-position: center;
+  border: 3px solid red;  */
+
+  display: flex;
+  background-image: url(/lotus.png);
   background-repeat: no-repeat;
   background-position: center;
-  /* border: 3px solid red; */
+  position: absolute;
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  height: 100%;
+  bottom: 45px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid red;
 `;
 
 export const LotusLight = styled.div`
@@ -38,7 +53,7 @@ export const LotusLight = styled.div`
   z-index: 20;
   background-image: url(/lightlotus.png);
   position: relative;
-  top: 127px;
+  top: 38%;
   width: 110000px;
   height: 300px;
   justify-content: center;
@@ -47,16 +62,16 @@ export const LotusLight = styled.div`
 `;
 
 // export const LotusLight2 = styled.div`
-//   flex-grow: 1;
-//   z-index: 20;
-//   background-image: url(/lightlotus.png);
-//   position: relative;
-//   top: 127px;
-//   width: 110000px;
-//   height: 300px;
-//   justify-content: center;
-//   background-position: center;
-//   background-repeat: no-repeat;
+//     flex-grow: 1;
+//     z-index: 20;
+//     background-image: url(/lightlotus.png);
+//     position: relative;
+//     top: 38%;
+//     width: 110000px;
+//     height: 300px;
+//     justify-content: center;
+//     background-position: center;
+//     background-repeat: no-repeat;
 // `;
 
 export const LotusTop = styled.div`
@@ -125,7 +140,7 @@ export const FortuneContents = styled.div`
 `;
 
 //닫기 버튼 -> 요거 누르면 MyDetail로 감
-export const ClosedㅈWrapper = styled.div`
+export const ClosedWrapper = styled.div`
   position: absolute;
   transform: translate(-50%, 0);
   bottom: 20px;
