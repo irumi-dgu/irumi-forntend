@@ -1,66 +1,94 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as S from "./style";
-import Lantern from "../../components/lantern/Lantern";
-import BackBtn from "../../components/common/backBtn/BackBtn";
-import { Link } from "react-router-dom";
-import LanternsSearchForm from "../../components/lanterns/lanternsSearchForm/LanternsSearchFrom";
 
-import LanternsWriteBtn from "../../components/lanterns/laternsWriteBtn/LanternsWriteBtn";
-import "../../assets/animation/animation.css";
+import { Link } from "react-router-dom";
 import { API } from "../../api/axios";
 
+import LanternsSearchForm from "../../components/lanterns/lanternsSearchForm/LanternsSearchFrom";
+import LanternsWriteBtn from "../../components/lanterns/laternsWriteBtn/LanternsWriteBtn";
+import Lantern from "../../components/lantern/Lantern";
+import BackBtn from "../../components/common/backBtn/BackBtn";
+
+import "../../assets/animation/animation.css";
+
 function Lanterns() {
+  //연등불러오기
+  const [count, setCount] = useState(0);
   const [sortBy, setSortBy] = useState("recent");
   const [lanternsData, setLanternsData] = useState([]);
+  //현재 연등 페이지
+  const [lanternsPage, setLanternsPage] = useState(1);
 
   const selectorClick = () => {
     console.log(sortBy);
     sortBy == "recent" ? setSortBy("pop") : setSortBy("recent");
   };
 
+  //초기 데이터 불러오기
   const fetchLanternsData = async () => {
     try {
-      const response = await API.get("/api/lanterns")
+      const response = await API.get(
+        `/api/lanterns/${sortBy}?page=${lanternsPage}`
+      );
+      setCount(response.data.count);
       setLanternsData(response.data.results);
-      // console.log(response.data.results);
-      // console.log(lanternDetail);
     } catch (error) {
       console.log("연등 가져오는 중 에러 발생", error);
     }
-  }
+  };
+  //스크롤 시 더 불러오기
+  const loadLanternsData = async () => {
+    try {
+      const response = await API.get(
+        `/api/lanterns/${sortBy}?page=${lanternsPage}`
+      );
+      const newData = lanternsData.concat(response.data.results);
+      setLanternsData(newData);
+    } catch (error) {
+      console.log("연등 가져오는 중 에러 발생", error);
+    }
+  };
+  //처음 로딩될때 초기값넣기
   useEffect(() => {
     fetchLanternsData();
-  }, [])
+  }, []);
+  //소트 바꿨을때 초기 값 넣기
+  useEffect(() => {
+    fetchLanternsData();
+  }, [sortBy]);
 
-  // get 해올거
-  const data = [
-    {
-      id: 3,
-      nickname: "일이삼사오육칠팔",
-      content:
-        "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
-      likes: 23,
-      lanternColor: 5,
-      twinkle: false
-    },
-    {
-      id: 2,
-      nickname: "20_김강민",
-      content:
-        "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
-      likes: 23,
-      lanternColor: 4,
-      twinkle: true
-    },
-    {
-      id: 1,
-      nickname: "멀티_서현",
-      content: "개발 빨리 끝났으면 좋겠습니다",
-      likes: 23,
-      lanternColor: 2,
-      twinkle: true
+  //현재스크롤 반환
+  const [position, setPosition] = useState(0);
+  function onScroll() {
+    setListHeight(LanternsListRef.current?.offsetHeight);
+    setPosition(window.scrollY);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  //마지막 랜턴리스트 길이 반환
+  const LanternsListRef = useRef();
+  const [listHeight, setListHeight] = useState(0);
+
+  //연등 26개 봤으면 새로 불러오기
+  useEffect(() => {
+    if (position != 0 && count / 26 > lanternsPage) {
+      console.log(position, window.innerHeight, listHeight);
+      if (position + window.innerHeight > listHeight) {
+        console.log("새로운거로드!");
+        setLanternsPage(lanternsPage + 1);
+      }
     }
-  ];
+  }, [position]);
+
+  //스크롤했으면 새 페이지 불러오기
+  useEffect(() => {
+    loadLanternsData();
+  }, [lanternsPage]);
 
   return (
     <>
@@ -79,13 +107,13 @@ function Lanterns() {
           <S.SelectorMenu $isActive={sortBy == "pop"}>응원순</S.SelectorMenu>
         </S.Selector>
 
-        <S.LanternsList>
+        <S.LanternsList ref={LanternsListRef}>
           {lanternsData.map((item, index) => (
-            // <Link to="/irumi/1" key={index}>
+            <Link to={`/irumi/${item.id}`} key={index}>
               <S.LanternBox>
                 <Lantern item={item} size={180} />
               </S.LanternBox>
-            // </Link>
+            </Link>
           ))}
         </S.LanternsList>
       </S.LanternsWrapper>
