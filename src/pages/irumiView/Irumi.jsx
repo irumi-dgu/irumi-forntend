@@ -52,7 +52,12 @@ function IrumiView() {
     <>
       <button
         onClick={handleDownload}
-        style={{ color: "white", position: "absolute", margin: "30px" }}
+        style={{
+          color: "white",
+          position: "absolute",
+          margin: "30px",
+          zIndex: "60"
+        }}
       >
         다운로드으으
       </button>
