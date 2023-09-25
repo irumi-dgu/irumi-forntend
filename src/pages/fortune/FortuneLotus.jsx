@@ -34,7 +34,9 @@ const FortuneLotus = () => {
         </S.FortuneContents>
       </S.LotusLeaf>
       <Link to="/MyDetail">
-        <S.ClosedButton />
+        <S.ClosedㅈWrapper>
+          <S.ClosedButton />
+        </S.ClosedㅈWrapper>
       </Link>
     </S.MainWrapper>
   );
