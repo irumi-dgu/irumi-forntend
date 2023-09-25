@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as S from "./style";
 import { API } from "../../api/axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import html2canvas from "html2canvas";
 import saveAs from "file-saver";
@@ -9,6 +9,7 @@ import saveAs from "file-saver";
 function MyDetail() {
   const [lanternDetail, setLanternDetail] = useState([]);
   const { detailId } = useParams();
+  const navigate = useNavigate();
 
   // const fetchLanternDetailData = async () => {
   //   try {
@@ -53,6 +54,12 @@ function MyDetail() {
     }
   };
 
+  //   링크복사
+  // const handleCopyLink = () => {
+  //   navigator.clipboard.writeText(window.location.href);
+  //   alert("현재 페이지의 링크가 복사되었습니다.");
+  // };
+
   return (
     <>
       <S.IrumiViewWrapper ref={LanternRef}>
@@ -76,11 +83,15 @@ function MyDetail() {
           <p>이미지로 저장</p>
         </S.MyBtn>
         <S.MyBtn>
-          <img src="/my_goMain.png" />
+          <img
+            src="/my_goMain.png"
+            onClick={() => navigate("/")}
+          />
           <p>메인페이지</p>
         </S.MyBtn>
         <S.MyBtn>
-          <img src="/my_copyUrl.png" />
+          <img
+            src="/my_copyUrl.png"/>
           <p>이루미 링크복사</p>
         </S.MyBtn>
       </S.MyBtnsBox>
