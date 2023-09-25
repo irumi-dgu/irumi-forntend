@@ -10,8 +10,12 @@ import Lantern from "../../components/lantern/Lantern";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 
 import "../../assets/animation/animation.css";
+import Loading from "../../components/common/Loading/Loading";
 
 function Lanterns() {
+  //로딩주기
+  const [init, setInit] = useState(true);
+
   //연등불러오기
   const [count, setCount] = useState(0);
   const [sortBy, setSortBy] = useState("recent");
@@ -20,8 +24,8 @@ function Lanterns() {
   const [lanternsPage, setLanternsPage] = useState(1);
 
   const selectorClick = () => {
-    console.log(sortBy);
     sortBy == "recent" ? setSortBy("pop") : setSortBy("recent");
+    setLanternsPage(1);
   };
 
   //초기 데이터 불러오기
@@ -39,11 +43,13 @@ function Lanterns() {
   //스크롤 시 더 불러오기
   const loadLanternsData = async () => {
     try {
+      setInit(false);
       const response = await API.get(
         `/api/lanterns/${sortBy}?page=${lanternsPage}`
       );
       const newData = lanternsData.concat(response.data.results);
       setLanternsData(newData);
+      setInit(true);
     } catch (error) {
       console.log("연등 가져오는 중 에러 발생", error);
     }
@@ -56,6 +62,10 @@ function Lanterns() {
   useEffect(() => {
     fetchLanternsData();
   }, [sortBy]);
+
+  //마지막 랜턴리스트 길이 반환
+  const LanternsListRef = useRef();
+  const [listHeight, setListHeight] = useState(0);
 
   //현재스크롤 반환
   const [position, setPosition] = useState(0);
@@ -70,16 +80,10 @@ function Lanterns() {
     };
   }, []);
 
-  //마지막 랜턴리스트 길이 반환
-  const LanternsListRef = useRef();
-  const [listHeight, setListHeight] = useState(0);
-
   //연등 26개 봤으면 새로 불러오기
   useEffect(() => {
-    if (position != 0 && count / 26 > lanternsPage) {
-      console.log(position, window.innerHeight, listHeight);
+    if (init && position != 0 && count / 26 > lanternsPage) {
       if (position + window.innerHeight > listHeight) {
-        console.log("새로운거로드!");
         setLanternsPage(lanternsPage + 1);
       }
     }
@@ -87,7 +91,10 @@ function Lanterns() {
 
   //스크롤했으면 새 페이지 불러오기
   useEffect(() => {
-    loadLanternsData();
+    if (lanternsPage != 1) {
+      // console.log("새로운거로드! 페이지 번호 =>", lanternsPage);
+      loadLanternsData();
+    }
   }, [lanternsPage]);
 
   return (
@@ -116,6 +123,7 @@ function Lanterns() {
             </Link>
           ))}
         </S.LanternsList>
+        {init ? <></> : <Loading />}
       </S.LanternsWrapper>
     </>
   );
