@@ -25,9 +25,10 @@ function Main() {
 
   const fetchLanternsData = async () => {
     try {
-      const response = await API.get(`/api/lanterns/rand`);
-      setCount(response.data.count);
-      setData(response.data.results);
+      const response = await API.get(`/api/lanterns/random`);
+      console.log(response);
+      setCount(response.data.totCount);
+      setData(response.data.lanterns);
     } catch (error) {
       console.log("연등 가져오는 중 에러 발생", error);
     }
