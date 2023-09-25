@@ -103,16 +103,34 @@ export const LotusLeaf = styled.div`
   flex-grow: 1;
   display: flex;
   background-image: url(/leaf.png);
-  position: fixed;
-  width: 260px;
-  height: 559px;
-  /* top: -2%; */
+
+  /* position: fixed; */
+  position: relative;
+
+  /* width: 260px; */
+  width: 65%;
+
+  /* height: 559px; */
+  height: auto;
+
+  top: -5%;
   margin: 5rem;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
+
+  /* width: 90%;
+    height: auto;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+    /* border: 1px solid yellow; */
 `;
 
 //포춘쿠키 내용
@@ -169,26 +187,30 @@ export const ClosedButton = styled.div`
 export const IrumiViewWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
-  max-width: 420px;
+  height: 100%;
+  /* max-width: 420px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* justify-content: space-around; */
+
   align-items: center;
-  color: ${props => props.theme.colors.font};
   background-image: url("/background_detail.png");
   background-size: cover;
   background-position: center;
 `;
 
 export const DetailLanternWrapper = styled.div`
-  width: 90%;
+  width: 84%;
   height: auto;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 20px;
+  top: -15px;
+  /* margin-top: 15px; */
+  /* margin-bottom: 30px; */
 `;
 
 export const DetailLanternImg = styled.img`
@@ -218,3 +240,32 @@ export const ContentSec = styled(TitleSec)`
   /* padding: 0 98px; */
   line-height: 130%;
 `;
+
+export const MyBtnsBoxPosition = styled.div`
+  width: 300px;
+  height: 65px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`
+export const MyBtnsBox = styled(MyBtnsBoxPosition)`
+  position: fixed;
+  bottom: 3%;
+`
+export const MyBtn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 6px;
+  }
+  p {
+    color: #FAFBFD;
+    font-size: 12px;
+    font-weight: 400;
+  }
+`
