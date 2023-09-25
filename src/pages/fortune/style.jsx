@@ -19,17 +19,33 @@ export const MainWrapper = styled.div`
 `;
 
 export const LotusWhole = styled.div`
-  flex-grow: 1;
+  /* flex-grow: 1;
   display: flex;
   background-image: url(/lotus.png);
-  position: fixed;
-  width: 390px;
-  height: 900px;
+  position: absolute;
+  width: 350px;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  background-size: contain;
+  /* background-size: contain; */
+  /* background-repeat: no-repeat;
+  background-position: center;
+  border: 3px solid red;  */
+
+  display: flex;
+  background-image: url(/lotus.png);
   background-repeat: no-repeat;
   background-position: center;
+  position: absolute;
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  height: 100%;
+  bottom: 45px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid red; */
 `;
 
 export const LotusLight = styled.div`
@@ -37,14 +53,26 @@ export const LotusLight = styled.div`
   z-index: 20;
   background-image: url(/lightlotus.png);
   position: relative;
-  top: 127px;
+  top: 38%;
   width: 110000px;
   height: 300px;
   justify-content: center;
-  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 `;
+
+// export const LotusLight2 = styled.div`
+//     flex-grow: 1;
+//     z-index: 20;
+//     background-image: url(/lightlotus.png);
+//     position: relative;
+//     top: 38%;
+//     width: 110000px;
+//     height: 300px;
+//     justify-content: center;
+//     background-position: center;
+//     background-repeat: no-repeat;
+// `;
 
 export const LotusTop = styled.div`
   flex-grow: 1;
@@ -77,19 +105,20 @@ export const LotusLeaf = styled.div`
   background-image: url(/leaf.png);
   position: fixed;
   width: 260px;
-  height: 505px;
-  top: 15px;
+  height: 559px;
+  /* top: -2%; */
   margin: 5rem;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   justify-content: center;
+  align-items: center;
 `;
 
 //포춘쿠키 내용
 export const FortuneContents = styled.div`
   display: flex;
-  position: relative;
+  position: fixed;
   writing-mode: vertical-lr;
   text-orientation: mixed;
   flex-wrap: wrap;
@@ -100,14 +129,30 @@ export const FortuneContents = styled.div`
   font-size: 19px;
   text-align: center;
   line-height: 100%;
-  padding: 68px 30px;
-  width: 100%;
+  /* padding: 68px 30px; */
+  width: 170px;
+  height: 54%;
   justify-content: center;
   align-items: center;
   line-height: 1.5;
+  /* border: 3px solid red; */
 `;
 
 //닫기 버튼 -> 요거 누르면 MyDetail로 감
+export const ClosedWrapper = styled.div`
+  position: absolute;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  margin-bottom: 10%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ClosedButton = styled.div`
   display: flex;
   background-image: url(/closedbutton.png);
@@ -116,8 +161,9 @@ export const ClosedButton = styled.div`
   background-repeat: no-repeat;
   width: 46px;
   height: 46px;
-  top: 675px;
+  top: 1350%;
   position: relative;
+  /* border: 3px solid yellow; */
 `;
 
 export const IrumiViewWrapper = styled.div`

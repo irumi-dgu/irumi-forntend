@@ -20,9 +20,20 @@ function MyDetail() {
     fetchLanternDetailData();
   }, [detailId]);
 
+  const data = [
+    {
+      id: 3,
+      nickname: "20 김강민",
+      content:
+        "내 연등 예시",
+      lantern_color: 1,
+      light_bool: true
+    }
+  ];
+
   return (
     <S.IrumiViewWrapper>
-      {lanternDetail.map(item => (
+      {data.map(item => (
         <S.DetailLanternWrapper key={item.id}>
           <S.DetailLanternImg
             src={`/detail_${item.lantern_color}_${item.light_bool}.png`}

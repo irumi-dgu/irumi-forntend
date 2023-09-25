@@ -10,9 +10,10 @@ export const LanternsWrapper = styled.div`
   flex-direction: column;
   background-image: url("/background_lanterns.png");
 
-  background-size: cover;
+  background-size: 100% auto;
+
   background-position: center;
-  background-repeat: repeat-y;
+  background-repeat: repeat;
   color: ${props => props.theme.colors.font};
   z-index: 2;
 `;
