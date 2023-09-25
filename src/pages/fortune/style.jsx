@@ -45,7 +45,7 @@ export const LotusWhole = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 `;
 
 export const LotusLight = styled.div`
@@ -105,15 +105,14 @@ export const LotusLeaf = styled.div`
   background-image: url(/leaf.png);
   position: fixed;
   width: 260px;
-  height: 64%;
-  top: 15px;
+  height: 559px;
+  /* top: -2%; */
   margin: 5rem;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
-  /* border: 3px solid white; */
 `;
 
 //포춘쿠키 내용
@@ -143,9 +142,10 @@ export const FortuneContents = styled.div`
 export const ClosedWrapper = styled.div`
   position: absolute;
   transform: translate(-50%, 0);
-  bottom: 20px;
+  bottom: 0;
   left: 50%;
   width: 100%;
+  margin-bottom: 10%;
   max-width: 300px;
   display: flex;
   flex-direction: column;
