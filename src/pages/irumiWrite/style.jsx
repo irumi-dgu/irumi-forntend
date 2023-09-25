@@ -2,10 +2,10 @@ import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const IrumiWriteWrapper = styled.div`
-  position: fixed;
+  /* position: fixed; */
+  position: relative;
   width: 100%;
   max-width: 420px;
-  height: 100vh;
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -18,19 +18,37 @@ export const IrumiWriteWrapper = styled.div`
   overflow: auto;
 `;
 
-export const BackBtnBox = styled(Link)`
+export const BackBtnBox = styled.div`
   width: 100%;
   max-width: 420px;
-  padding-left: 23px;
-  margin-top: 31px;
-  margin-bottom: 3px;
+  height: 38px;
+  margin-top: 20px;
+  margin-bottom: 5px;
   display: flex;
-  position: absolute;
+  align-items: center;
+  padding: 0px 20px;
+  position: fixed;
   top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 `;
 
+export const LanternChoiceSection = styled.div`
+  width: 100%;
+  border: none;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: center;
+`;
 export const wishBgImg = styled.img`
-  width: 115%;
+  max-width: 100%;
+  width: auto;
+
+  @media (max-width: 860px) and (max-height: 1180px) {
+    max-width: 120%;
+  }
 `;
 
 export const wishContent = styled.div`
@@ -47,12 +65,29 @@ export const WriteName = styled.div`
 
 export const Textarea = styled.div`
   position: absolute;
-  top: 45%;
+  top: 40%;
   width: 100%;
   display: flex;
   flex-direction: column;
   font-size: 16px;
   height: 330px;
+  padding: 10px;
+
+  @media (max-width: 860px) and (max-height: 1180px) {
+    width: 120%;
+    height: 460px;
+  }
+
+  @media (max-width: 320px) and (max-height: 568px) {
+    width: 100%;
+    padding: initial;
+    height: 270px;
+  }
+
+  @media (max-width: 360px) and (max-height: 740px) {
+    width: 120%;
+    height: 400px;
+  }
 `;
 
 export const TextareaName = styled.div`
@@ -106,19 +141,38 @@ export const ContentInput = styled.textarea`
 //비밀번호
 
 export const WritePw = styled.div`
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 10%;
-  transform: translate(0%, 770%);
+  transform: translate(0%, 30%);
   display: flex;
   align-items: center;
+
+  //iphone XR사이즈
+  @media (max-width: 414px) and (max-height: 896px) {
+    transform: translate(10%, 30%);
+  }
+
+  //ipad mini
+  @media (max-width: 820px) and (max-height: 1180px) {
+    transform: translate(10%, 30%);
+  }
+
+  @media (max-width: 393px) and (max-height: 851px) {
+    transform: translate(7%, 13%);
+  }
+
+  //iphone 12 Pro
+  @media (max-width: 390px) and (max-height: 844px) {
+    transform: translate(5%, 10%);
+  }
 `;
 
 export const WritePwLetter = styled.div`
   text-align: left;
-  font-size: 12px;
+  font-size: 10px;
   color: black;
-  width: 75px;
+  width: 44px;
 `;
 
 export const PasswordInput = styled.input`
@@ -126,9 +180,8 @@ export const PasswordInput = styled.input`
   outline: none;
   background-color: #f1f1f1;
   border-radius: 7px;
-  width: 90%;
+  width: 115px;
   height: 30px;
-  margin-left: 5px;
   padding: 5px 6px;
   font-family: "DonggukFont";
 
@@ -136,6 +189,11 @@ export const PasswordInput = styled.input`
 
   &::placeholder {
     font-size: 10px;
+  }
+
+  @media (max-width: 390px) and (max-height: 844px),
+    (max-width: 412px) and (max-height: 915px) {
+    width: 125px;
   }
 `;
 
@@ -145,27 +203,31 @@ export const ShowPasswordIcon = styled.div`
   cursor: pointer;
 
   img {
-    width: 130%;
+    width: 80%;
   }
 `;
 
 export const Submit = styled.div`
   position: relative;
   /* transform: translateX(-70%); */
-  margin-top: 162%;
-  margin-bottom: 10%;
-
-  height: 40px;
+  margin-top: 144%;
+  margin-bottom: 5%;
+  height: 35px;
   border-radius: 20px;
   background-color: #f0939e;
   justify-content: center;
   display: flex;
+
+  @media (max-width: 860px) and (max-height: 1180px) {
+    margin-top: 174%;
+  }
 `;
 
 export const SubmitBtn = styled.button`
-  height: 40px;
+  /* height: 35px; */
   width: 200px;
   font-family: "DonggukFont";
   color: white;
   font-size: 12px;
+  height: 35px;
 `;
