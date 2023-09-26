@@ -65,7 +65,7 @@ export const WriteName = styled.div`
 
 export const Textarea = styled.div`
   position: absolute;
-  top: 40%;
+  top: 42%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -122,7 +122,7 @@ export const ContentInput = styled.textarea`
   margin-top: 7px;
   background-color: #f1f1f1;
   border-radius: 5px;
-  height: 50%;
+  height: 45%;
   padding: 7px;
   width: 100%;
   justify-content: center;
@@ -181,7 +181,8 @@ export const PasswordInput = styled.input`
   background-color: #f1f1f1;
   border-radius: 7px;
   width: 115px;
-  height: 30px;
+  /* height: 30px; */
+  height: 60%;
   padding: 5px 6px;
   font-family: "DonggukFont";
 
