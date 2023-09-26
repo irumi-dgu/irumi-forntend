@@ -11,18 +11,22 @@ function MyDetail() {
   const { detailId } = useParams();
   const navigate = useNavigate();
 
-  // const fetchLanternDetailData = async () => {
-  //   try {
-  //     const response = await API.get(`/api/lanterns/${detailId}`);
-  //     setLanternDetail(response.data.results);
-  //   } catch (error) {
-  //     console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
-  //   }
-  // };
+  const fetchLanternDetailData = async () => {
+    try {
+      const response = await API.get(`/api/lanterns/${detailId}`);
+      setLanternDetail(response.data);
+      console.log(response.data);
+      console.log(lanternDetail);
+    } catch (error) {
+      console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchLanternDetailData();
-  // }, [detailId]);
+  useEffect(() => {
+    fetchLanternDetailData();
+  }, [detailId]);
+
+  console.log(lanternDetail);
 
   const data = [
     {
@@ -55,15 +59,18 @@ function MyDetail() {
   };
 
   //   링크복사
-  // const handleCopyLink = () => {
-  //   navigator.clipboard.writeText(window.location.href);
-  //   alert("현재 페이지의 링크가 복사되었습니다.");
-  // };
+  const handleCopyLink = () => {
+    // 배포 링크 보고 수정 필요
+    // navigator.clipboard.writeText(`http://iirumi/irumi/${detailId}.com`);
+    navigator.clipboard.writeText(window.location.href);
+    // navigator.clipboard.writeText("http://iirumi.com");
+    alert("현재 페이지의 링크가 복사되었습니다.");
+  };
 
   return (
     <>
       <S.IrumiViewWrapper ref={LanternRef}>
-        {data.map(item => (
+        {[lanternDetail].map(item => (
           <S.DetailLanternWrapper key={item.id}>
             <S.DetailLanternImg
               src={`/detail_${item.lantern_color}_${item.light_bool}.png`}
@@ -91,7 +98,9 @@ function MyDetail() {
         </S.MyBtn>
         <S.MyBtn>
           <img
-            src="/my_copyUrl.png"/>
+            src="/my_copyUrl.png"
+            onClick={() => handleCopyLink()}
+          />
           <p>이루미 링크복사</p>
         </S.MyBtn>
       </S.MyBtnsBox>

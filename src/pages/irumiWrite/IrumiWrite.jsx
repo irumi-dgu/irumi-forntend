@@ -5,6 +5,7 @@ import LanternChoice from "../../components/irumiWrite/lanternColorChoice";
 import axios from "axios";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 import { API } from "../../api/axios";
+import MyDetail from "../fortune/MyDetail";
 
 function IrumiWrite() {
   // const location = useLocation();
@@ -14,6 +15,8 @@ function IrumiWrite() {
   const [userWishContent, setUserWishContent] = useState(""); // 사용자의 소원을 저장할 상태 변수
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const [dataToShare, setDataToShare] = useState([]);
 
   // 뒤로 가기 버튼 클릭 핸들러
   const handleBackClick = () => {
@@ -110,10 +113,14 @@ function IrumiWrite() {
       // 서버 응답 처리
       if (response.status === 200) {
         // 성공적으로 제출되면 포춘 페이지로 이동
-        window.location.href = "/fortune";
+        // window.location.href = "/fortune";
+        window.location.href = `/fortune/${response.data.id}`;
+        // console.log(response.data.id);
         console.log("됐닥");
       } else {
-        window.location.href = "/fortune";
+        // window.location.href = "/fortune";
+        window.location.href = `/fortune/${response.data.id}`;
+        console.log(response.data.id);
         console.log("됐닥");
       }
     } catch (error) {

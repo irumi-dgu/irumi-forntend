@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import * as S from "./style";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { API } from "../../api/axios";
 
 const FortuneLotus = () => {
   const [fortuneMessage, setFortuneMessage] = useState("");
+  const { detailId } = useParams();
 
   useEffect(() => {
     // API 요청
@@ -33,7 +34,7 @@ const FortuneLotus = () => {
           )}
         </S.FortuneContents>
       </S.LotusLeaf>
-      <Link to="/MyDetail">
+      <Link to={`/MyDetail/${detailId}`}>
         <S.ClosedWrapper>
           <S.ClosedButton />
         </S.ClosedWrapper>

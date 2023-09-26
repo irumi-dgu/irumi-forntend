@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import * as S from "./style";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function Fortune() {
   const [isLotusLightVisible, setIsLotusLightVisible] = useState(false);
   const [isAnimationCompleted, setIsAnimationCompleted] = useState(false);
+  const { detailId } = useParams();
+  // console.log(detailId);
 
   // LotusTop 클릭 시 빛 번짐 애니메이션
   const handleLotusTopClick = () => {
@@ -21,7 +23,7 @@ function Fortune() {
         setIsAnimationCompleted(true);
 
         // 페이지 이동 코드
-        window.location.href = "/fortuneLotus";
+        window.location.href = `/fortuneLotus/${detailId}`;
       }, animationDuration);
     }
   }, [isLotusLightVisible]);
@@ -31,7 +33,8 @@ function Fortune() {
       <S.FortuneTitle>행운의 연꽃잎을 뽑아보세요</S.FortuneTitle>
       <S.LotusWhole className="lotus-whole">
         {isAnimationCompleted ? (
-          <Link to="/fortuneLotus">
+          <Link>
+          {/* to="/fortuneLotus" */}
             <S.LotusTop />
           </Link>
         ) : (
