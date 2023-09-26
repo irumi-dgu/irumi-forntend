@@ -35,15 +35,15 @@ const router = createBrowserRouter([
         element: <LanternsSearch />
       },
       {
-        path: "fortune",
+        path: "fortune/:detailId",
         element: <Fortune />
       },
       {
-        path: "fortuneLotus",
+        path: "fortuneLotus/:detailId",
         element: <FortuneLotus />
       },
       {
-        path: "myDetail",
+        path: "myDetail/:detailId",
         element: <MyDetail />
       },
       {
