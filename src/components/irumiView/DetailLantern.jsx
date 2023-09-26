@@ -11,7 +11,7 @@ import ReportAlertModal from "./ReportAlertModal";
 import { useParams } from "react-router-dom";
 import { API } from "../../api/axios";
 
-function DetailLantern({ data, isLiked, setIsLiked }) {
+function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
   const [modalOpen, setModalOpen] = useState(false);
   // 삭제
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -85,6 +85,7 @@ function DetailLantern({ data, isLiked, setIsLiked }) {
       try {
         setIsLiked(false);
         // setIsLiked(i => !i);
+        setLikeCount(prevCount => prevCount - 1);
         const response = await API.post(`/api/lanterns/${detailId}/likes`);
         if (response.status === 200) {
           // 204 에러?
@@ -101,6 +102,7 @@ function DetailLantern({ data, isLiked, setIsLiked }) {
         if (response.status === 200) {
           setIsLiked(true);
           // setIsLiked(i => !i);
+          setLikeCount(prevCount => prevCount + 1);
           console.log("좋아요 눌림");
           console.log(isLiked);
         } else {
@@ -128,10 +130,11 @@ function DetailLantern({ data, isLiked, setIsLiked }) {
         <S.MoreSec src="/moreBtn.png" onClick={openModal} />
         <S.LikeBtn>
           <img
-            src={data.is_liked ? "/detail_like_fill.png" : "/detail_like.png"}
+            src={isLiked ? "/detail_like_fill.png" : "/detail_like.png"}
             onClick={handleLike}
           />
-          <p>{data.like_cnt}</p>
+          {/* <p>{data.like_cnt}</p> */}
+          <p>{likeCount}</p>
         </S.LikeBtn>
         {/* </S.LanternBox> */}
       </S.DetailLanternWrapper>

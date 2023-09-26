@@ -93,6 +93,7 @@ function IrumiWrite() {
       lanternColor: selectedColor
     });
 
+    //쿠키로 정보 받아오는 뭐 그런 지피티 코드인데 쓰레기같음
     function getCookie(name) {
       let cookieValue = null;
       if (document.cookie && document.cookie !== "") {
@@ -121,6 +122,7 @@ function IrumiWrite() {
           light_bool: false
         },
         {
+          //여기도 쿠키헤던데 무용지물인듯
           headers: {
             "X-CSRFToken": csrfToken
           }
