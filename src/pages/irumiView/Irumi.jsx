@@ -9,6 +9,7 @@ function IrumiView() {
   const { detailId } = useParams();
   // 내용
   const [lanternDetail, setLanternDetail] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
 
   // get 해올거
   const fetchLanternDetailData = async () => {
@@ -16,6 +17,7 @@ function IrumiView() {
       // const response = await API.get("/api/lanterns")
       const response = await API.get(`/api/lanterns/${detailId}`);
       setLanternDetail(response.data);
+      setIsLiked(response.data.is_liked);
       // results
       console.log(response.data);
       // console.log(lanternDetail);
@@ -36,7 +38,12 @@ function IrumiView() {
           </Link>
         </S.BackBtnBox>
         {[lanternDetail].map(item => (
-          <DetailLantern key={item.id} data={item} />
+          <DetailLantern
+            key={item.id}
+            data={item}
+            isLiked={isLiked}
+            setIsLiked={setIsLiked}
+          />
         ))}
       </S.IrumiViewWrapper>
     </>

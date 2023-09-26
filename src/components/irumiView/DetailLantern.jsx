@@ -11,7 +11,7 @@ import ReportAlertModal from "./ReportAlertModal";
 import { useParams } from "react-router-dom";
 import { API } from "../../api/axios";
 
-function DetailLantern({ data }) {
+function DetailLantern({ data, isLiked, setIsLiked }) {
   const [modalOpen, setModalOpen] = useState(false);
   // 삭제
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -83,7 +83,8 @@ function DetailLantern({ data }) {
     // const detailId = data.id;
     if (data.is_liked === true) {
       try {
-        setIsLiked(i => !i);
+        setIsLiked(false);
+        // setIsLiked(i => !i);
         const response = await API.post(`/api/lanterns/${detailId}/likes`);
         if (response.status === 200) {
           // 204 에러?
@@ -98,7 +99,8 @@ function DetailLantern({ data }) {
       try {
         const response = await API.post(`/api/lanterns/${detailId}/likes`);
         if (response.status === 200) {
-          setIsLiked(i => !i);
+          setIsLiked(true);
+          // setIsLiked(i => !i);
           console.log("좋아요 눌림");
           console.log(isLiked);
         } else {
