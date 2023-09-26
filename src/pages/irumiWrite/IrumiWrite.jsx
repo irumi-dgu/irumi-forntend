@@ -23,14 +23,6 @@ function IrumiWrite() {
     navigate(-1);
   };
 
-  // // 상태 변수 추가: 폼 데이터 저장
-  // const [formData, setFormData] = useState({
-  //   nickname: "",
-  //   content: "",
-  //   lanternColor: "1",
-  //   password: ""
-  // });
-
   // 사용자가 입력한 닉네임 관련 함수
   const handleUserWishChange = event => {
     const content = event.target.value;

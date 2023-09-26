@@ -12,6 +12,7 @@ import NotFound from "./NotFound";
 import Lanterns from "./pages/lanterns/Lanterns";
 import LanternsSearch from "./pages/lanterns/LanternsSearch";
 import Intro from "./pages/intro/Irumi";
+import About from "./pages/About/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "irumi/:detailId",
         element: <IrumiView />
+      },
+      {
+        path: "/about",
+        element: <About />
       }
     ],
     errorElement: <NotFound />
