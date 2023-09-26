@@ -28,7 +28,7 @@ function LanternsSearch() {
       content:
         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
       like_cnt: 23,
-      lantern_color: 5,
+      lanternColor: 5,
       light_bool: false
     }
   ];

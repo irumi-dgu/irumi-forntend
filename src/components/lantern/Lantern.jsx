@@ -28,7 +28,7 @@ function Lantern({ item, size }) {
         <img src="/detail_like_fill.png" />
         <p>{item.like_cnt}</p>
       </S.LikeBtn>
-      <img src={`/detail_${item.lantern_color}_${item.light_bool}.png`} />
+      <img src={`/detail_${item.lanternColor}_${item.light_bool}.png`} />
     </S.LanternWrapper>
   );
 }

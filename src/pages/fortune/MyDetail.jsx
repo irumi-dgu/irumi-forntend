@@ -32,9 +32,8 @@ function MyDetail() {
     {
       id: 3,
       nickname: "20 김강민",
-      content:
-        "내 연등 예시",
-      lantern_color: 1,
+      content: "내 연등 예시",
+      lanternColor: 1,
       light_bool: true
     }
   ];
@@ -83,24 +82,15 @@ function MyDetail() {
       </S.IrumiViewWrapper>
       <S.MyBtnsBox>
         <S.MyBtn>
-          <img
-            src="/my_saveImg.png"
-            onClick={handleDownload}
-          />
+          <img src="/my_saveImg.png" onClick={handleDownload} />
           <p>이미지로 저장</p>
         </S.MyBtn>
         <S.MyBtn>
-          <img
-            src="/my_goMain.png"
-            onClick={() => navigate("/")}
-          />
+          <img src="/my_goMain.png" onClick={() => navigate("/")} />
           <p>메인페이지</p>
         </S.MyBtn>
         <S.MyBtn>
-          <img
-            src="/my_copyUrl.png"
-            onClick={() => handleCopyLink()}
-          />
+          <img src="/my_copyUrl.png" onClick={() => handleCopyLink()} />
           <p>이루미 링크복사</p>
         </S.MyBtn>
       </S.MyBtnsBox>
