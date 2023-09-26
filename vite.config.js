@@ -7,13 +7,10 @@ export default defineConfig({
     include: ["react", "react-dom"]
   },
   server: {
-    port: 5173,
-    hmr: {
-      host: "iirumi.com",
-      port: 80
-    },
+    port: 5173, // 사용할 포트 번호
     proxy: {
       "/api": "http://localhost:8000"
-    }
+    },
+    allow: ["./", "/home/ubuntu/irumi-forntend"]
   }
 });
