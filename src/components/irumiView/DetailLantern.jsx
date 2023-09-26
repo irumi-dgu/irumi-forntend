@@ -77,46 +77,6 @@ function DetailLantern({ data }) {
     }, 1500);
   };
 
-  // get 해올거
-  //   const fetchLanternDetailData = async () => {
-  //     try {
-  //       const response = await API.get("/api/lanterns");
-  //       // const response = await API.get(`/api/lanterns/${detailId}`)
-  //       setLanternDetail(response.data.results);
-  //       // results
-  //       console.log(lanternDetail);
-  //     } catch (error) {
-  //       console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
-  //     }
-  //   };
-  //   useEffect(() => {
-  //     fetchLanternDetailData();
-  //   }, [detailId]);
-
-  //   const data = [
-  //     {
-  //       id: 3,
-  //       nickname: "20 김강민",
-  //       content:
-  //         "여친 사귀고 싶다 여백 확인 중 길게길게 써보는 중 어케되나 함보자 배가고프구나",
-  //       like_cnt: 23,
-  //       lantern_color: 1,
-  //       light_bool: false,
-  //       is_liked: true
-  //     }
-  //   ];
-
-  // 연등 -> 이미지로 매핑
-  // const getImageUrl = (lantern_color, light_bool) => {
-  //     if (lantern_color >= 1 && lantern_color <= 5) {
-  //         const twinkleToggle = light_bool ? "yes" : "no";
-  //         return `/detail_${lantern_color}_${twinkleToggle}.png`;
-  //     }
-  //     return "/detail_1_yes.png";
-  // }
-  // const backgroundIamge = getImageUrl();
-  // const backgroundIamge = `/detail_${lanternColor}_${lightBool}.png`
-
   // 좋아요
   const handleLike = async () => {
     // 경로 부분 수정 필요
@@ -124,7 +84,7 @@ function DetailLantern({ data }) {
     if (data.is_liked === true) {
       try {
         setIsLiked(i => !i);
-        const response = await API.delete(`/api/lanterns/${detailId}/likes`);
+        const response = await API.post(`/api/lanterns/${detailId}/likes`);
         if (response.status === 200) {
           // 204 에러?
           console.log("좋아요 취소 완료");
