@@ -81,7 +81,7 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
   const handleLike = async () => {
     // 경로 부분 수정 필요
     // const detailId = data.id;
-    if (data.is_liked === true) {
+    if (isLiked === true) {
       try {
         setIsLiked(false);
         // setIsLiked(i => !i);
@@ -96,7 +96,7 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
       } catch (error) {
         console.log("좋아요 취소 중 오류 발생", error);
       }
-    } else if (data.is_liked === false) {
+    } else if (isLiked === false) {
       try {
         const response = await API.post(`/api/lanterns/${detailId}/likes`);
         if (response.status === 200) {
