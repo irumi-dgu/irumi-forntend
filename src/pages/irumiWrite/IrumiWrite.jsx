@@ -93,15 +93,39 @@ function IrumiWrite() {
       lanternColor: selectedColor
     });
 
-    try {
-      const response = await API.post("/api/lanterns", {
-        nickname: userWish,
-        content: userWishContent,
-        lanternColor: selectedColor,
-        password: password,
-        light_bool: false
-      });
+    function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) === name + "=") {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+        }
+      }
+      return cookieValue;
+    }
 
+    const csrfToken = getCookie("csrftoken");
+
+    try {
+      const response = await API.post(
+        "/api/lanterns",
+        {
+          nickname: userWish,
+          content: userWishContent,
+          lanternColor: selectedColor,
+          password: password,
+          light_bool: false
+        },
+        {
+          headers: {
+            "X-CSRFToken": csrfToken
+          }
+        }
+      );
       // 서버 응답 처리
       if (response.status === 200) {
         // 성공적으로 제출되면 포춘 페이지로 이동

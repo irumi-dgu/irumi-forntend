@@ -121,7 +121,7 @@ function DetailLantern({ data }) {
   const handleLike = async () => {
     // 경로 부분 수정 필요
     // const detailId = data.id;
-    if (data.is_liked) {
+    if (data.is_liked === true) {
       try {
         setIsLiked(i => !i);
         const response = await API.delete(`/api/lanterns/${detailId}/likes`);
@@ -134,7 +134,7 @@ function DetailLantern({ data }) {
       } catch (error) {
         console.log("좋아요 취소 중 오류 발생", error);
       }
-    } else {
+    } else if (data.is_liked === false) {
       try {
         const response = await API.post(`/api/lanterns/${detailId}/likes`);
         if (response.status === 200) {
@@ -147,6 +147,8 @@ function DetailLantern({ data }) {
       } catch (error) {
         console.log("좋아요 중 오류 발생", error);
       }
+    } else {
+      console.log("좋아요 중 오류 발생");
     }
   };
 
