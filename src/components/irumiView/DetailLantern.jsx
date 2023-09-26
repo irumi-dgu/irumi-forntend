@@ -23,7 +23,7 @@ function DetailLantern({ data, isLiked, setIsLiked }) {
   // 내용
   // const [lanternDetail, setLanternDetail] = useState([]);
   // 좋아요
-  const [isLiked, setIsLiked] = useState(false);
+  // const [isLiked, setIsLiked] = useState(false);
 
   const { detailId } = useParams();
   // console.log(detailId);
