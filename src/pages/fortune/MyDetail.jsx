@@ -72,7 +72,7 @@ function MyDetail() {
         {[lanternDetail].map(item => (
           <S.DetailLanternWrapper key={item.id}>
             <S.DetailLanternImg
-              src={`/detail_${item.lantern_color}_${item.light_bool}.png`}
+              src={`/detail_${item.lanternColor}_${item.light_bool}.png`}
             />
             <S.TitleSec>{item.nickname}</S.TitleSec>
             <S.ContentSec>{item.content}</S.ContentSec>
