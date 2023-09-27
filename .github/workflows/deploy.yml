@@ -16,10 +16,3 @@ jobs:
 
       - name: Build
         run: yarn vite build
-
-      - name: Deploy # Deploy to EC2
-        run: aws deploy create-deployment
-          --application-name irumu
-          --deployment-config-name CodeDeployDefault.AllAtOnce
-          --deployment-group-name irumuwish-webservice-group
-          --s3-location bucket=irumu,key=build-fe.zip,bundleType=zip
