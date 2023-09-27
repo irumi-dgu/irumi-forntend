@@ -19,6 +19,9 @@ import { useEffect, useState } from "react";
 
 import { API } from "../../api/axios";
 
+//import Moon (For About Page)
+import Moon from "../../components/common/moon/Moon";
+
 function Main() {
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);

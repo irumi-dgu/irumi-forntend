@@ -8,6 +8,7 @@ import LanternsSearchForm from "../../components/lanterns/lanternsSearchForm/Lan
 import LanternsWriteBtn from "../../components/lanterns/laternsWriteBtn/LanternsWriteBtn";
 import Lantern from "../../components/lantern/Lantern";
 import BackBtn from "../../components/common/backBtn/BackBtn";
+import Moon from "../../components/common/moon/Moon";
 
 import "../../assets/animation/animation.css";
 import Loading from "../../components/common/loading/Loading";
@@ -100,6 +101,7 @@ function Lanterns() {
   return (
     <>
       <S.LanternsWrapper>
+        <Moon />
         <LanternsWriteBtn />
         <S.Header>
           <Link to="/">
