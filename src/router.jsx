@@ -13,6 +13,7 @@ import Lanterns from "./pages/lanterns/Lanterns";
 import LanternsSearch from "./pages/lanterns/LanternsSearch";
 import Intro from "./pages/intro/Irumi";
 import About from "./pages/About/AboutUs";
+import AboutUs from "./pages/About/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />
+        element: <AboutUs />
       }
     ],
     errorElement: <NotFound />
