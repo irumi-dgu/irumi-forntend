@@ -6,22 +6,21 @@ import { Outlet } from "react-router-dom";
 
 const BackGroundColor = styled.div`
   width: 100vw;
-
   background-color: black;
 `;
 
 const Wrapper = styled.div`
   margin: 0 auto;
   width: 100%;
-  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   max-width: 420px;
-  background-color: #202029;
 
+  position: absolute;
+  overflow-y: scroll;
   * {
     /* border: 1px solid black; */
   }

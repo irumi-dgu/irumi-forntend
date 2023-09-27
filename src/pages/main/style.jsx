@@ -16,7 +16,7 @@ export const MainWrapper = styled.div`
   background-size: 100% auto;
   flex-direction: column;
   background-size: cover;
-  /* background-position: center; */
+
   color: ${props => props.theme.colors.font};
   overflow: hidden;
 `;

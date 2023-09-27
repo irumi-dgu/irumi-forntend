@@ -6,7 +6,9 @@ export const MainWrapper = styled.div`
   width: 100%;
   max-width: 420px;
   height: 100vh;
-
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
   display: flex;
 
   align-items: center;
@@ -130,7 +132,7 @@ export const LotusLeaf = styled.div`
     justify-content: center;
     align-items: center; */
 
-    /* border: 1px solid yellow; */
+  /* border: 1px solid yellow; */
 `;
 
 //포춘쿠키 내용
@@ -185,19 +187,18 @@ export const ClosedButton = styled.div`
 `;
 
 export const IrumiViewWrapper = styled.div`
-  flex-grow: 1;
   width: 100%;
   height: 100%;
-  /* max-width: 420px; */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* justify-content: space-around; */
 
   align-items: center;
   background-image: url("/background_detail.png");
   background-size: cover;
   background-position: center;
+  margin-bottom: 20px;
 `;
 
 export const DetailLanternWrapper = styled.div`
@@ -248,11 +249,11 @@ export const MyBtnsBoxPosition = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`
+`;
 export const MyBtnsBox = styled(MyBtnsBoxPosition)`
   position: fixed;
   bottom: 3%;
-`
+`;
 export const MyBtn = styled.div`
   display: flex;
   flex-direction: column;
@@ -264,8 +265,9 @@ export const MyBtn = styled.div`
     margin-bottom: 6px;
   }
   p {
-    color: #FAFBFD;
+    color: #fafbfd;
     font-size: 12px;
     font-weight: 400;
+    margin-top: 5px;
   }
-`
+`;

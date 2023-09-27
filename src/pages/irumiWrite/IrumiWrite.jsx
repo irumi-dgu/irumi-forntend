@@ -160,9 +160,9 @@ function IrumiWrite() {
 
   return (
     <S.IrumiWriteWrapper>
-      <S.BackBtnBox onClick={handleBackClick}>
+      {/* <S.BackBtnBox onClick={handleBackClick}>
         <BackBtn />
-      </S.BackBtnBox>
+      </S.BackBtnBox> */}
       <S.LanternChoiceSection>
         <LanternChoice
           selectedColor={selectedColor}

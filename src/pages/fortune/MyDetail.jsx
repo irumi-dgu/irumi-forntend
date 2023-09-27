@@ -49,7 +49,7 @@ function MyDetail() {
       const canvas = await html2canvas(div, { scale: 2 });
       canvas.toBlob(blob => {
         if (blob !== null) {
-          saveAs(blob, "result.png");
+          saveAs(blob, "당신의_연등.png");
         }
       });
     } catch (error) {
@@ -67,7 +67,7 @@ function MyDetail() {
   };
 
   return (
-    <>
+    <S.MainWrapper>
       <S.IrumiViewWrapper ref={LanternRef}>
         {[lanternDetail].map(item => (
           <S.DetailLanternWrapper key={item.id}>
@@ -78,8 +78,8 @@ function MyDetail() {
             <S.ContentSec>{item.content}</S.ContentSec>
           </S.DetailLanternWrapper>
         ))}
-        <S.MyBtnsBoxPosition />
       </S.IrumiViewWrapper>
+
       <S.MyBtnsBox>
         <S.MyBtn>
           <img src="/my_saveImg.png" onClick={handleDownload} />
@@ -94,7 +94,7 @@ function MyDetail() {
           <p>이루미 링크복사</p>
         </S.MyBtn>
       </S.MyBtnsBox>
-    </>
+    </S.MainWrapper>
   );
 }
 
