@@ -54,7 +54,7 @@ function PwModal({ openPwModal, closePwModal, data }) {
                     closeAlert();
                     navigate("/lanterns");
                 }, 2000);
-            } else if (response.status === 400) {
+            } else if (response.status === 401) {
                 // 비밀번호 불일치
                 setIsPasswordCorrect(false);
                 setAlertOpen(true);
