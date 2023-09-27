@@ -35,9 +35,7 @@ function IrumiView() {
     <>
       <S.IrumiViewWrapper>
         <S.BackBtnBox>
-          <Link to="/lanterns">
-            <BackBtn />
-          </Link>
+          <BackBtn />
         </S.BackBtnBox>
         {[lanternDetail].map(item => (
           <DetailLantern

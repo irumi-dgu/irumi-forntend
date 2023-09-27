@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export const BackBtnBox = styled.div`
   width: 24px;
@@ -10,8 +11,12 @@ export const BackBtnBox = styled.div`
 `;
 
 const BackBtn = () => {
+  const navigate = useNavigate();
+  const handleBackClick = () => {
+    navigate(-1);
+  };
   return (
-    <BackBtnBox>
+    <BackBtnBox onClick={handleBackClick}>
       <img src="/backBtn.png" style={{ width: "20px" }} />
     </BackBtnBox>
   );

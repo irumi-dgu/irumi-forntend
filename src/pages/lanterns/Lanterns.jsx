@@ -103,10 +103,9 @@ function Lanterns() {
       <S.LanternsWrapper>
         <Moon />
         <LanternsWriteBtn />
+
         <S.Header>
-          <Link to="/">
-            <BackBtn />
-          </Link>
+          <BackBtn />
           <LanternsSearchForm />
         </S.Header>
 

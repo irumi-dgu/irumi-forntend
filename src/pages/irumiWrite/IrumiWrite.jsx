@@ -8,8 +8,6 @@ import { API } from "../../api/axios";
 import MyDetail from "../fortune/MyDetail";
 
 function IrumiWrite() {
-  // const location = useLocation();
-  const navigate = useNavigate();
   const [selectedColor, setSelectedColor] = useState("1");
   const [userWish, setUserWish] = useState("");
   const [userWishContent, setUserWishContent] = useState(""); // 사용자의 소원을 저장할 상태 변수
@@ -19,9 +17,6 @@ function IrumiWrite() {
   const [dataToShare, setDataToShare] = useState([]);
 
   // 뒤로 가기 버튼 클릭 핸들러
-  const handleBackClick = () => {
-    navigate(-1);
-  };
 
   // 사용자가 입력한 닉네임 관련 함수
   const handleUserWishChange = event => {
@@ -163,13 +158,15 @@ function IrumiWrite() {
       {/* <S.BackBtnBox onClick={handleBackClick}>
         <BackBtn />
       </S.BackBtnBox> */}
-      <S.LanternChoiceSection>
+      <S.Header>
+        <BackBtn />
         <LanternChoice
           selectedColor={selectedColor}
           setSelectedColor={handleColorChange} // 컬러 선택 핸들러 전달
           value={selectedColor}
         />
-      </S.LanternChoiceSection>
+      </S.Header>
+
       <S.wishContent>
         <S.wishBgImg img src={`/write_${selectedColor}.svg`} />
 
@@ -179,13 +176,13 @@ function IrumiWrite() {
           <S.NameInput
             value={userWish}
             onChange={handleUserWishChange}
-            placeholder="닉네임을 입력하세요.(최대 10자, 공백 사용 불가)"
+            placeholder="최대 10자, 공백은 사용불가합니다."
           />
           <S.TextareaContent>소원 내용</S.TextareaContent>
           <S.ContentInput
             value={userWishContent}
             onChange={handleUserWishContent}
-            placeholder="소원 내용을 입력해주세요.(100자 이내)"
+            placeholder="100자 이내로 작성해주세요."
           />
           <S.WritePw>
             <S.WritePwLetter>비밀번호</S.WritePwLetter>
@@ -207,10 +204,8 @@ function IrumiWrite() {
             </S.ShowPasswordIcon>
           </S.WritePw>
         </S.Textarea>
-      </S.wishContent>
-      <S.Submit>
         <S.SubmitBtn onClick={handleSubmit}>연등 달기</S.SubmitBtn>
-      </S.Submit>
+      </S.wishContent>
     </S.IrumiWriteWrapper>
   );
 }

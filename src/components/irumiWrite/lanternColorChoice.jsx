@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./style";
+import BackBtn from "../common/backBtn/BackBtn";
 
 function LanternChoice({ selectedColor, setSelectedColor }) {
   // 색상 숫자 상태 추가
@@ -13,7 +14,7 @@ function LanternChoice({ selectedColor, setSelectedColor }) {
 
   return (
     <S.lantern>
-      <S.lanternLetter>연등</S.lanternLetter>
+      {/* <S.lanternLetter>연등</S.lanternLetter> */}
       <S.lanternImage
         img
         src="/s_lantern_pink.png"
