@@ -31,6 +31,12 @@ function ReportModal({closeReportModal, openReportedModal, detailId}) {
             openReportedModal();
         } catch (error) {
             console.log("연등 신고 시 오류 발생", error);
+
+            if (response.status === 400) {
+                alert("이미 신고한 게시글입니다")
+            } else {
+                console.log(`HTTP 상태 코드: ${response.status}`);
+            }
         }
     }
 
