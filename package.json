@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "set PORT=80 && react-scripts start",
-    "dev": "vite",
+    "dev": "vite --host 192.168.45.98",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

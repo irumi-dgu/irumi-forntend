@@ -6,7 +6,9 @@ export const MainWrapper = styled.div`
   width: 100%;
   max-width: 420px;
   height: 100vh;
-
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
   display: flex;
 
   align-items: center;
@@ -185,19 +187,18 @@ export const ClosedButton = styled.div`
 `;
 
 export const IrumiViewWrapper = styled.div`
-  flex-grow: 1;
   width: 100%;
   height: 100%;
-  /* max-width: 420px; */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* justify-content: space-around; */
 
   align-items: center;
   background-image: url("/background_detail.png");
   background-size: cover;
   background-position: center;
+  margin-bottom: 20px;
 `;
 
 export const DetailLanternWrapper = styled.div`

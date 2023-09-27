@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import DonggukFont from "../assets/fonts/Dongguk.woff";
 
 export const GlobalStyle = createGlobalStyle`
+
   :root {
     --vh: 100%;
    }
