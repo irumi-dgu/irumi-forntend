@@ -62,10 +62,12 @@ export const LanternChoiceSection = styled.div`
 `;
 
 export const wishBgImg = styled.img`
+  max-width: 220px !important;
   height: 100%;
 `;
 
 export const wishContent = styled.div`
+  max-width: 220px !important;
   display: flex;
   height: 85%;
   justify-content: center;
@@ -80,6 +82,7 @@ export const Textarea = styled.div`
   font-size: 16px;
 
   width: 90%;
+  max-width: 189px;
   height: 50%;
 
   top: 42%;
