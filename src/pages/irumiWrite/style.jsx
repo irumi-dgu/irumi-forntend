@@ -85,7 +85,7 @@ export const Textarea = styled.div`
   max-width: 189px;
   height: 50%;
 
-  top: 42%;
+  top: 45%;
 `;
 
 export const TextareaName = styled.div`
