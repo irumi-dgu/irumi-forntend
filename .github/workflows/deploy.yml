@@ -3,7 +3,7 @@ on:
   push:
     branches: ["main"]
 jobs:
-  #  main 브랜치에서 push가 이루어지면 아래 작업들이 이루어짐
+  # main 브랜치에서 push가 이루어지면 아래 작업들이 이루어짐
   build:
     runs-on: ubuntu-latest
 
@@ -17,7 +17,7 @@ jobs:
       - name: Build
         run: yarn vite build
 
-    - name: S3 Deploy
+      - name: S3 Deploy
         run: aws s3 sync ./dist s3://irumu
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
