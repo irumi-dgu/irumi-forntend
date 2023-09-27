@@ -234,7 +234,7 @@ export const YesModalWrapper = styled(DeleteModalWrapper)`
 
 `
 export const AlertBox = styled(DeleteBox)`
-    width: 282px;
+    width: 270px;
     height: 64px;
     color: #000;
     font-size: 16px;
@@ -242,6 +242,7 @@ export const AlertBox = styled(DeleteBox)`
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #3D4353;
 `
 
 // ReportModal.jsx

@@ -70,7 +70,7 @@ function PwModal({ openPwModal, closePwModal, data }) {
             }
         } catch (error) {
             console.log("연등 삭제 중 오류 발생", error);
-            
+
             // 비밀번호 불일치
             setIsPasswordCorrect(false);
             setAlertOpen(true);
@@ -120,9 +120,24 @@ function PwModal({ openPwModal, closePwModal, data }) {
                 </S.PwBox>
             </S.PwModalWrapper>
 
+            {/* 비번 일치여부 모달 */}
             {alertOpen && (
                 <AlertModal isPasswordCorrect={isPasswordCorrect} />
             )}
+
+            {/* 뒷 배경 어둡게 */}
+            {/* {alertOpen && (
+                <div
+                    style={{
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        backgroundColor: "rgba(0, 0, 0, 0.3)"
+                    }}
+                />
+            )} */}
         </>
     )
 }
