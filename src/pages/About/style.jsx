@@ -32,3 +32,31 @@ export const aboutIntro = styled.div`
   line-height: 15px;
   text-align: center;
 `;
+
+export const CloseBtn = styled.div`
+  position: absolute;
+  width: 200px;
+  font-family: "DonggukFont";
+  color: white;
+  font-size: 14px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Close = styled.div`
+  position: absolute;
+  /* transform: translateX(-70%); */
+  margin-top: 200%;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #f0939e;
+  justify-content: center;
+  display: flex;
+  width: 200px;
+
+  @media (max-width: 860px) and (max-height: 1180px) {
+    margin-top: 207%;
+  }
+`;
