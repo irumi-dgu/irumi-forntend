@@ -18,7 +18,7 @@ export const aboutWrapper = styled.div`
 export const aboutBg = styled.img`
   width: 80%;
   margin-top: 100px;
-  margin-bottom: 250px;
+  margin-bottom: 100px;
 `;
 
 export const aboutIntro = styled.div`
@@ -48,7 +48,7 @@ export const CloseBtn = styled.div`
 export const Close = styled.div`
   position: absolute;
   /* transform: translateX(-70%); */
-  margin-top: 200%;
+  margin-top: 240%;
   height: 35px;
   border-radius: 20px;
   background-color: #f0939e;
@@ -56,8 +56,4 @@ export const Close = styled.div`
   display: flex;
   width: 200px;
   cursor: pointer;
-
-  @media (max-width: 860px) and (max-height: 1180px) {
-    margin-top: 207%;
-  }
 `;
