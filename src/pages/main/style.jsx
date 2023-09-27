@@ -10,7 +10,6 @@ export const MainWrapper = styled.div`
     height: -webkit-fill-available;
   }
   display: flex;
-
   align-items: center;
   background-image: url("/background_main.png");
   background-size: 100% auto;

@@ -2,14 +2,26 @@ import { styled } from "styled-components";
 
 //lanternColorChioce의 스타일 컴포넌트
 
-export const LanternChoice = styled.div``;
-export const lantern = styled.div`
-  width: 80%;
-  margin-top: 15%;
-  /* 90px */
-  border: none;
-  flex-direction: row;
+export const lanternWrapper = styled.div`
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  height: 30px;
+`;
+export const lantern = styled.div`
+  position: absolute;
+  transform: translate(50%, 50%);
+  bottom: 50%;
+  right: 50%;
+  width: 100%;
+  padding: 0 20%;
+  height: 5%;
+  border: none;
+  display: flex;
+
   align-items: center;
   border: none;
   justify-content: space-between;
@@ -28,8 +40,10 @@ export const lanternColor = styled.div`
 `;
 
 export const lanternImage = styled.img`
+  width: 30px;
   border: none;
   cursor: pointer;
+  margin: 0 10px;
 `;
 
 //wishForm 스타일 컴포넌트
