@@ -16,6 +16,10 @@ export const LanternsWrapper = styled.div`
   background-repeat: repeat;
   color: ${props => props.theme.colors.font};
   z-index: 2;
+  height: auto;
+  max-width: 420px;
+  border: 1px solid red;
+  position: relative;
 `;
 
 export const Header = styled.div`

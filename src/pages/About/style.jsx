@@ -55,6 +55,7 @@ export const Close = styled.div`
   justify-content: center;
   display: flex;
   width: 200px;
+  cursor: pointer;
 
   @media (max-width: 860px) and (max-height: 1180px) {
     margin-top: 207%;
