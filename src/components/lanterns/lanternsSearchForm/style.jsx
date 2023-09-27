@@ -12,6 +12,9 @@ export const Search = styled.form`
 
   input::placeholder {
     color: #745b45;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "DonggukFont";
   }
 `;
 
