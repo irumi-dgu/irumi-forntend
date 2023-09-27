@@ -18,7 +18,7 @@ export const LanternsWrapper = styled.div`
   z-index: 2;
   height: auto;
   max-width: 420px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   position: relative;
 `;
 
