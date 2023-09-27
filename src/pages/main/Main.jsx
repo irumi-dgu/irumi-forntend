@@ -42,6 +42,7 @@ function Main() {
 
   return (
     <S.MainWrapper>
+      <Moon />
       <S.MainTitle>현재까지 "{count}"개의 연등이 달렸어요!</S.MainTitle>
       <S.SubTitle className="shine">좌우로 드래그 해보세요</S.SubTitle>
 
