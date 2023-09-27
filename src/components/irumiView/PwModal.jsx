@@ -70,17 +70,23 @@ function PwModal({ openPwModal, closePwModal, data }) {
             }
         } catch (error) {
             console.log("연등 삭제 중 오류 발생", error);
-            // console.log(data);
-            // 비밀번호 불일치
-            setIsPasswordCorrect(false);
-            setAlertOpen(true);
-            console.log("비밀번호 틀렸음");
 
-            // 2초 뒤 다시 입력
-            setTimeout(() => {
-                closeAlert();
-                openPwModal();
-            }, 2000);
+            if (response.status === 401) {
+                // 비밀번호 불일치
+                setIsPasswordCorrect(false);
+                setAlertOpen(true);
+                console.log("비밀번호 틀렸음");
+
+                // 2초 뒤 다시 입력
+                setTimeout(() => {
+                    closeAlert();
+                    openPwModal();
+                }, 2000);
+            } else if (response.status === 400) {
+                alert("비밀번호를 입력해주세요")
+            } else {
+                console.log(`HTTP 상태 코드: ${response.status}`);
+            }
         }
     };
 
