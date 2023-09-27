@@ -13,11 +13,9 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-        working-directory: ./client
 
       - name: Build
         run: yarn vite build
-        working-directory: ./client
 
       - name: Sync Bucket
         env:
@@ -29,4 +27,3 @@ jobs:
             --region ap-northeast-2 \
             build s3: \
             --delete
-        working-directory: ./client
