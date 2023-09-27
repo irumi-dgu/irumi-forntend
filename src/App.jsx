@@ -6,7 +6,10 @@ import { Outlet } from "react-router-dom";
 
 const BackGroundColor = styled.div`
   width: 100vw;
+  height: 100vh;
   background-color: black;
+  display: flex;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
@@ -19,11 +22,7 @@ const Wrapper = styled.div`
 
   max-width: 420px;
 
-  position: absolute;
   overflow-y: scroll;
-  * {
-    /* border: 1px solid black; */
-  }
 `;
 
 const Layout = () => {

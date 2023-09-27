@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 export const IrumiViewWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   /* max-width: 420px; */
   display: flex;
   flex-direction: column;
