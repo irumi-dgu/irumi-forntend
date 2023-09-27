@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import * as S from "./style";
 import { API } from "../../api/axios";
 
-function ReportModal({closeReportModal, openReportedModal, detailId}) {
+function ReportModal({closeReportModal, openReportedModal, openIsReportedModal, detailId}) {
     // const [abuse, setAbuse] = useState(false);
     // const [fraud, setFraud] = useState(false);
     // const [explicit, setExplicit] = useState(false);
@@ -32,11 +32,16 @@ function ReportModal({closeReportModal, openReportedModal, detailId}) {
         } catch (error) {
             console.log("연등 신고 시 오류 발생", error);
 
-            if (response.status === 400) {
-                alert("이미 신고한 게시글입니다")
-            } else {
-                console.log(`HTTP 상태 코드: ${response.status}`);
-            }
+            // openReportedModal();
+            openIsReportedModal();
+
+            // alert("이미 신고한 게시글입니다")
+
+            // if (response.status === 400) {
+            //     alert("이미 신고한 게시글입니다")
+            // } else {
+            //     console.log(`HTTP 상태 코드: ${response.status}`);
+            // }
         }
     }
 

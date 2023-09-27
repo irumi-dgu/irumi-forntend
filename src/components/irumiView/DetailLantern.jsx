@@ -8,6 +8,7 @@ import PwModal from "./PwModal";
 // import AlertModal from './AlertModal';
 import ReportModal from "./ReportModal";
 import ReportAlertModal from "./ReportAlertModal";
+import ReportedAlertModal from "./ReportedAlertModal";
 import { useParams } from "react-router-dom";
 import { API } from "../../api/axios";
 
@@ -20,6 +21,8 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
   // 신고
   const [reportModalOpen, setReportModalOpen] = useState(false);
   const [reportedModalOpen, setReportedModalOpen] = useState(false);
+  const [isReportedModalOpen, setIsReportedModalOpen] = useState(false);
+  const [isReported, setIsReported] = useState(false);
   // 내용
   // const [lanternDetail, setLanternDetail] = useState([]);
   // 좋아요
@@ -76,6 +79,14 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
       setReportedModalOpen(false);
     }, 1500);
   };
+  // 이미 신고한 게시글 모달
+  const openIsReportedModal = () => {
+    setIsReportedModalOpen(true);
+    closeReportModal();
+    setTimeout(() => {
+      setIsReportedModalOpen(false);
+    }, 1500);
+  }
 
   // 좋아요
   const handleLike = async () => {
@@ -175,17 +186,21 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
         <ReportModal
           closeReportModal={closeReportModal}
           openReportedModal={openReportedModal}
+          openIsReportedModal={openIsReportedModal}
           detailId={detailId}
         />
       )}
       {/* 신고 완료 모달 */}
       {reportedModalOpen && <ReportAlertModal />}
+      {/* 이미 신고한 게시글 모달 */}
+      {isReportedModalOpen && <ReportedAlertModal />}
 
       {/* 뒷 배경 어둡게 */}
       {(deleteModalOpen ||
         pwModalOpen ||
         reportModalOpen ||
-        reportedModalOpen) && (
+        reportedModalOpen ||
+        isReportedModalOpen) && (
         <div
           style={{
             position: "fixed",
