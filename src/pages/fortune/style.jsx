@@ -130,7 +130,7 @@ export const LotusLeaf = styled.div`
     justify-content: center;
     align-items: center; */
 
-    /* border: 1px solid yellow; */
+  /* border: 1px solid yellow; */
 `;
 
 //포춘쿠키 내용
@@ -248,11 +248,11 @@ export const MyBtnsBoxPosition = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`
+`;
 export const MyBtnsBox = styled(MyBtnsBoxPosition)`
   position: fixed;
   bottom: 3%;
-`
+`;
 export const MyBtn = styled.div`
   display: flex;
   flex-direction: column;
@@ -264,8 +264,9 @@ export const MyBtn = styled.div`
     margin-bottom: 6px;
   }
   p {
-    color: #FAFBFD;
+    color: #fafbfd;
     font-size: 12px;
     font-weight: 400;
+    margin-top: 5px;
   }
-`
+`;
