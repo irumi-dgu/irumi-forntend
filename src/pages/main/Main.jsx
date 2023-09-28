@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -23,13 +24,31 @@ import { API } from "../../api/axios";
 import Moon from "../../components/common/moon/Moon";
 
 function Main() {
+  const navigate = useNavigate();
+  // 페이지가 로드될 때 실행되는 함수
+  const checkFirstVisit = () => {
+    // localStorage에서 isFirst 값을 가져옴
+    const isFirstVisit = localStorage.getItem("isFirst");
+
+    if (!isFirstVisit) {
+      // isFirst 값이 없으면(처음 들어오는 유저라면) 처리
+      localStorage.setItem("isFirst", "true"); // isFirst 값을 저장
+      navigate("/intro"); // '/about' 페이지로 이동
+    }
+  };
+
+  // 페이지 로드될 때 checkFirstVisit 함수 실행
+  useEffect(() => {
+    checkFirstVisit();
+  }, []);
+
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
 
   const fetchLanternsData = async () => {
     try {
       const response = await API.get(`/api/lanterns/random`);
-      console.log(response);
+      // console.log(response);
       setCount(response.data.totCount);
       setData(response.data.lanterns);
     } catch (error) {
