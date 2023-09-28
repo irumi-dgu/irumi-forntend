@@ -99,7 +99,7 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount, lig
         setLikeCount(prevCount => prevCount - 1);
         console.log(likeCount);
 
-        if (likeCount <= 9) {
+        if (likeCount <= 10) {
           setLightBool(false);
         } else {
           setLightBool(true);
