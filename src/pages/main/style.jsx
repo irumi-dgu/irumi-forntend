@@ -25,7 +25,7 @@ export const MainTitle = styled.div`
   justify-content: center;
 
   font-size: 18px;
-  margin-top: 50px;
+  margin-top: 12%;
   margin-bottom: 30px;
 `;
 
@@ -66,7 +66,7 @@ export const SwiperSlideActive = styled.div`
 `;
 
 export const Btns = styled.div`
-  position: absolute;
+  position: fixed;
   transform: translate(-50%, 0);
   bottom: 20px;
   left: 50%;

@@ -62,11 +62,12 @@ export const LikeBtn = styled.div`
 
 // MoreModal.jsx
 export const MoreModalWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  max-width: 420px;
 
-  padding: 0 7% 5px 7%; // 0 632px 31px 22px
+  padding: 0 10px 5px 10px; // 0 632px 31px 22px
   display: flex;
   flex-direction: column;
   justify-content: end;
