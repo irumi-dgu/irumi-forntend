@@ -198,7 +198,7 @@ export const Submit = styled.div`
 
   height: 35px;
   border-radius: 20px;
-  background-color: #f0939e;
+  background-color: ${props => (props.active ? "#f0939e" : "#AEAEAE")};
   justify-content: center;
   display: flex;
   bottom: 4%;
@@ -211,7 +211,7 @@ export const SubmitBtn = styled.button`
 
   font-family: "DonggukFont";
   color: white;
-  background-color: #f0939e;
+  background-color: ${props => (props.active ? "#f0939e" : "#AEAEAE")};
   border-radius: 20px;
   font-size: 14px;
   padding: 7px 0px;
