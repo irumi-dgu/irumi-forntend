@@ -97,6 +97,14 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount, lig
         setIsLiked(false);
         // setIsLiked(i => !i);
         setLikeCount(prevCount => prevCount - 1);
+        console.log(likeCount);
+
+        if (likeCount <= 9) {
+          setLightBool(false);
+        } else {
+          setLightBool(true);
+        }
+
         const response = await API.post(`/api/lanterns/${detailId}/likes`);
         if (response.status === 200) {
           // 204 에러?
