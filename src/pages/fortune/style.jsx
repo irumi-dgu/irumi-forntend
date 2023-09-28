@@ -176,8 +176,10 @@ export const ClosedButton = styled.div`
   background-repeat: no-repeat;
   width: 46px;
   height: 46px;
-  top: 1350%;
-  position: relative;
+  transform: translate(-50%, 0);
+  position: fixed;
+  bottom: 3%;
+
   /* border: 3px solid yellow; */
 `;
 
