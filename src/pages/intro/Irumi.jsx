@@ -76,7 +76,8 @@ function Intro() {
                     (2) 신고 접수된 연등은 운영자의 검토 후 삭제될 수 있습니다.
                   </S.ModalContent>
                   <S.ModalContent color="#744A21">
-                    (3) 이 서비스는 베타 서비스이며, 10월에 종료될 예정입니다.
+                    (3) 이 서비스는 베타 서비스이며, 10월 중에 종료될
+                    예정입니다.
                   </S.ModalContent>
                 </S.ModalContentBox>
 
