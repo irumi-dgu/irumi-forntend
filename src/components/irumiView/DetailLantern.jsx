@@ -86,7 +86,7 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
     setTimeout(() => {
       setIsReportedModalOpen(false);
     }, 1500);
-  }
+  };
 
   // 좋아요
   const handleLike = async () => {
@@ -132,7 +132,6 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
       {/* {lanternDetail.map((item) => ( */}
       {/* <S.DetailLanternWrapper key={item.id} imageUrl={`/detail_${item.lantern_color}_${item.light_bool}.png`} > */}
       <S.DetailLanternWrapper key={data.id}>
-        {/* <S.LanternBox> */}
         <S.DetailLanternImg
           src={`/detail_${data.lanternColor}_${data.light_bool}.png`}
         />
@@ -147,7 +146,6 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
           {/* <p>{data.like_cnt}</p> */}
           <p>{likeCount}</p>
         </S.LikeBtn>
-        {/* </S.LanternBox> */}
       </S.DetailLanternWrapper>
       {/* ))} */}
 

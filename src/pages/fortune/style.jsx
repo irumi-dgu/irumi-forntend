@@ -102,21 +102,15 @@ export const FortuneTitle = styled.div`
 
 //포춘 연꽃잎
 export const LotusLeaf = styled.div`
-  flex-grow: 1;
   display: flex;
   background-image: url(/leaf.png);
 
-  /* position: fixed; */
-  position: relative;
+  position: absolute;
+  top: 2%;
 
-  /* width: 260px; */
-  width: 65%;
+  width: 270px;
+  height: 600px;
 
-  /* height: 559px; */
-  height: auto;
-
-  top: -5%;
-  margin: 5rem;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -138,7 +132,8 @@ export const LotusLeaf = styled.div`
 //포춘쿠키 내용
 export const FortuneContents = styled.div`
   display: flex;
-  position: fixed;
+  position: absolute;
+  top: 25%;
   writing-mode: vertical-lr;
   text-orientation: mixed;
   flex-wrap: wrap;
@@ -165,7 +160,7 @@ export const ClosedWrapper = styled.div`
   bottom: 0;
   left: 50%;
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 3%;
   max-width: 300px;
   display: flex;
   flex-direction: column;

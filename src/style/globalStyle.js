@@ -5,6 +5,8 @@ export const GlobalStyle = createGlobalStyle`
 
   :root {
     --vh: 100%;
+    background-color: 
+  #041A31;
    }
 
   html, body, div, span, applet, object, iframe,
