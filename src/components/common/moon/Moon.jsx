@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const MoonImage = styled.div`
+  /* transform: translate(50%, 50%); */
   position: absolute;
-  top: 0; /* 상단에 배치 */
-  right: 0; /* 오른쪽에 배치 */
-  /* height: 100vh; 높이를 원하는 값으로 조절 */
+  top: 0;
+  right: 0;
+
   z-index: -1000;
   cursor: pointer;
 `;
@@ -14,7 +15,7 @@ const MoonImage = styled.div`
 function Moon() {
   return (
     <Link to="/about">
-      <MoonImage>
+      <MoonImage style={{ width: "30%" }}>
         <img src="/moon.png" alt="Moon" style={{ width: "100%" }} />
       </MoonImage>
     </Link>
