@@ -133,6 +133,7 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
       {/* <S.DetailLanternWrapper key={item.id} imageUrl={`/detail_${item.lantern_color}_${item.light_bool}.png`} > */}
       <S.DetailLanternWrapper key={data.id}>
         <S.DetailLanternImg
+          img
           src={`/detail_${data.lanternColor}_${data.light_bool}.png`}
         />
         <S.TitleSec>{data.nickname}</S.TitleSec>

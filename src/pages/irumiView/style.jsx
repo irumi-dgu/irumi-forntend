@@ -14,21 +14,27 @@ export const Header = styled.div`
 `;
 
 export const IrumiViewWrapper = styled.div`
-  position: relative;
+  position: fixed;
+
   width: 100%;
   max-width: 420px;
-  min-height: 100vh;
+  height: 100vh;
   @supports (-webkit-touch-callout: none) {
-    max-height: -webkit-fill-available;
+    height: -webkit-fill-available;
   }
 
   display: flex;
   flex-direction: column;
 
+  justify-content: start;
   align-items: center;
-  background-image: url("/background_detail.png");
+  background-image: url("background_write.png");
+  background-size: 100% auto;
+
   background-size: cover;
   background-position: center;
+  color: ${props => props.theme.colors.font};
+  overflow: hidden;
 `;
 
 export const BackBtnBox = styled.div`

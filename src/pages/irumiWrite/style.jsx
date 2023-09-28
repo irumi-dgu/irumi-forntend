@@ -46,13 +46,16 @@ export const LanternChoiceSection = styled.div`
   justify-content: center;
 `;
 
-export const wishBgImg = styled.img`
-  height: 100%;
-`;
+//연등
 
 export const wishContent = styled.div`
-  height: 620px;
+  height: 87%;
+  max-height: 620px;
   position: relative;
+`;
+
+export const wishBgImg = styled.img`
+  height: 100%;
 `;
 
 export const TextareaName = styled.div`
@@ -63,7 +66,7 @@ export const TextareaName = styled.div`
   left: 50%;
   width: 85%;
 
-  color: black;
+  color: #5b3a1a;
   font-size: 12px;
 `;
 
@@ -93,11 +96,11 @@ export const TextareaContent = styled.div`
   position: absolute;
   transform: translate(-50%, 0);
 
-  top: 55%;
+  top: 54%;
   left: 50%;
   width: 85%;
 
-  color: black;
+  color: #5b3a1a;
   font-size: 12px;
 `;
 
@@ -105,10 +108,10 @@ export const ContentInput = styled.textarea`
   position: absolute;
   transform: translate(-50%, 0);
 
-  top: 58%;
+  top: 57%;
   left: 50%;
   width: 85%;
-  height: 20%;
+  height: 22%;
 
   border: 1px solid #898989;
   outline: none;
@@ -137,7 +140,7 @@ export const WritePw = styled.div`
   position: absolute;
   transform: translate(-50%, 0);
 
-  top: 73%;
+  top: 74%;
   left: 50%;
   width: 85%;
   height: 20%;
@@ -150,7 +153,7 @@ export const WritePw = styled.div`
 export const WritePwLetter = styled.div`
   text-align: left;
   font-size: 12px;
-  color: black;
+  color: #5b3a1a;
   flex-shrink: 0;
   margin-right: 5px;
 `;
