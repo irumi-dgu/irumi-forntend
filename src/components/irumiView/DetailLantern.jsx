@@ -12,7 +12,7 @@ import ReportedAlertModal from "./ReportedAlertModal";
 import { useParams } from "react-router-dom";
 import { API } from "../../api/axios";
 
-function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
+function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount, lightBool, setLightBool }) {
   const [modalOpen, setModalOpen] = useState(false);
   // 삭제
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -116,6 +116,12 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
           setLikeCount(prevCount => prevCount + 1);
           console.log("좋아요 눌림");
           console.log(isLiked);
+
+          if (likeCount >= 10) {
+            setLightBool(true);
+          } else {
+            setLightBool(false);
+          }
         } else {
           console.log("200 ok 아님, 좋아요 오류");
         }
@@ -127,6 +133,9 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
     }
   };
 
+  // 좋아요 10개째에 연등 불켜지게
+
+
   return (
     <>
       {/* {lanternDetail.map((item) => ( */}
@@ -134,7 +143,7 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount }) {
       <S.DetailLanternWrapper key={data.id}>
         <S.DetailLanternImg
           img
-          src={`/detail_${data.lanternColor}_${data.light_bool}.png`}
+          src={`/detail_${data.lanternColor}_${lightBool}.png`}
         />
         <S.TitleSec>{data.nickname}</S.TitleSec>
         <S.ContentSec>{data.content}</S.ContentSec>

@@ -12,6 +12,8 @@ function IrumiView() {
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(false);
 
+  const [lightBool, setLightBool] = useState(false);
+
   // get 해올거
   const fetchLanternDetailData = async () => {
     try {
@@ -20,6 +22,7 @@ function IrumiView() {
       setLanternDetail(response.data);
       setIsLiked(response.data.is_liked);
       setLikeCount(response.data.like_cnt);
+      setLightBool(response.data.light_bool);
       // results
       console.log(response.data);
       // console.log(lanternDetail);
@@ -46,6 +49,8 @@ function IrumiView() {
             setIsLiked={setIsLiked}
             likeCount={likeCount}
             setLikeCount={setLikeCount}
+            lightBool={lightBool}
+            setLightBool={setLightBool}
           />
         ))}
       </S.IrumiViewWrapper>
