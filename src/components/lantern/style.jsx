@@ -23,6 +23,7 @@ export const TitleSec = styled.div`
   align-items: center;
 `;
 export const ContentSec = styled.div`
+  text-align: center;
   transform: translate(-50%, 0);
   position: absolute;
 
