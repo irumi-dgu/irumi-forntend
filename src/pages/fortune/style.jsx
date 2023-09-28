@@ -107,13 +107,11 @@ export const LotusLeaf = styled.div`
   background-image: url(/leaf.png);
 
   position: relative;
-
-  width: 65%;
-
-  height: auto;
+  margin-top: 30px;
+  width: 270px;
 
   top: -5%;
-  margin: 5rem;
+
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -163,7 +161,7 @@ export const ClosedWrapper = styled.div`
   bottom: 0;
   left: 50%;
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 3%;
   max-width: 300px;
   display: flex;
   flex-direction: column;
