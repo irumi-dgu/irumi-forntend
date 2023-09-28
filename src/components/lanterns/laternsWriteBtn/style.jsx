@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
 export const WriteBtnLink = styled(Link)`
-  z-index: 20;
+  z-index: 20;;
 `;
 export const WriteBtn = styled.div`
   width: 50px;
