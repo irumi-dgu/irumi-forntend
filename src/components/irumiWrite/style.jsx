@@ -122,7 +122,7 @@ export const NoBtn = styled.div`
 `;
 
 export const YesBtn = styled(NoBtn)`
-  color: #c31010;
+  color: #007afe;
   border-radius: 0;
   border-bottom-right-radius: 15px;
   border-right: 0;
