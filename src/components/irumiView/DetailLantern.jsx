@@ -114,10 +114,11 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount, lig
           setIsLiked(true);
           // setIsLiked(i => !i);
           setLikeCount(prevCount => prevCount + 1);
+          console.log(likeCount);
           console.log("좋아요 눌림");
           console.log(isLiked);
 
-          if (likeCount >= 10) {
+          if (likeCount >= 9) {
             setLightBool(true);
           } else {
             setLightBool(false);
