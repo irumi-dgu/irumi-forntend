@@ -28,19 +28,7 @@ function IrumiView() {
     }
   };
   useEffect(() => {
-    // fetchLanternDetailData();
-    setIsLiked(true);
-    setLikeCount(3);
-    setLanternDetail({
-      id: 3,
-      nickname: "20 김강민",
-      content:
-        "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
-      lanternColor: 1,
-      light_bool: true,
-      isLiked: true,
-      likeCount: 2
-    });
+    fetchLanternDetailData();
   }, [detailId]);
 
   return (

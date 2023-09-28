@@ -2,9 +2,9 @@ import { styled } from "styled-components";
 
 // DetailLantern.jsx
 export const DetailLanternWrapper = styled.div`
+  height: 87%;
+  max-height: 620px;
   position: relative;
-  /* height: 95%; */
-  height: 620px;
 `;
 
 export const DetailLanternImg = styled.img`

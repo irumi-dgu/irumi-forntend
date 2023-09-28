@@ -171,7 +171,7 @@ function IrumiWrite() {
         <S.NameInput
           value={userWish}
           onChange={handleUserWishChange}
-          placeholder="최대 10자, 공백은 사용불가합니다."
+          placeholder="10자이내로 작성해주세요."
         />
         <S.TextareaContent>소원 내용</S.TextareaContent>
         <S.ContentInput
