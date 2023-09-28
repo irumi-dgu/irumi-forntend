@@ -58,6 +58,7 @@ function Lanterns() {
   //처음 로딩될때 초기값넣기
   useEffect(() => {
     fetchLanternsData();
+    // setLanternsData(data);
   }, []);
   //소트 바꿨을때 초기 값 넣기
   useEffect(() => {

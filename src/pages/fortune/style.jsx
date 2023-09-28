@@ -102,15 +102,14 @@ export const FortuneTitle = styled.div`
 
 //포춘 연꽃잎
 export const LotusLeaf = styled.div`
-  flex-grow: 1;
   display: flex;
   background-image: url(/leaf.png);
 
-  position: relative;
-  margin-top: 30px;
-  width: 270px;
+  position: absolute;
+  top: 2%;
 
-  top: -5%;
+  width: 270px;
+  height: 600px;
 
   background-size: contain;
   background-position: center;

@@ -1,14 +1,29 @@
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
-export const IrumiViewWrapper = styled.div`
-  flex-grow: 1;
+export const Header = styled.div`
+  position: fixed;
   width: 100%;
-  height: 100vh;
-  /* max-width: 420px; */
+  max-width: 420px;
+  display: flex;
+  height: 38px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  margin: 20px 0px;
+`;
+
+export const IrumiViewWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    max-height: -webkit-fill-available;
+  }
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   align-items: center;
   background-image: url("/background_detail.png");
