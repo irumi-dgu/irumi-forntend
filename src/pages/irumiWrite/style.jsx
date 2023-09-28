@@ -36,21 +36,6 @@ export const IrumiWriteWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const BackBtnBox = styled.div`
-  width: 100%;
-  max-width: 420px;
-  height: 38px;
-  margin-top: 20px;
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  padding: 0px 20px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-`;
-
 export const LanternChoiceSection = styled.div`
   width: 100%;
   border: none;
@@ -62,41 +47,34 @@ export const LanternChoiceSection = styled.div`
 `;
 
 export const wishBgImg = styled.img`
-  max-width: 220px !important;
   height: 100%;
 `;
 
 export const wishContent = styled.div`
-  max-width: 220px !important;
-  display: flex;
-  height: 85%;
-  justify-content: center;
+  height: 620px;
   position: relative;
 `;
 
-export const Textarea = styled.div`
+export const TextareaName = styled.div`
   position: absolute;
-
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-
-  width: 90%;
-  max-width: 189px;
-  height: 50%;
+  transform: translate(-50%, 0);
 
   top: 45%;
-`;
+  left: 50%;
+  width: 85%;
 
-export const TextareaName = styled.div`
   color: black;
   font-size: 12px;
-  margin-bottom: 3%;
-  padding-left: 5px;
 `;
 
 export const NameInput = styled.input`
-  width: 100%;
+  position: absolute;
+  transform: translate(-50%, 0);
+
+  top: 48%;
+  left: 50%;
+  width: 85%;
+
   border: 1px solid #898989;
   outline: none;
 
@@ -112,21 +90,31 @@ export const NameInput = styled.input`
 `;
 
 export const TextareaContent = styled.div`
+  position: absolute;
+  transform: translate(-50%, 0);
+
+  top: 55%;
+  left: 50%;
+  width: 85%;
+
   color: black;
   font-size: 12px;
-  margin-top: 13px;
-  padding-left: 5px;
 `;
 
 export const ContentInput = styled.textarea`
+  position: absolute;
+  transform: translate(-50%, 0);
+
+  top: 58%;
+  left: 50%;
+  width: 85%;
+  height: 20%;
+
   border: 1px solid #898989;
   outline: none;
-  margin-top: 7px;
+
   background-color: #f1f1f1;
   border-radius: 5px;
-  height: 50%;
-
-  width: 100%;
 
   justify-content: center;
   display: flex;
@@ -146,12 +134,17 @@ export const ContentInput = styled.textarea`
 //비밀번호
 
 export const WritePw = styled.div`
-  margin-top: 10px;
-  width: 100%;
+  position: absolute;
+  transform: translate(-50%, 0);
+
+  top: 73%;
+  left: 50%;
+  width: 85%;
+  height: 20%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 5px;
 `;
 
 export const WritePwLetter = styled.div`
@@ -193,20 +186,12 @@ export const ShowPasswordIcon = styled.div`
   }
 `;
 
-export const Submit = styled.div`
-  position: absolute;
-
-  height: 35px;
-  border-radius: 20px;
-  background-color: #f0939e;
-  justify-content: center;
-  display: flex;
-  bottom: 4%;
-`;
-
 export const SubmitBtn = styled.button`
   position: absolute;
+  transform: translate(-50%, 0);
+
   bottom: 2%;
+  left: 50%;
   width: 90%;
 
   font-family: "DonggukFont";

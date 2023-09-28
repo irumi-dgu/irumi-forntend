@@ -155,9 +155,6 @@ function IrumiWrite() {
 
   return (
     <S.IrumiWriteWrapper>
-      {/* <S.BackBtnBox onClick={handleBackClick}>
-        <BackBtn />
-      </S.BackBtnBox> */}
       <S.Header>
         <BackBtn />
         <LanternChoice
@@ -169,41 +166,38 @@ function IrumiWrite() {
 
       <S.wishContent>
         <S.wishBgImg img src={`/write_${selectedColor}.svg`} />
+        <S.TextareaName>닉네임</S.TextareaName>
 
-        <S.Textarea>
-          <S.TextareaName>닉네임</S.TextareaName>
-
-          <S.NameInput
-            value={userWish}
-            onChange={handleUserWishChange}
-            placeholder="최대 10자, 공백은 사용불가합니다."
+        <S.NameInput
+          value={userWish}
+          onChange={handleUserWishChange}
+          placeholder="최대 10자, 공백은 사용불가합니다."
+        />
+        <S.TextareaContent>소원 내용</S.TextareaContent>
+        <S.ContentInput
+          value={userWishContent}
+          onChange={handleUserWishContent}
+          placeholder="100자 이내로 작성해주세요."
+        />
+        <S.WritePw>
+          <S.WritePwLetter>비밀번호</S.WritePwLetter>
+          <S.PasswordInput
+            placeholder="숫자 4자리"
+            minLength={4}
+            maxLength={4}
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={handlePasswordChange}
+            required
+            inputMode="numeric"
           />
-          <S.TextareaContent>소원 내용</S.TextareaContent>
-          <S.ContentInput
-            value={userWishContent}
-            onChange={handleUserWishContent}
-            placeholder="100자 이내로 작성해주세요."
-          />
-          <S.WritePw>
-            <S.WritePwLetter>비밀번호</S.WritePwLetter>
-            <S.PasswordInput
-              placeholder="숫자 4자리"
-              minLength={4}
-              maxLength={4}
-              type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={handlePasswordChange}
-              required
-              inputMode="numeric"
+          <S.ShowPasswordIcon onClick={toggleShowPassword}>
+            <img
+              src={showPassword ? "/write_pw_open.png" : "/write_pw_un.png"}
+              alt={showPassword ? "보임" : "숨김"}
             />
-            <S.ShowPasswordIcon onClick={toggleShowPassword}>
-              <img
-                src={showPassword ? "/write_pw_open.png" : "/write_pw_un.png"}
-                alt={showPassword ? "보임" : "숨김"}
-              />
-            </S.ShowPasswordIcon>
-          </S.WritePw>
-        </S.Textarea>
+          </S.ShowPasswordIcon>
+        </S.WritePw>
         <S.SubmitBtn onClick={handleSubmit}>연등 달기</S.SubmitBtn>
       </S.wishContent>
     </S.IrumiWriteWrapper>
