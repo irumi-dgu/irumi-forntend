@@ -57,13 +57,27 @@ function MyDetail() {
     }
   };
 
-  //   링크복사
+  // //   링크복사
+  // const handleCopyLink = () => {
+  //   // 배포 링크 보고 수정 필요
+  //   // navigator.clipboard.writeText(`http://iirumi/irumi/${detailId}.com`);
+  //   navigator.clipboard.writeText(window.location.href);
+  //   // navigator.clipboard.writeText("http://iirumi.com");
+  //   alert("현재 페이지의 링크가 복사되었습니다.");
+  // };
+
   const handleCopyLink = () => {
-    // 배포 링크 보고 수정 필요
-    // navigator.clipboard.writeText(`http://iirumi/irumi/${detailId}.com`);
-    navigator.clipboard.writeText(window.location.href);
-    // navigator.clipboard.writeText("http://iirumi.com");
-    alert("현재 페이지의 링크가 복사되었습니다.");
+    const link = `http://iirumi.com/irumi/${detailId}`;
+    navigator.clipboard
+      .writeText(link)
+      .then(() => {
+        console.log(`링크 복사됨: ${link}`);
+        alert("링크가 복사되었습니다.");
+      })
+      .catch(error => {
+        console.error("링크 복사 중에 오류 생김:", error);
+        alert("앗, 잠시 문제가 생긴 것 같아요.");
+      });
   };
 
   return (
