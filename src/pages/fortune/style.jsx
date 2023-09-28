@@ -106,13 +106,10 @@ export const LotusLeaf = styled.div`
   display: flex;
   background-image: url(/leaf.png);
 
-  /* position: fixed; */
   position: relative;
 
-  /* width: 260px; */
   width: 65%;
 
-  /* height: 559px; */
   height: auto;
 
   top: -5%;
@@ -138,7 +135,8 @@ export const LotusLeaf = styled.div`
 //포춘쿠키 내용
 export const FortuneContents = styled.div`
   display: flex;
-  position: fixed;
+  position: absolute;
+  top: 25%;
   writing-mode: vertical-lr;
   text-orientation: mixed;
   flex-wrap: wrap;
