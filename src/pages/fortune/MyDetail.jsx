@@ -76,7 +76,7 @@ function MyDetail() {
       })
       .catch(error => {
         console.error("링크 복사 중에 오류 생김:", error);
-        alert("앗, 잠시 문제가 생긴 것 같아요.");
+        alert("앗, 링크 복사 중에 오류가 생겼어요.");
       });
   };
 
