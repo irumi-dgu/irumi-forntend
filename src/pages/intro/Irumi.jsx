@@ -60,8 +60,8 @@ function Intro() {
                   아래 이용사항을 읽어보신 후 서비스를 이용해주세요!
                 </S.ModalMinTitle>
                 <S.ModalTitle style={{ marginBottom: "30px" }} color="#C9542F">
-                  연등 작성 내용의 모든 책임은 작성자에게 있 으며 이루미는
-                  어떠한 책임도 입장도 가지고 있지 않습니다.
+                  연등 작성 내용의 모든 책임은 작성자에게 있으며 이루미는 어떠한
+                  책임도 입장도 가지고 있지 않습니다.
                 </S.ModalTitle>
 
                 <S.ModalTitle color="#744A21">
@@ -76,8 +76,8 @@ function Intro() {
                     (2) 신고 접수된 연등은 운영자의 검토 후 삭제될 수 있습니다.
                   </S.ModalContent>
                   <S.ModalContent color="#744A21">
-                    (3) 이 서비스는 베타 서비스이며, 가을 축제 마지막 날
-                    서비스가 종료됩니다.
+                    (3) 이 서비스는 베타 서비스이며, 10월 중에 종료될
+                    예정입니다.
                   </S.ModalContent>
                 </S.ModalContentBox>
 

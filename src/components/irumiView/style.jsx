@@ -2,9 +2,10 @@ import { styled } from "styled-components";
 
 // DetailLantern.jsx
 export const DetailLanternWrapper = styled.div`
-  height: 87%;
+  height: 90%;
   max-height: 620px;
   position: relative;
+  margin-top: 3%;
 `;
 
 export const DetailLanternImg = styled.img`
@@ -19,7 +20,7 @@ export const TitleSec = styled.div`
   width: 48%;
 
   color: #5b3a1a;
-  font-size: 16px;
+  font-size: 100%;
   font-weight: 400;
   display: flex;
   justify-content: center;
@@ -35,11 +36,9 @@ export const ContentSec = styled(TitleSec)`
 `;
 export const MoreSec = styled.img`
   position: absolute;
-  top: 56%;
-  right: 26%;
-  width: 25px;
-  height: 20px;
-  padding: 0 10px;
+  top: 54%;
+  right: 25%;
+  width: 3px;
 `;
 export const LikeBtn = styled.div`
   position: absolute;
@@ -63,11 +62,12 @@ export const LikeBtn = styled.div`
 
 // MoreModal.jsx
 export const MoreModalWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  max-width: 420px;
 
-  padding: 0 7% 5px 7%; // 0 632px 31px 22px
+  padding: 0 10px 5px 10px; // 0 632px 31px 22px
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -120,6 +120,9 @@ export const XBtn = styled(MoreBtnBox)`
 // DeleteModal.jsx
 export const DeleteModalWrapper = styled.div`
   position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;

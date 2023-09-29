@@ -8,17 +8,20 @@ export const aboutWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(transparent, transparent),
-    url("about_moon2.png"), linear-gradient(transparent, transparent),
-    url("about_moon.png");
-  background-size: auto, 100% auto, auto, 100% auto;
-  background-repeat: no-repeat;
+  background-image: url("/background_lanterns.png");
+
+  background-size: 100% auto;
+
+  background-position: center;
+  background-repeat: repeat;
+  color: ${props => props.theme.colors.font};
+
   background-position: left top, left bottom, left bottom, left top;
 `;
 export const aboutBg = styled.img`
   width: 80%;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `;
 
 export const aboutIntro = styled.div`

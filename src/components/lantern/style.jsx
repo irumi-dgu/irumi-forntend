@@ -16,26 +16,27 @@ export const TitleSec = styled.div`
   font-size: ${props => props.fontSize}px;
 
   width: 52%;
-  top: 61%;
+  top: 59%;
   left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 export const ContentSec = styled.div`
+  text-align: center;
   transform: translate(-50%, 0);
   position: absolute;
 
   font-size: ${props => props.fontSize}px;
   line-height: 130%;
-  width: 52%;
-  top: 67%;
+  width: 55%;
+  top: 64%;
   left: 50%;
 `;
 
 export const LikeBtn = styled.div`
   position: absolute;
-  bottom: 5%;
+  bottom: 4%;
   right: 25%;
   display: flex;
   align-items: center;

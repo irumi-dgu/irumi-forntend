@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import LanternChoice from "../../components/irumiWrite/lanternColorChoice";
-import axios from "axios";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 import { API } from "../../api/axios";
 import MyDetail from "../fortune/MyDetail";
+import Modal from "../../components/irumiWrite/ConfirmModal";
 
 function IrumiWrite() {
   const [selectedColor, setSelectedColor] = useState("1");
@@ -13,10 +12,12 @@ function IrumiWrite() {
   const [userWishContent, setUserWishContent] = useState(""); // 사용자의 소원을 저장할 상태 변수
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [dataToShare, setDataToShare] = useState([]);
 
-  // 뒤로 가기 버튼 클릭 핸들러
+  // '작성하기' 버튼의 스타일을 동적으로 변경하기 위한 상태 변수
+  const [submitButtonActive, setSubmitButtonActive] = useState(false);
 
   // 사용자가 입력한 닉네임 관련 함수
   const handleUserWishChange = event => {
@@ -25,19 +26,17 @@ function IrumiWrite() {
     const trimmedContent = content.replace(/\s/g, "");
     if (trimmedContent.length <= 10) {
       setUserWish(trimmedContent);
-      // 상태 변수 업데이트
-      // setFormData({ ...formData, nickname: trimmedContent });
+      updateSubmitButtonStyle();
     }
   };
 
   //사용자가 입력한 소원 내용 관련 함수
   const handleUserWishContent = event => {
     const content = event.target.value;
-    // 글자수가 100자를 초과하지 않도록 제한
-    if (content.length <= 100) {
+    // 글자수가 80자를 초과하지 않도록 제한
+    if (content.length <= 80) {
       setUserWishContent(content);
-      // 상태 변수 업데이트
-      // setFormData({ ...formData, content: content });
+      updateSubmitButtonStyle();
     }
   };
 
@@ -46,7 +45,7 @@ function IrumiWrite() {
     const inputValue = event.target.value;
     if (/^[0-9]*$/.test(inputValue)) {
       setPassword(inputValue);
-      // setFormData({ ...formData, password: inputValue });
+      updateSubmitButtonStyle();
     }
   };
 
@@ -58,54 +57,61 @@ function IrumiWrite() {
   // 색상 선택 핸들러
   const handleColorChange = color => {
     setSelectedColor(color); // 선택한 숫자로 업데이트
-    // setFormData({ ...formData, lanternColor: color }); // 숫자로 업데이트
+  };
+
+  // '작성하기' 버튼의 스타일 업데이트 함수
+  const updateSubmitButtonStyle = () => {
+    const userWishNotEmpty = userWish.trim() !== "";
+    const userWishContentNotEmpty = userWishContent.trim() !== "";
+    const passwordNotEmpty = password.trim() !== "";
+    setSubmitButtonActive(
+      userWishNotEmpty && userWishContentNotEmpty && passwordNotEmpty
+    );
   };
 
   // 제출 버튼 클릭 핸들러
   const handleSubmit = async () => {
-    // 모든 필수 입력 필드가 채워져 있는지 확인
-    if (
-      userWish.trim() === "" ||
-      userWishContent.trim() === "" ||
-      password.trim() === ""
-    ) {
-      // 필수 입력 필드 중 하나라도 비어 있다면 알림을 표시하고 제출하지 않음
+    if (!submitButtonActive) {
       alert("모든 부분을 입력해주세요 :)");
       return;
     }
 
-    // 비밀번호가 4자리가 아닌 경우 제출을 중지하고 경고 메시지를 표시
     if (password.length !== 4) {
       alert("비밀번호를 4자리로 입력해주세요!");
       return;
     }
 
-    // 콘솔에 데이터 출력
-    console.log("보내는 데이터:", {
-      nickname: userWish,
-      content: userWishContent,
-      password: password,
-      lanternColor: selectedColor
-    });
+    setIsModalOpen(true); // 모달을 열기 위해 상태를 변경합니다.
+  };
 
-    //쿠키로 정보 받아오는 뭐 그런 지피티 코드인데 쓰레기같음
-    function getCookie(name) {
-      let cookieValue = null;
-      if (document.cookie && document.cookie !== "") {
-        const cookies = document.cookie.split(";");
-        for (let i = 0; i < cookies.length; i++) {
-          const cookie = cookies[i].trim();
-          if (cookie.substring(0, name.length + 1) === name + "=") {
-            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-            break;
-          }
+  // 콘솔에 데이터 출력
+  // console.log("보내는 데이터:", {
+  //   nickname: userWish,
+  //   content: userWishContent,
+  //   password: password,
+  //   lanternColor: selectedColor
+  // });
+
+  //쿠키로 정보 받아오는 뭐 그런 지피티 코드인데 쓰레기같음
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
         }
       }
-      return cookieValue;
     }
+    return cookieValue;
+  }
 
-    const csrfToken = getCookie("csrftoken");
+  const csrfToken = getCookie("csrftoken");
 
+  // 모달 확인 버튼을 클릭했을 때 실행될 함수
+  const handleConfirmSubmit = async () => {
     try {
       const response = await API.post(
         "/api/lanterns",
@@ -152,6 +158,10 @@ function IrumiWrite() {
       }
     }
   };
+  // 모달 취소 버튼을 클릭했을 때 실행될 함수
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // 모달을 닫기 위해 상태를 변경합니다.
+  };
 
   return (
     <S.IrumiWriteWrapper>
@@ -163,6 +173,11 @@ function IrumiWrite() {
           value={selectedColor}
         />
       </S.Header>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmSubmit}
+      />
 
       <S.wishContent>
         <S.wishBgImg img src={`/write_${selectedColor}.svg`} />
@@ -177,7 +192,7 @@ function IrumiWrite() {
         <S.ContentInput
           value={userWishContent}
           onChange={handleUserWishContent}
-          placeholder="100자 이내로 작성해주세요."
+          placeholder="80자 이내로 작성해주세요."
         />
         <S.WritePw>
           <S.WritePwLetter>비밀번호</S.WritePwLetter>
@@ -198,7 +213,9 @@ function IrumiWrite() {
             />
           </S.ShowPasswordIcon>
         </S.WritePw>
-        <S.SubmitBtn onClick={handleSubmit}>연등 달기</S.SubmitBtn>
+        <S.SubmitBtn onClick={handleSubmit} active={submitButtonActive}>
+          연등 달기
+        </S.SubmitBtn>
       </S.wishContent>
     </S.IrumiWriteWrapper>
   );

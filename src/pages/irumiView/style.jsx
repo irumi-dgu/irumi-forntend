@@ -28,7 +28,7 @@ export const IrumiViewWrapper = styled.div`
 
   justify-content: start;
   align-items: center;
-  background-image: url("background_write.png");
+  background-image: url("/background_main.png");
   background-size: 100% auto;
 
   background-size: cover;
