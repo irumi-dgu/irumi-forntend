@@ -1,4 +1,5 @@
 .DS_STORE
+*.pem
 .env
 .env.devlopment
 .env.production
