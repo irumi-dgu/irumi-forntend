@@ -24,7 +24,7 @@ function ReportModal({closeReportModal, openReportedModal, openIsReportedModal, 
             const response = await API.post(
                 `/api/lanterns/${detailId}/report`,
                 {
-                    categories: selectedCategories
+                    category: selectedCategories
                 }
             );
             console.log(response.data);
