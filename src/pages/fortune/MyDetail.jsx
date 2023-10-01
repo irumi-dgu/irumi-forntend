@@ -67,7 +67,7 @@ function MyDetail() {
   // };
 
   const handleCopyLink = () => {
-    const link = `http://iirumi.com/irumi/${detailId}`;
+    const link = `https://iirumi.com/irumi/${detailId}`;
     navigator.clipboard
       .writeText(link)
       .then(() => {
