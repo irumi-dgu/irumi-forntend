@@ -33,7 +33,10 @@ function Lanterns() {
   const fetchLanternsData = async () => {
     try {
       const response = await API.get(
-        `/api/lanterns/${sortBy}?page=${lanternsPage}`
+        `/api/lanterns/${sortBy}?page=${lanternsPage}`,
+        {
+          withCredentials: true // withCredentials 옵션을 요청 설정 객체에 추가
+        }
       );
       setCount(response.data.count);
       setLanternsData(response.data.results);
@@ -46,7 +49,10 @@ function Lanterns() {
     try {
       setInit(false);
       const response = await API.get(
-        `/api/lanterns/${sortBy}?page=${lanternsPage}`
+        `/api/lanterns/${sortBy}?page=${lanternsPage}`,
+        {
+          withCredentials: true // withCredentials 옵션을 요청 설정 객체에 추가
+        }
       );
       const newData = lanternsData.concat(response.data.results);
       setLanternsData(newData);

@@ -47,7 +47,9 @@ function Main() {
 
   const fetchLanternsData = async () => {
     try {
-      const response = await API.get(`/api/lanterns/random`);
+      const response = await API.get(`/api/lanterns/random`, {
+        withCredentials: true // withCredentials 옵션을 요청 설정 객체에 추가
+      });
       // console.log(response);
       setCount(response.data.totCount);
       setData(response.data.lanterns);

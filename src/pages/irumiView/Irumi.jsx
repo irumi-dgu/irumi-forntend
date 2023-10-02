@@ -18,7 +18,9 @@ function IrumiView() {
   const fetchLanternDetailData = async () => {
     try {
       // const response = await API.get("/api/lanterns")
-      const response = await API.get(`/api/lanterns/${detailId}`);
+      const response = await API.get(`/api/lanterns/${detailId}`, {
+        withCredentials: true
+      });
       setLanternDetail(response.data);
       setIsLiked(response.data.is_liked);
       setLikeCount(response.data.like_cnt);

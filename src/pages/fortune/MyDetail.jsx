@@ -13,7 +13,9 @@ function MyDetail() {
 
   const fetchLanternDetailData = async () => {
     try {
-      const response = await API.get(`/api/lanterns/${detailId}`);
+      const response = await API.get(`/api/lanterns/${detailId}`, {
+        withCredentials: true
+      });
       setLanternDetail(response.data);
       console.log(response.data);
       console.log(lanternDetail);

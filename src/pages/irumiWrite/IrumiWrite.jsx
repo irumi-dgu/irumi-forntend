@@ -123,12 +123,13 @@ function IrumiWrite() {
           light_bool: false
         },
         {
-          //여기도 쿠키헤던데 무용지물인듯
+          withCredentials: true, // withCredentials 옵션을 요청 설정 객체에 추가
           headers: {
             "X-CSRFToken": csrfToken
           }
         }
       );
+
       // 서버 응답 처리
       if (response.status === 200) {
         // 성공적으로 제출되면 포춘 페이지로 이동

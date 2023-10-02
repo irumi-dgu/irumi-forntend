@@ -1,8 +1,10 @@
 import axios from "axios";
 
+axios.defaults.withCredentials = true;
+
 export const API = axios.create({
   // baseURL: "http://127.0.0.1:8000",
-  baseURL: "https://iirumi.com/api",
+  baseURL: "https://iirumi.com",
   //axios.js + config.js
   //http + http localhost 조합 = 보류 (통신 안됨)
   //http + http iirumi.com 조합 = 쓰레기
