@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     port: 5173, // 사용할 포트 번호
     proxy: {
-      "/api": "http://iirumi.com"
+      "/api": "https://iirumi.com"
     },
     allow: ["./", "/home/ubuntu/irumi-forntend"]
   }
