@@ -29,6 +29,7 @@ function DeleteModal({ isOpen, onClose, onConfirm }) {
     </S.ConfirmModalWrapper>
   );
 }
+export default DeleteModal;
 
 //기존 코드
 // export default DeleteModal;
