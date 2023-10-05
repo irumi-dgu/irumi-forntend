@@ -1,4 +1,7 @@
-![header](https://capsule-render.vercel.app/api?type=rounded&color=gradient&customColorList=0,2,2,5,30&height=300&section=header&text=🪷%20FE%IRUMI🪷&animation=fadeIn&fontSize=50)
+![header](https://capsule-render.vercel.app/api?type=shark&color=auto&height=250&section=header&text=🪷FE%20IRUMI🪷&fontSize=70&animation=scaleIn)
+
+
+
 <br>
 <div align="center">✨Platforms & Languages✨
 	<br>
