@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=IRUMI FRONTEND%20render&fontSize=90" />
+![header](https://capsule-render.vercel.app/api?type=rounded&color=gradient&customColorList=0,2,2,5,30&height=300&section=header&text=🪷%20FE%IRUMI🪷&animation=fadeIn&fontSize=50)
 <br>
 <div align="center">✨Platforms & Languages✨
 	<br>
