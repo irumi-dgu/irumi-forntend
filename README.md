@@ -3,7 +3,7 @@
 
 
 <br>
-<div align="center">✨Platforms & Languages✨
+<div align="center"><h1>✨Platforms & Languages✨</h1>
 	<br>
 	<br>
 	<img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white" />
@@ -13,9 +13,12 @@
 </div>
 <br>
 
-<div align="center">
+<div align="center"><h1>🦁Developers🦁</h1>
+
+<h2>
   FE 김민경 <br>
   FE 심서현 <br>
   FE 오찬주 <br>
   FE 차승민 <br>
+</h2>
 </div>
