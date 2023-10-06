@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import DetailLantern from "../../components/irumiView/DetailLantern";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 import { API } from "../../api/axios";
+import MyDetailBackBtn from "../../components/common/backBtn/MyDetailBackBtn";
 
 function IrumiView() {
   const { detailId } = useParams();
+  const navigate = useNavigate();
   // 내용
   const [lanternDetail, setLanternDetail] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
@@ -36,10 +38,10 @@ function IrumiView() {
     <>
       <S.IrumiViewWrapper>
         <S.Header>
-          <BackBtn />
+          <MyDetailBackBtn />
         </S.Header>
 
-        {lanternDetail == [] ? (
+        {lanternDetail.length !== 0 ? (
           [lanternDetail].map(item => (
             <DetailLantern
               key={item.id}
