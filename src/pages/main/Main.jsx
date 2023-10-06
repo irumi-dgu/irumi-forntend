@@ -70,8 +70,8 @@ function Main() {
   }, []);
 
   function trackLanternClick() {
-    gtag("event", "lantern_click", {
-      event_category: "Main Lantern Click"
+    gtag("event", "Main_Lantern_click", {
+      event_category: "Main_Lantern_click"
     });
   }
 
