@@ -4,7 +4,7 @@ import DetailLantern from "../../components/irumiView/DetailLantern";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 import { API } from "../../api/axios";
-import MyDetailBackBtn from "../../components/common/backBtn/MyDetailBackBtn";
+import MyDetailBackBtn from "../../components/common/backBtn/LanternsBackBtn";
 
 function IrumiView() {
   const { detailId } = useParams();
