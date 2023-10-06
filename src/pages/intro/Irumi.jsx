@@ -47,7 +47,7 @@ function Intro() {
         </>
       ) : (
         <>
-          <Notice className="popupModal" />
+          <Notice />
           <S.SubTitle className="fadein">
             이루미에 오신것을 환영합니다
           </S.SubTitle>

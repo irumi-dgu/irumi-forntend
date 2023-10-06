@@ -8,7 +8,10 @@ function Notice(props) {
     props.closeModal(false);
   };
   return (
-    <S.Modal style={{ opacity: props.type == "main" ? "100%" : "0%" }}>
+    <S.Modal
+      className="popupModal"
+      style={{ opacity: props.type == "main" ? "100%" : "" }}
+    >
       <S.ModalInner>
         <S.ModalText>
           <S.ModalBigTitleBox>

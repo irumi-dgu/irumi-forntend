@@ -10,12 +10,13 @@ export const Modal = styled.div`
   height: 640px;
   border-radius: 10px;
   background-color: #fbedd0;
-  z-index: 5;
+  z-index: 400;
 
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  opacity: 0%;
 `;
 
 export const ModalInner = styled.div`
