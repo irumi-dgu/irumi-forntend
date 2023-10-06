@@ -108,8 +108,8 @@ function Lanterns() {
 
   // Lanterns 컴포넌트 내에서 랜턴 클릭 이벤트 추적
   function trackLanternClick() {
-    gtag("event", "lantern_click", {
-      event_category: "Lanterns Lantern Click"
+    gtag("event", "Lanterns_Lantern_Click", {
+      event_category: "Lanterns_Lantern_Click"
     });
   }
 
