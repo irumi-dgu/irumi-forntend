@@ -25,7 +25,7 @@ function IrumiView() {
       setLikeCount(response.data.like_cnt);
       setLightBool(response.data.light_bool);
     } catch (error) {
-      console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
+      // console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
     }
   };
   useEffect(() => {
