@@ -18,8 +18,6 @@ function MyDetail() {
         withCredentials: true
       });
       setLanternDetail(response.data);
-      console.log(response.data);
-      console.log(lanternDetail);
     } catch (error) {
       console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
     }
@@ -28,18 +26,6 @@ function MyDetail() {
   useEffect(() => {
     fetchLanternDetailData();
   }, [detailId]);
-
-  console.log(lanternDetail);
-
-  const data = [
-    {
-      id: 3,
-      nickname: "20 김강민",
-      content: "내 연등 예시",
-      lanternColor: 1,
-      light_bool: true
-    }
-  ];
 
   // 이미지 저장
   const LanternRef = useRef();
@@ -60,15 +46,7 @@ function MyDetail() {
     }
   };
 
-  // //   링크복사
-  // const handleCopyLink = () => {
-  //   // 배포 링크 보고 수정 필요
-  //   // navigator.clipboard.writeText(`http://iirumi/irumi/${detailId}.com`);
-  //   navigator.clipboard.writeText(window.location.href);
-  //   // navigator.clipboard.writeText("http://iirumi.com");
-  //   alert("현재 페이지의 링크가 복사되었습니다.");
-  // };
-
+  // 링크복사
   const handleCopyLink = () => {
     const textArea = LinkRef.current;
     textArea.select();
@@ -76,18 +54,6 @@ function MyDetail() {
     document.execCommand("copy");
     textArea.setSelectionRange(0, 0);
     alert("클립보드에 주소가 복사되었습니다.");
-    // const link = `iirumi.com/irumi/${detailId}`;
-
-    // navigator.clipboard
-    //   .writeText(link)
-    //   .then(() => {
-    //     console.log(`링크 복사됨: ${link}`);
-    //     alert("링크가 복사되었습니다.");
-    //   })
-    //   .catch(error => {
-    //     console.error("링크 복사 중에 오류 생김:", error);
-    //     alert("앗, 잠시 문제가 생긴 것 같아요.");
-    //   });
   };
 
   return (

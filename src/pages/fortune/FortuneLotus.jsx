@@ -14,7 +14,7 @@ const FortuneLotus = () => {
         const response = await API.get("/api/lanterns/cookie");
         setFortuneMessage(response.data.fortune);
       } catch (error) {
-        console.error("포춘쿠키 내용 불러오기에 실패해버림:", error);
+        console.error("포춘쿠키 내용 불러오기 실패:", error);
       }
     };
 
@@ -30,7 +30,7 @@ const FortuneLotus = () => {
           ) : (
             <div>
               오지 않은 미래를 걱정하는 것 보다 마주한 현재에 최선을 다하세요
-            </div> //더미 텍스트
+            </div>
           )}
         </S.FortuneContents>
       </S.LotusLeaf>

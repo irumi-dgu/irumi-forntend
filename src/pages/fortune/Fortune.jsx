@@ -6,11 +6,9 @@ function Fortune() {
   const [isLotusLightVisible, setIsLotusLightVisible] = useState(false);
   const [isAnimationCompleted, setIsAnimationCompleted] = useState(false);
   const { detailId } = useParams();
-  // console.log(detailId);
 
   // LotusTop 클릭 시 빛 번짐 애니메이션
   const handleLotusTopClick = () => {
-    console.log("연꽃잎 클릭 감지");
     setIsLotusLightVisible(true);
   };
 
@@ -34,7 +32,6 @@ function Fortune() {
       <S.LotusWhole className="lotus-whole">
         {isAnimationCompleted ? (
           <Link>
-          {/* to="/fortuneLotus" */}
             <S.LotusTop />
           </Link>
         ) : (

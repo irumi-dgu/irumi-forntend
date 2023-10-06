@@ -8,14 +8,6 @@ function Lantern({ item, size }) {
   let titleFontSize = size / 15;
   let contentFontSize = size / 18;
 
-  // const getImageUrl = (lanternColor, twinkle) => {
-  //   if (lanternColor >= 1 && lanternColor <= 5) {
-  //     const twinkleToggle = twinkle ? "yes" : "no";
-  //     return `/lanterns_${lanternColor}_${twinkleToggle}.svg`;
-  //   }
-  //   return "/lanterns_1_yes.svg";
-  // };
-
   return (
     <S.LanternWrapper
       className="lantern"

@@ -1,8 +1,7 @@
 // MoreModal.jsx
 
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./style";
-import DeleteModal from "./DeleteModal";
 
 function MoreModal({ closeModal, openDeleteModal, openReportModal }) {
   return (
