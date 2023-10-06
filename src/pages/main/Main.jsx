@@ -22,8 +22,16 @@ import { API } from "../../api/axios";
 
 //import Moon (For About Page)
 import Moon from "../../components/common/moon/Moon";
+import Notice from "../../components/notice/Notice";
 
 function Main() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = x => {
+    setIsModalOpen(x);
+  };
   const navigate = useNavigate();
   // 페이지가 로드될 때 실행되는 함수
   const checkFirstVisit = () => {
@@ -100,10 +108,11 @@ function Main() {
             <S.MenuBtn>연등 작성하기</S.MenuBtn>
           </Link>
         </S.BtnWrapper>
-        <Link to="/intro">
-          <S.MinTitle>이용약관</S.MinTitle>
-        </Link>
+
+        <S.MinTitle onClick={showModal}>이용약관</S.MinTitle>
       </S.Btns>
+
+      {isModalOpen ? <Notice type={"main"} closeModal={closeModal} /> : <></>}
     </S.MainWrapper>
   );
 }
