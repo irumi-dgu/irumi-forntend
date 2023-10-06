@@ -14,7 +14,7 @@ const FortuneLotus = () => {
         const response = await API.get("/api/lanterns/cookie");
         setFortuneMessage(response.data.fortune);
       } catch (error) {
-        console.error("포춘쿠키 내용 불러오기 실패:", error);
+        // console.error("포춘쿠키 내용 불러오기 실패:", error);
       }
     };
 

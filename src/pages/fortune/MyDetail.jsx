@@ -19,7 +19,7 @@ function MyDetail() {
       });
       setLanternDetail(response.data);
     } catch (error) {
-      console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
+      // console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
     }
   };
 
@@ -42,7 +42,7 @@ function MyDetail() {
         }
       });
     } catch (error) {
-      console.error("Error converting div to image:", error);
+      // console.error("Error converting div to image:", error);
     }
   };
 
