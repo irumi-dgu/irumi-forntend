@@ -43,18 +43,25 @@ function IrumiView() {
           <BackBtn />
         </S.Header>
 
-        {[lanternDetail].map(item => (
-          <DetailLantern
-            key={item.id}
-            data={item}
-            isLiked={isLiked}
-            setIsLiked={setIsLiked}
-            likeCount={likeCount}
-            setLikeCount={setLikeCount}
-            lightBool={lightBool}
-            setLightBool={setLightBool}
-          />
-        ))}
+        {lanternDetail == [] ? (
+          [lanternDetail].map(item => (
+            <DetailLantern
+              key={item.id}
+              data={item}
+              isLiked={isLiked}
+              setIsLiked={setIsLiked}
+              likeCount={likeCount}
+              setLikeCount={setLikeCount}
+              lightBool={lightBool}
+              setLightBool={setLightBool}
+            />
+          ))
+        ) : (
+          <>
+            <img src="https://mblogthumb-phinf.pstatic.net/MjAyMjA0MjhfMTgz/MDAxNjUxMTU1MDk1NjE3.qUYBXYpzEiB9rLUNmmeuHDb20AcBzLxv9WWXaN7e8XQg.mtFGSMdjWqq0bm6w-RgmM1PCJ_--q-17Ycm9F2KYnQcg.JPEG.2babybears/output_4145535885.jpg?type=w800" />
+            <div>없는 연등이거나 오류가 발생했어요~</div>
+          </>
+        )}
       </S.IrumiViewWrapper>
     </>
   );
