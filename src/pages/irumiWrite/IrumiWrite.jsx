@@ -24,7 +24,7 @@ function IrumiWrite() {
     const content = event.target.value;
     // 공백 제거
     const trimmedContent = content.replace(/\s/g, "");
-    if (trimmedContent.length <= 10) {
+    if (trimmedContent.length <= 8) {
       setUserWish(trimmedContent);
       updateSubmitButtonStyle();
     }
@@ -136,7 +136,7 @@ function IrumiWrite() {
         // window.location.href = "/fortune";
         window.location.href = `/fortune/${response.data.id}`;
         // console.log(response.data.id);
-        console.log("됐닥");
+        // console.log("됐닥");
       } else {
         // window.location.href = "/fortune";
         window.location.href = `/fortune/${response.data.id}`;
@@ -145,17 +145,17 @@ function IrumiWrite() {
       }
     } catch (error) {
       // 오류 처리
-      console.log("안됐단다", error);
+      // console.log("안됐단다", error);
 
       if (error.response) {
         // 서버에서 응답이 왔지만 오류 응답인 경우
-        console.log("오류 응답 데이터:", error);
+        // console.log("오류 응답 데이터:", error);
       } else if (error.request) {
         // 서버로 요청을 보냈지만 응답을 받지 못한 경우
-        console.log("요청이 응답을 받지 못했습니다.");
+        // console.log("요청이 응답을 받지 못했습니다.");
       } else {
         // 요청을 보내기 전에 발생한 오류
-        console.error("오류 메시지:", error.message);
+        // console.error("오류 메시지:", error.message);
       }
     }
   };
@@ -187,7 +187,7 @@ function IrumiWrite() {
         <S.NameInput
           value={userWish}
           onChange={handleUserWishChange}
-          placeholder="10자이내로 작성해주세요."
+          placeholder="8자이내로 작성해주세요."
         />
         <S.TextareaContent>소원 내용</S.TextareaContent>
         <S.ContentInput
