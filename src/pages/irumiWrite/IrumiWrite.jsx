@@ -187,7 +187,7 @@ function IrumiWrite() {
         <S.NameInput
           value={userWish}
           onChange={handleUserWishChange}
-          placeholder="8자이내로 작성해주세요."
+          placeholder="8자 이내로 작성해주세요."
         />
         <S.TextareaContent>소원 내용</S.TextareaContent>
         <S.ContentInput
