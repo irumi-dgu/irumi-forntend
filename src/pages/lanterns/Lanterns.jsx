@@ -12,6 +12,7 @@ import Moon from "../../components/common/moon/Moon";
 
 import "../../assets/animation/animation.css";
 import Loading from "../../components/common/loading/Loading";
+import LanternsBackBtn from "../../components/common/backBtn/LanternsBackBtn";
 
 function Lanterns() {
   //로딩주기
@@ -119,7 +120,7 @@ function Lanterns() {
         <LanternsWriteBtn />
 
         <S.Header>
-          <BackBtn />
+          <LanternsBackBtn />
           <LanternsSearchForm />
         </S.Header>
 
