@@ -17,7 +17,6 @@ function IrumiView() {
   // get 해올거
   const fetchLanternDetailData = async () => {
     try {
-      // const response = await API.get("/api/lanterns")
       const response = await API.get(`/api/lanterns/${detailId}`, {
         withCredentials: true
       });
@@ -25,9 +24,6 @@ function IrumiView() {
       setIsLiked(response.data.is_liked);
       setLikeCount(response.data.like_cnt);
       setLightBool(response.data.light_bool);
-      // results
-      console.log(response.data);
-      // console.log(lanternDetail);
     } catch (error) {
       console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
     }

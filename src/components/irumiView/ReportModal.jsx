@@ -8,17 +8,12 @@ function ReportModal({
   openIsReportedModal,
   detailId
 }) {
-  // const [abuse, setAbuse] = useState(false);
-  // const [fraud, setFraud] = useState(false);
-  // const [explicit, setExplicit] = useState(false);
-  // const [promotion, setPromotion] = useState(false);
 
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   const toggleCategory = category => {
     if (selectedCategories.includes(category)) {
       setSelectedCategories(selectedCategories.filter(c => c !== category));
-      console.log(selectedCategories);
     } else {
       setSelectedCategories([...selectedCategories, category]);
     }
@@ -35,21 +30,11 @@ function ReportModal({
           withCredentials: true // withCredentials 옵션을 요청 설정 객체 안에 넣어야 합니다.
         }
       );
-      console.log(response.data);
       openReportedModal();
     } catch (error) {
-      console.log("연등 신고 시 오류 발생", error);
+      // console.log("연등 신고 시 오류 발생", error);
 
-      // openReportedModal();
       openIsReportedModal();
-
-      // alert("이미 신고한 게시글입니다")
-
-      // if (response.status === 400) {
-      //     alert("이미 신고한 게시글입니다")
-      // } else {
-      //     console.log(`HTTP 상태 코드: ${response.status}`);
-      // }
     }
   };
 
@@ -67,10 +52,7 @@ function ReportModal({
               <input
                 type="checkbox"
                 name="abuse"
-                // value={abuse}
-                // checked={abuse}
                 checked={selectedCategories.includes("abuse")}
-                // onChange={() => setAbuse((prevCheck1) => !prevCheck1)}
                 onChange={() => toggleCategory("abuse")}
                 required
               />
@@ -80,10 +62,7 @@ function ReportModal({
               <input
                 type="checkbox"
                 name="fraud"
-                // value={fraud}
-                // checked={fraud}
                 checked={selectedCategories.includes("fraud")}
-                // onChange={() => setFraud((prevCheck2) => !prevCheck2)}
                 onChange={() => toggleCategory("fraud")}
                 required
               />
@@ -93,10 +72,7 @@ function ReportModal({
               <input
                 type="checkbox"
                 name="explicit"
-                // value={explicit}
-                // checked={explicit}
                 checked={selectedCategories.includes("explicit")}
-                // onChange={() => setExplicit((prevCheck3) => !prevCheck3)}
                 onChange={() => toggleCategory("explicit")}
                 required
               />
@@ -106,10 +82,7 @@ function ReportModal({
               <input
                 type="checkbox"
                 name="promotion"
-                // value={promotion}
-                // checked={promotion}
                 checked={selectedCategories.includes("promotion")}
-                // onChange={() => setPromotion((prevCheck4) => !prevCheck4)}
                 onChange={() => toggleCategory("promotion")}
                 required
               />

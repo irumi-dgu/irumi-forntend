@@ -21,19 +21,6 @@ export const MainWrapper = styled.div`
 `;
 
 export const LotusWhole = styled.div`
-  /* flex-grow: 1;
-  display: flex;
-  background-image: url(/lotus.png);
-  position: absolute;
-  width: 350px;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  /* background-size: contain; */
-  /* background-repeat: no-repeat;
-  background-position: center;
-  border: 3px solid red;  */
-
   display: flex;
   background-image: url(/lotus.png);
   background-repeat: no-repeat;
@@ -47,7 +34,6 @@ export const LotusWhole = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 3px solid red; */
 `;
 
 export const LotusLight = styled.div`
@@ -62,19 +48,6 @@ export const LotusLight = styled.div`
   background-position: center;
   background-repeat: no-repeat;
 `;
-
-// export const LotusLight2 = styled.div`
-//     flex-grow: 1;
-//     z-index: 20;
-//     background-image: url(/lightlotus.png);
-//     position: relative;
-//     top: 38%;
-//     width: 110000px;
-//     height: 300px;
-//     justify-content: center;
-//     background-position: center;
-//     background-repeat: no-repeat;
-// `;
 
 export const LotusTop = styled.div`
   flex-grow: 1;
@@ -116,17 +89,6 @@ export const LotusLeaf = styled.div`
   background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
-
-  /* width: 90%;
-    height: auto;
-
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-
-  /* border: 1px solid yellow; */
 `;
 
 //포춘쿠키 내용
@@ -144,13 +106,11 @@ export const FortuneContents = styled.div`
   font-size: 19px;
   text-align: center;
   line-height: 100%;
-  /* padding: 68px 30px; */
   width: 170px;
   height: 54%;
   justify-content: center;
   align-items: center;
   line-height: 1.5;
-  /* border: 3px solid red; */
 `;
 
 //닫기 버튼 -> 요거 누르면 MyDetail로 감
@@ -179,8 +139,6 @@ export const ClosedButton = styled.div`
   transform: translate(-50%, 0);
   position: fixed;
   bottom: 3%;
-
-  /* border: 3px solid yellow; */
 `;
 
 export const IrumiViewWrapper = styled.div`
@@ -207,15 +165,9 @@ export const DetailLanternWrapper = styled.div`
   justify-content: center;
   align-items: center;
   top: -15px;
-  /* margin-top: 15px; */
-  /* margin-bottom: 30px; */
 `;
 
 export const DetailLanternImg = styled.img`
-  /* width: 344px; */
-  /* height: 735.32px; */
-
-  /* max-width: 82%; */
   width: 82%;
   height: auto;
 `;
@@ -224,7 +176,6 @@ export const TitleSec = styled.div`
   position: absolute;
   top: 60%;
   width: 44%;
-  /* padding: 0 63.26px; */
   color: #5b3a1a;
   font-size: 16px;
   font-weight: 400;
@@ -235,7 +186,6 @@ export const TitleSec = styled.div`
 export const ContentSec = styled(TitleSec)`
   top: 65%;
   font-size: 14px;
-  /* padding: 0 98px; */
   line-height: 130%;
 `;
 

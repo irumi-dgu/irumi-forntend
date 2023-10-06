@@ -5,15 +5,12 @@ import * as S from "./style";
 import AlertModal from "./AlertModal";
 import { useNavigate } from "react-router-dom";
 import { API } from "../../api/axios";
-// import axiosInstance from "../../api/axios";
 
 function PwModal({ openPwModal, closePwModal, data }) {
   const [password, setPassword] = useState();
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
   const navigate = useNavigate();
-
-  // const { detailId } = useParams();
 
   const openAlert = () => {
     setAlertOpen(true);
@@ -30,9 +27,6 @@ function PwModal({ openPwModal, closePwModal, data }) {
   // 2초 뒤에 alert 꺼짐과 동시에 다시 비밀번호 입력 모달로
   const handleDelete = async () => {
     try {
-      console.log(password);
-      console.log(data.id);
-
       const response = await API.post(
         `/api/lanterns/${data.id}/delete`,
         {
@@ -42,15 +36,12 @@ function PwModal({ openPwModal, closePwModal, data }) {
           withCredentials: true // withCredentials 옵션을 요청 설정 객체 안에 넣어야 합니다.
         }
       );
-      console.log(response.status);
-      console.log(data);
-      console.log(password);
 
       if (response.status === 204) {
         // 비밀번호 일치
         setIsPasswordCorrect(true);
         setAlertOpen(true);
-        console.log("비밀번호 일치함");
+        // console.log("비밀번호 일치함");
 
         // 2초 뒤 둘러보기 페이지로
         setTimeout(() => {
@@ -61,7 +52,7 @@ function PwModal({ openPwModal, closePwModal, data }) {
         // 비밀번호 불일치
         setIsPasswordCorrect(false);
         setAlertOpen(true);
-        console.log("비밀번호 틀렸음");
+        // console.log("비밀번호 틀렸음");
 
         // 2초 뒤 다시 입력
         setTimeout(() => {
@@ -69,15 +60,15 @@ function PwModal({ openPwModal, closePwModal, data }) {
           openPwModal();
         }, 2000);
       } else {
-        console.log(`HTTP 상태 코드: ${response.status}`);
+        // console.log(`HTTP 상태 코드: ${response.status}`);
       }
     } catch (error) {
-      console.log("연등 삭제 중 오류 발생", error);
+      // console.log("연등 삭제 중 오류 발생", error);
 
       // 비밀번호 불일치
       setIsPasswordCorrect(false);
       setAlertOpen(true);
-      console.log("비밀번호 틀렸음");
+      // console.log("비밀번호 틀렸음");
 
       // 2초 뒤 다시 입력
       setTimeout(() => {
@@ -125,20 +116,6 @@ function PwModal({ openPwModal, closePwModal, data }) {
 
       {/* 비번 일치여부 모달 */}
       {alertOpen && <AlertModal isPasswordCorrect={isPasswordCorrect} />}
-
-      {/* 뒷 배경 어둡게 */}
-      {/* {alertOpen && (
-                <div
-                    style={{
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        backgroundColor: "rgba(0, 0, 0, 0.3)"
-                    }}
-                />
-            )} */}
     </>
   );
 }
