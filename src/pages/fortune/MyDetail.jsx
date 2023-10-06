@@ -7,6 +7,7 @@ import html2canvas from "html2canvas";
 import saveAs from "file-saver";
 
 function MyDetail() {
+  const LinkRef = useRef();
   const [lanternDetail, setLanternDetail] = useState([]);
   const { detailId } = useParams();
   const navigate = useNavigate();
@@ -69,21 +70,33 @@ function MyDetail() {
   // };
 
   const handleCopyLink = () => {
-    const link = `https://iirumi.com/irumi/${detailId}`;
-    navigator.clipboard
-      .writeText(link)
-      .then(() => {
-        console.log(`링크 복사됨: ${link}`);
-        alert("링크가 복사되었습니다.");
-      })
-      .catch(error => {
-        console.error("링크 복사 중에 오류 생김:", error);
-        alert("앗, 잠시 문제가 생긴 것 같아요.");
-      });
+    const textArea = LinkRef.current;
+    textArea.select();
+    textArea.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    textArea.setSelectionRange(0, 0);
+    alert("클립보드에 주소가 복사되었습니다.");
+    // const link = `iirumi.com/irumi/${detailId}`;
+
+    // navigator.clipboard
+    //   .writeText(link)
+    //   .then(() => {
+    //     console.log(`링크 복사됨: ${link}`);
+    //     alert("링크가 복사되었습니다.");
+    //   })
+    //   .catch(error => {
+    //     console.error("링크 복사 중에 오류 생김:", error);
+    //     alert("앗, 잠시 문제가 생긴 것 같아요.");
+    //   });
   };
 
   return (
     <S.MainWrapper>
+      <textarea
+        ref={LinkRef}
+        value={`iirumi.com/irumi/${detailId}`}
+        style={{ position: "fixed", top: "-123px" }}
+      />
       <S.IrumiViewWrapper ref={LanternRef}>
         {[lanternDetail].map(item => (
           <S.DetailLanternWrapper key={item.id}>
