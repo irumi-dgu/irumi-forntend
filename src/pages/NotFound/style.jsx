@@ -34,6 +34,7 @@ export const FixTitle = styled.div`
 `;
 
 export const FixImg = styled.div`
+  position: fixed;
   width: 250px;
   height: 282px;
   display: flex;
@@ -55,4 +56,5 @@ export const FixText = styled.div`
   letter-spacing: 0em;
   text-align: center;
   color: #ffff;
+  margin-bottom: 10%;
 `;
