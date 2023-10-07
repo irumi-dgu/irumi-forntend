@@ -61,11 +61,9 @@ export const wishBgImg = styled.img`
 export const TextareaName = styled.div`
   position: absolute;
   transform: translate(-50%, 0);
-
   top: 45%;
   left: 50%;
   width: 85%;
-
   color: #5b3a1a;
   font-size: 12px;
 `;
@@ -77,15 +75,14 @@ export const NameInput = styled.input`
   top: 48%;
   left: 50%;
   width: 85%;
-
+  color: #5b3a1a;
   border: 1px solid #898989;
   outline: none;
-
   background-color: #f1f1f1;
   border-radius: 5px;
-
   font-family: "DonggukFont";
   font-size: 10px;
+
   &::placeholder {
     font-size: 10px;
   }
@@ -95,11 +92,9 @@ export const NameInput = styled.input`
 export const TextareaContent = styled.div`
   position: absolute;
   transform: translate(-50%, 0);
-
   top: 54%;
   left: 50%;
   width: 85%;
-
   color: #5b3a1a;
   font-size: 12px;
 `;
@@ -107,24 +102,21 @@ export const TextareaContent = styled.div`
 export const ContentInput = styled.textarea`
   position: absolute;
   transform: translate(-50%, 0);
-
   top: 57%;
   left: 50%;
   width: 85%;
   height: 22%;
-
+  color: #5b3a1a;
   border: 1px solid #898989;
   outline: none;
-
   background-color: #f1f1f1;
   border-radius: 5px;
-
   justify-content: center;
   display: flex;
   font-family: "DonggukFont";
   padding: 5px 10px;
-
   font-size: 10px;
+
   &::placeholder {
     font-size: 10px; /* placeholder 텍스트 크기 설정 */
   }
@@ -139,15 +131,14 @@ export const ContentInput = styled.textarea`
 export const WritePw = styled.div`
   position: absolute;
   transform: translate(-50%, 0);
-
   top: 74%;
   left: 50%;
   width: 85%;
   height: 20%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #5b3a1a;
 `;
 
 export const WritePwLetter = styled.div`
@@ -165,7 +156,7 @@ export const PasswordInput = styled.input`
   outline: none;
   background-color: #f1f1f1;
   border-radius: 7px;
-
+  color: #5b3a1a;
   padding: 5px 10px;
   font-family: "DonggukFont";
 
@@ -192,11 +183,9 @@ export const ShowPasswordIcon = styled.div`
 export const SubmitBtn = styled.button`
   position: absolute;
   transform: translate(-50%, 0);
-
   bottom: 2%;
   left: 50%;
   width: 90%;
-
   font-family: "DonggukFont";
   color: white;
   background-color: ${props => (props.active ? "#f0939e" : "#AEAEAE")};
