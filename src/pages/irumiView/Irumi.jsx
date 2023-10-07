@@ -56,7 +56,6 @@ function IrumiView() {
           ))
         ) : (
           <>
-            <img src="/fixing.png" />
             <S.FixText>존재하지 않는 연등이에요</S.FixText>
           </>
         )}
