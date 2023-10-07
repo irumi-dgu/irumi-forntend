@@ -46,7 +46,6 @@ export const FixImg = styled.div`
   background-size: cover;
   overflow: hidden;
   /* border: 3px solid red; */
-  top: 186px;
 `;
 
 export const FixText = styled.div`
@@ -56,5 +55,4 @@ export const FixText = styled.div`
   letter-spacing: 0em;
   text-align: center;
   color: #ffff;
-  margin-bottom: 10%;
 `;
