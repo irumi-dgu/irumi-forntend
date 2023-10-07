@@ -11,7 +11,15 @@ import ReportedAlertModal from "./ReportedAlertModal";
 import { useParams } from "react-router-dom";
 import { API } from "../../api/axios";
 
-function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount, lightBool, setLightBool }) {
+function DetailLantern({
+  data,
+  isLiked,
+  setIsLiked,
+  likeCount,
+  setLikeCount,
+  lightBool,
+  setLightBool
+}) {
   const [modalOpen, setModalOpen] = useState(false);
   // 삭제
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -127,7 +135,9 @@ function DetailLantern({ data, isLiked, setIsLiked, likeCount, setLikeCount, lig
         />
         <S.TitleSec>{data.nickname}</S.TitleSec>
         <S.ContentSec>{data.content}</S.ContentSec>
-        <S.MoreSec src="/moreBtn.png" onClick={openModal} />
+        <S.MoreSecContainer onClick={openModal}>
+          <S.MoreSec src="/moreBtn.png" />
+        </S.MoreSecContainer>
         <S.LikeBtn>
           <img
             src={isLiked ? "/detail_like_fill.png" : "/detail_like.png"}

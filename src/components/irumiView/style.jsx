@@ -34,12 +34,24 @@ export const ContentSec = styled(TitleSec)`
   font-size: 14px;
   line-height: 130%;
 `;
+
+export const MoreSecContainer = styled.div`
+  position: absolute;
+  top: 52%;
+  right: 20%;
+  width: 27px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
+
 export const MoreSec = styled.img`
   position: absolute;
-  top: 54%;
-  right: 25%;
   width: 3px;
 `;
+
 export const LikeBtn = styled.div`
   position: absolute;
   bottom: 3%;

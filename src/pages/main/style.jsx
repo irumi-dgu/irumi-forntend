@@ -92,7 +92,7 @@ export const MenuBtn = styled.div`
 export const MinTitle = styled.div`
   display: flex;
   justify-content: center;
-
+  cursor: pointer;
   font-size: 12px;
   color: #898989;
 `;
