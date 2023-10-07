@@ -56,8 +56,8 @@ function IrumiView() {
           ))
         ) : (
           <>
-            <img src="https://mblogthumb-phinf.pstatic.net/MjAyMjA0MjhfMTgz/MDAxNjUxMTU1MDk1NjE3.qUYBXYpzEiB9rLUNmmeuHDb20AcBzLxv9WWXaN7e8XQg.mtFGSMdjWqq0bm6w-RgmM1PCJ_--q-17Ycm9F2KYnQcg.JPEG.2babybears/output_4145535885.jpg?type=w800" />
-            <div>없는 연등이거나 오류가 발생했어요~</div>
+            <img src="/fixing.png" />
+            <S.FixText>존재하지 않는 연등이에요</S.FixText>
           </>
         )}
       </S.IrumiViewWrapper>
