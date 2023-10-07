@@ -107,11 +107,11 @@ function Lanterns() {
   }, [lanternsPage]);
 
   // Lanterns 컴포넌트 내에서 랜턴 클릭 이벤트 추적
-  function trackLanternClick() {
-    gtag("event", "lantern_click", {
-      event_category: "Lanterns Lantern Click"
-    });
-  }
+  // function trackLanternClick() {
+  //   gtag("event", "Lanterns_Lantern_Click", {
+  //     event_category: "Lanterns_Lantern_Click"
+  //   });
+  // }
 
   return (
     <>
@@ -132,11 +132,7 @@ function Lanterns() {
 
         <S.LanternsList ref={LanternsListRef}>
           {lanternsData.map((item, index) => (
-            <Link
-              to={`/irumi/${item.id}`}
-              key={index}
-              onClick={trackLanternClick}
-            >
+            <Link to={`/irumi/${item.id}`} key={index}>
               <S.LanternBox>
                 <Lantern item={item} size={180} />
               </S.LanternBox>

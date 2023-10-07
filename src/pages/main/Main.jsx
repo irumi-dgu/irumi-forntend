@@ -69,11 +69,11 @@ function Main() {
     fetchLanternsData();
   }, []);
 
-  function trackLanternClick() {
-    gtag("event", "lantern_click", {
-      event_category: "Main Lantern Click"
-    });
-  }
+  // function trackLanternClick() {
+  //   gtag("event", "Main_Lantern_click", {
+  //     event_category: "Main_Lantern_click"
+  //   });
+  // }
 
   return (
     <S.MainWrapper>
@@ -98,7 +98,7 @@ function Main() {
       >
         {data.map(item => (
           <SwiperSlide key={item.id}>
-            <Link to={`/irumi/${item.id}`} onClick={trackLanternClick}>
+            <Link to={`/irumi/${item.id}`}>
               <Lantern item={item} size={180} />
             </Link>
           </SwiperSlide>
