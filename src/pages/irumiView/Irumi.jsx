@@ -5,7 +5,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 import { API } from "../../api/axios";
 import MyDetailBackBtn from "../../components/common/backBtn/LanternsBackBtn";
-import NotFound from "../NotFound/NotFound";
 
 function IrumiView() {
   const { detailId } = useParams();
@@ -57,15 +56,8 @@ function IrumiView() {
           ))
         ) : (
           <>
-            <S.Wrapper>
-              <S.MainWrapper>
-                <S.FixTitle>어라? 연등이 없어요</S.FixTitle>
-                <S.FixImg />
-                <S.FixText>
-                  존재하지 않는 연등이거나 <br /> 잘못된 경로입니다!
-                </S.FixText>
-              </S.MainWrapper>
-            </S.Wrapper>
+            <img src="https://mblogthumb-phinf.pstatic.net/MjAyMjA0MjhfMTgz/MDAxNjUxMTU1MDk1NjE3.qUYBXYpzEiB9rLUNmmeuHDb20AcBzLxv9WWXaN7e8XQg.mtFGSMdjWqq0bm6w-RgmM1PCJ_--q-17Ycm9F2KYnQcg.JPEG.2babybears/output_4145535885.jpg?type=w800" />
+            <div>없는 연등이거나 오류가 발생했어요~</div>
           </>
         )}
       </S.IrumiViewWrapper>
