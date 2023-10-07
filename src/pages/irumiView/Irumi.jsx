@@ -10,7 +10,7 @@ function IrumiView() {
   const { detailId } = useParams();
   const navigate = useNavigate();
   // 내용
-  const [lanternDetail, setLanternDetail] = useState([]);
+  const [lanternDetail, setLanternDetail] = useState(null); // 초기값을 null로 설정
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(false);
 
@@ -28,6 +28,7 @@ function IrumiView() {
       setLightBool(response.data.light_bool);
     } catch (error) {
       // console.log("각 id에 해당하는 연등 디테일 가져오는 중 에러 발생", error);
+      setLanternDetail(null); // 에러가 발생한 경우 데이터를 null로 설정
     }
   };
   useEffect(() => {
@@ -41,7 +42,13 @@ function IrumiView() {
           <MyDetailBackBtn />
         </S.Header>
 
-        {lanternDetail.length !== 0 ? (
+        {lanternDetail === null ? ( // 데이터가 null인 경우에만 텍스트를 렌더링
+          <>
+            <S.TextWrapper>
+              <S.FixText>존재하지 않는 연등이에요</S.FixText>
+            </S.TextWrapper>
+          </>
+        ) : (
           [lanternDetail].map(item => (
             <DetailLantern
               key={item.id}
@@ -54,12 +61,6 @@ function IrumiView() {
               setLightBool={setLightBool}
             />
           ))
-        ) : (
-          <>
-            <S.TextWrapper>
-              <S.FixText>존재하지 않는 연등이에요</S.FixText>
-            </S.TextWrapper>
-          </>
         )}
       </S.IrumiViewWrapper>
     </>
