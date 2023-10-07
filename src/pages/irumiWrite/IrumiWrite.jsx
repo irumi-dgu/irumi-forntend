@@ -54,14 +54,10 @@ function IrumiWrite() {
     setShowPassword(!showPassword);
   };
 
-  // 색상 선택 핸들러
-  const handleColorChange = color => {
-    setSelectedColor(color); // 선택한 숫자로 업데이트
-    trackColorSelection(color);
-  };
-
-  const trackColorSelection = color => {
-    gtag("event", "lanter_color", { lanter_color: color });
+  const trackSubmission = () => {
+    gtag("event", "lanterColor_submission", {
+      event_category: "lanterColor_submission"
+    });
   };
 
   // '작성하기' 버튼의 스타일 업데이트 함수
@@ -74,8 +70,13 @@ function IrumiWrite() {
     );
   };
 
-  // 제출 버튼 클릭 핸들러
-  const handleSubmit = async () => {
+  // 예시: 연등 컴포넌트 내에서 이벤트 추적 함수 호출
+  function handleColorChange(color) {
+    setSelectedColor(color);
+    trackColorSelection(color); // 색상 선택 이벤트 추적
+  }
+
+  function handleSubmit() {
     if (!submitButtonActive) {
       alert("모든 부분을 입력해주세요 :)");
       return;
@@ -86,16 +87,9 @@ function IrumiWrite() {
       return;
     }
 
-    setIsModalOpen(true); // 모달을 열기 위해 상태를 변경합니다.
-  };
-
-  // 콘솔에 데이터 출력
-  // console.log("보내는 데이터:", {
-  //   nickname: userWish,
-  //   content: userWishContent,
-  //   password: password,
-  //   lanternColor: selectedColor
-  // });
+    trackSubmission(); // 제출 이벤트 추적
+    setIsModalOpen(true); // 모달 열기
+  }
 
   //쿠키로 정보 받아오는 뭐 그런 지피티 코드인데 쓰레기같음
   function getCookie(name) {
@@ -145,8 +139,8 @@ function IrumiWrite() {
       } else {
         // window.location.href = "/fortune";
         window.location.href = `/fortune/${response.data.id}`;
-        console.log(response.data.id);
-        console.log("됐닥");
+        // console.log(response.data.id);
+        // console.log("됐닥");
       }
     } catch (error) {
       // 오류 처리

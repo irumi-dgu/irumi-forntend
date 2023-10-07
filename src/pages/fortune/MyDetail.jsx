@@ -44,6 +44,11 @@ function MyDetail() {
     } catch (error) {
       // console.error("Error converting div to image:", error);
     }
+
+    // 이미지 저장 이벤트 추적
+    gtag("event", "download_image", {
+      event_category: "download_image"
+    });
   };
 
   // 링크복사
@@ -54,6 +59,10 @@ function MyDetail() {
     document.execCommand("copy");
     textArea.setSelectionRange(0, 0);
     alert("클립보드에 주소가 복사되었습니다.");
+
+    gtag("event", "copy_link", {
+      event_category: "copy_link"
+    });
   };
 
   return (

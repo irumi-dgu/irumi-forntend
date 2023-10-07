@@ -75,6 +75,12 @@ function Main() {
     });
   }
 
+  function trackClick() {
+    gtag("event", "Main_write", {
+      event_category: "Main_write"
+    });
+  }
+
   return (
     <S.MainWrapper>
       <Moon />
@@ -110,7 +116,7 @@ function Main() {
           <Link to="/lanterns">
             <S.MenuBtn>연등 둘러보기</S.MenuBtn>
           </Link>
-          <Link to="/irumiWrite">
+          <Link to="/irumiWrite" onClick={trackClick}>
             <S.MenuBtn>연등 작성하기</S.MenuBtn>
           </Link>
         </S.BtnWrapper>
