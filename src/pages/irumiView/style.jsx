@@ -96,6 +96,12 @@ export const FixImg = styled.div`
   /* border: 3px solid red; */
 `;
 
+export const TextWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const FixText = styled.div`
   font-size: 22px;
   font-weight: 800;

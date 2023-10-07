@@ -56,7 +56,9 @@ function IrumiView() {
           ))
         ) : (
           <>
-            <S.FixText>존재하지 않는 연등이에요</S.FixText>
+            <S.TextWrapper>
+              <S.FixText>존재하지 않는 연등이에요</S.FixText>
+            </S.TextWrapper>
           </>
         )}
       </S.IrumiViewWrapper>
