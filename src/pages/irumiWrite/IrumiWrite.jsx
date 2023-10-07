@@ -57,12 +57,12 @@ function IrumiWrite() {
   // 색상 선택 핸들러
   const handleColorChange = color => {
     setSelectedColor(color); // 선택한 숫자로 업데이트
-    // trackColorSelection(color);
+    trackColorSelection(color);
   };
 
-  // const trackColorSelection = color => {
-  //   gtag("event", "lanter_color", { lanter_color: color });
-  // };
+  const trackColorSelection = color => {
+    gtag("event", "lanter_color", { lanter_color: color });
+  };
 
   // '작성하기' 버튼의 스타일 업데이트 함수
   const updateSubmitButtonStyle = () => {
