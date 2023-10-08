@@ -84,6 +84,20 @@ function Main() {
   return (
     <S.MainWrapper>
       <Moon />
+      {isModalOpen && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            zIndex: 30
+          }}
+          onClick={closeModal}
+        />
+      )}
       <S.MainTitle>현재까지 "{count}"개의 연등이 달렸어요!</S.MainTitle>
       <S.SubTitle className="shine">좌우로 드래그 해보세요</S.SubTitle>
 
