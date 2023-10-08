@@ -13,12 +13,15 @@ function LanternsSearchForm() {
   };
   return (
     <S.Search onSubmit={onSubmit}>
-      <S.Input
+      <input
+        type="text"
         placeholder="닉네임을 입력해주세요"
         value={searchWord}
         onChange={changeSearchWord}
       />
-      <img src="/icon_search.svg" style={{ width: "16px" }} />
+      <S.SearchIcon>
+        <img src="/icon_search.svg" style={{ width: "16px" }} />
+      </S.SearchIcon>
     </S.Search>
   );
 }
