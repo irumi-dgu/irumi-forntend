@@ -73,7 +73,15 @@ function IrumiWrite() {
   // 예시: 연등 컴포넌트 내에서 이벤트 추적 함수 호출
   function handleColorChange(color) {
     setSelectedColor(color);
-    trackColorSelection(color); // 색상 선택 이벤트 추적
+
+    // Google Analytics 이벤트 추적
+    gtag("event", "Color_Selection", {
+      event_category: "Color_Selection",
+      event_label: color // 선택된 색상을 이벤트 레이블로 사용
+    });
+
+    // 기존 코드 - 선택한 색상 업데이트
+    setSelectedColor(color);
   }
 
   function handleSubmit() {
@@ -87,7 +95,14 @@ function IrumiWrite() {
       return;
     }
 
-    trackSubmission(); // 제출 이벤트 추적
+    // 원하는 동적인 색상 값을 추출하고 event_label에 설정
+    const submittedColorLabel = `Lantern_Color_Submission_${selectedColor}`;
+
+    gtag("event", "Lantern_Color_Submission", {
+      event_category: "Lantern_Color_Submission",
+      event_label: submittedColorLabel // 동적으로 설정된 색상 값
+    });
+
     setIsModalOpen(true); // 모달 열기
   }
 
