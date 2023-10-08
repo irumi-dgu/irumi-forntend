@@ -23,4 +23,5 @@ export const Input = styled.input`
   font-size: 16px;
   color: #5b3a1a;
   margin-right: 5px;
+  font-family: "DonggukFont";
 `;
