@@ -24,12 +24,25 @@ export const LanternsWrapper = styled.div`
 `;
 
 export const Header = styled.div`
+  /* width: 100%; */
   display: flex;
   height: 38px;
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
   margin: 20px 0px;
+  right: 4%;
+  position: relative;
+
+  @media (max-width: 393px) {
+    /* 화면 너비가 390px 미만일 때 스타일을 적용 */
+    transform: scale(0.9, 0.9);
+  }
+
+  @media (max-width: 320px) {
+    /* 화면 너비가 320px 미만일 때 스타일을 적용 */
+    transform: scale(0.8, 0.8);
+  }
 `;
 
 export const Selector = styled.div`

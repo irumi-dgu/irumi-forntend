@@ -18,6 +18,10 @@ export const WriteBtn = styled.div`
     transform: translate(-130%, 0%);
   }
 
+  @media (min-width: 321px) and (max-width: 375px) {
+    transform: translate(-80%, 0%);
+  }
+
   img {
     position: absolute;
     transform: translate(-50%, -50%);

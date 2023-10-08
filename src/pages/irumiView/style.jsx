@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 export const Header = styled.div`
   position: fixed;
   width: 100%;
-  /* max-width: 420px; */
+  max-width: 420px;
   display: flex;
   height: 38px;
   justify-content: space-between;
