@@ -55,4 +55,5 @@ export const FixText = styled.div`
   letter-spacing: 0em;
   text-align: center;
   color: #ffff;
+  font-family: DONGGUK UNIVERSITY;
 `;
