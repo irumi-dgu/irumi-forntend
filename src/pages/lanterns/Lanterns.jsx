@@ -15,6 +15,126 @@ import Loading from "../../components/common/loading/Loading";
 import LanternsBackBtn from "../../components/common/backBtn/LanternsBackBtn";
 
 function Lanterns() {
+  const [finLoad, setFinLoad] = useState(false);
+  const data = [
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 3,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    },
+    {
+      id: 3,
+      nickname: "111",
+      content:
+        "동국대 학생들의 소원을 들어주는 이루미! 다가오는 한가위 사랑하는 가족과 함께 즐겁게 보내시길 바랍니다",
+      like_cnt: 23,
+      lanternColor: 1,
+      light_bool: "false"
+    }
+  ];
   //로딩주기
   const [init, setInit] = useState(true);
 
@@ -41,6 +161,7 @@ function Lanterns() {
       );
       setCount(response.data.count);
       setLanternsData(response.data.results);
+      // setLanternsData(data);
     } catch (error) {
       console.log("연등 가져오는 중 에러 발생", error);
     }
@@ -57,16 +178,20 @@ function Lanterns() {
       );
       const newData = lanternsData.concat(response.data.results);
       setLanternsData(newData);
+
+      // const newData = lanternsData.concat(data);
+      // setLanternsData(newData);
       setInit(true);
     } catch (error) {
       console.log("연등 가져오는 중 에러 발생", error);
     }
   };
+
   //처음 로딩될때 초기값넣기
   useEffect(() => {
     fetchLanternsData();
-    // setLanternsData(data);
   }, []);
+
   //소트 바꿨을때 초기 값 넣기
   useEffect(() => {
     fetchLanternsData();
@@ -91,6 +216,10 @@ function Lanterns() {
 
   //연등 26개 봤으면 새로 불러오기
   useEffect(() => {
+    if (count / 26 < lanternsPage || lanternsPage > 9) {
+      setFinLoad(true);
+      return;
+    }
     if (init && position != 0 && count / 26 > lanternsPage) {
       if (position + window.innerHeight > listHeight) {
         setLanternsPage(lanternsPage + 1);
@@ -144,6 +273,13 @@ function Lanterns() {
           ))}
         </S.LanternsList>
         {init ? <></> : <Loading />}
+        {finLoad ? (
+          <div style={{ padding: "40px" }}>
+            한번에 볼 수 있는 데이터를 전부 로드했어요
+          </div>
+        ) : (
+          ""
+        )}
       </S.LanternsWrapper>
     </>
   );
