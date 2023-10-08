@@ -20,6 +20,7 @@ export const LanternsWrapper = styled.div`
   max-width: 420px;
   /* border: 1px solid red; */
   position: relative;
+  overflow-x: hidden;
 `;
 
 export const Header = styled.div`
@@ -55,6 +56,7 @@ export const LanternsList = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 30px;
   padding-bottom: 100px;
+  justify-content: center;
 `;
 
 export const LanternBox = styled.div`

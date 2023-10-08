@@ -10,6 +10,10 @@ export const Search = styled.form`
   padding: 10px 20px;
   background-color: #fbedd0b2;
 
+  @media (max-width: 320px) {
+    margin-left: 10px;
+  }
+
   input::placeholder {
     color: #745b45;
     font-size: 12px;
