@@ -26,6 +26,13 @@ export const Search = styled.form`
     font-weight: 400;
     font-family: "DonggukFont";
   }
+
+  input {
+    color: #745b45;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "DonggukFont";
+  }
 `;
 
 export const Input = styled.input`
@@ -37,5 +44,5 @@ export const Input = styled.input`
 `;
 
 export const SearchIcon = styled.div`
-  margin-left: 90px; /* 이미지와 입력 상자 사이에 간격을 조정하세요. */
+  margin-left: 100px;
 `;
