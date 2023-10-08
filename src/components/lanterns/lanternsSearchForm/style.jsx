@@ -12,7 +12,7 @@ export const Search = styled.form`
 
   @media (max-width: 320px) {
     margin-left: 10px;
-    width: 70%;
+    width: 250px;
   }
 
   input::placeholder {
