@@ -9,6 +9,7 @@ export const BackBtnBox = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 1000;
 `;
 
 const LanternsBackBtn = () => {

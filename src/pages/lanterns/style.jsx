@@ -24,7 +24,6 @@ export const LanternsWrapper = styled.div`
 `;
 
 export const Header = styled.div`
-  width: 100%;
   display: flex;
   height: 38px;
   justify-content: space-between;
