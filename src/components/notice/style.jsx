@@ -50,6 +50,7 @@ export const ModalBigTitle = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
+  line-height: 25px;
 `;
 export const ModalBigTitleBox = styled.div`
   line-height: 230%;
@@ -59,12 +60,16 @@ export const ModalBigTitleBox = styled.div`
   flex-direction: column;
   margin-top: 10px;
   margin-bottom: 20px;
+  width: 100%;
 `;
 export const ModalTitle = styled.div`
   font-size: 14px;
   color: ${props => props.color};
   margin-bottom: 5px;
   line-height: 110%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
 `;
 
 export const ModalMinTitle = styled.div`
@@ -89,7 +94,7 @@ export const ModalContent = styled.div`
   font-size: 12px;
   color: ${props => props.color};
   margin-bottom: 5px;
-  line-height: 110%;
+  line-height: 120%;
 `;
 
 export const ModalBtn = styled.div`
