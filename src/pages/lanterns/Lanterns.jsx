@@ -251,6 +251,8 @@ function Lanterns() {
         <S.Header>
           <LanternsBackBtn />
           <LanternsSearchForm />
+
+          <div style={{ width: "24px" }} />
         </S.Header>
 
         <S.Selector onClick={selectorClick}>

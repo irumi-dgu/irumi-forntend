@@ -13,13 +13,19 @@ export const Header = styled.div`
 `;
 
 export const IrumiWriteWrapper = styled.div`
-  position: fixed;
-
   width: 100%;
   max-width: 420px;
-  height: 100vh;
-  @supports (-webkit-touch-callout: none) {
-    height: -webkit-fill-available;
+
+  @media (max-height: 500px) {
+    height: 550px;
+    padding-bottom: 50px;
+  }
+  @media (min-height: 500px) {
+    position: fixed;
+    height: 100vh;
+    @supports (-webkit-touch-callout: none) {
+      height: -webkit-fill-available;
+    }
   }
 
   display: flex;
