@@ -11,10 +11,17 @@ export const BackBtnBox = styled.div`
   cursor: pointer;
 `;
 
-const MyDetailBackBtn = () => {
+const MyDetailBackBtn = ({ location }) => {
   const navigate = useNavigate();
   const handleBackClick = () => {
-    navigate("/lanterns");
+    // 이전 페이지가 없는 경우 홈 페이지로 이동
+    if (location.state && location.state.from) {
+      console.log(location.state);
+      console.log(location.state.from);
+      navigate(location.state.from);
+    } else {
+      navigate("/");
+    }
   };
   return (
     <BackBtnBox onClick={handleBackClick}>
