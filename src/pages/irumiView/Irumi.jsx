@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import DetailLantern from "../../components/irumiView/DetailLantern";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import BackBtn from "../../components/common/backBtn/BackBtn";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+// import BackBtn from "../../components/common/backBtn/BackBtn";
 import { API } from "../../api/axios";
-// import MyDetailBackBtn from "../../components/common/backBtn/MyDetailBackBtn";
+import MyDetailBackBtn from "../../components/common/backBtn/MyDetailBackBtn";
 
 function IrumiView() {
   const { detailId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   // 내용
   const [lanternDetail, setLanternDetail] = useState(null);
@@ -44,8 +45,8 @@ function IrumiView() {
     <>
       <S.IrumiViewWrapper>
         <S.Header>
-          {/* <MyDetailBackBtn /> */}
-          <BackBtn />
+          <MyDetailBackBtn location={location} />
+          {/* <BackBtn /> */}
         </S.Header>
 
         {isLoading ? ( // 데이터 로딩 중인지 확인

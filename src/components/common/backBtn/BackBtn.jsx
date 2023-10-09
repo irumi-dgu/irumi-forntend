@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const BackBtnBox = styled.div`
   width: 24px;
@@ -13,15 +13,8 @@ export const BackBtnBox = styled.div`
 
 const BackBtn = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-
   const handleBackClick = () => {
-    // 이전 페이지가 없는 경우 홈 페이지로 이동
-    if (location.state && location.state.from) {
-      navigate(location.state.from);
-    } else {
-      navigate("/");
-    }
+    navigate(-1);
   };
   return (
     <BackBtnBox onClick={handleBackClick}>
