@@ -101,7 +101,8 @@ export const FortuneContents = styled.div`
   flex-wrap: wrap;
   word-wrap: break-word;
   word-break: keep-all;
-  white-space: normal;
+  /* white-space: normal; */
+  white-space: pre-line;
   color: #5f3a16;
   font-size: 19px;
   text-align: center;
