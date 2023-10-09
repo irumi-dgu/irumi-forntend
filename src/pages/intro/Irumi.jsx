@@ -49,7 +49,7 @@ function Intro() {
         <>
           <Notice />
           <S.SubTitle className="fadein">
-            이루미에 오신것을 환영합니다
+            이루미에 오신 것을 환영합니다
           </S.SubTitle>
           <S.intro1_box>
             <S.intro1 className="fadein" src={"intro_after_lantern.svg"} />
