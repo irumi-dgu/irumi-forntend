@@ -1,24 +1,20 @@
 import { styled } from "styled-components";
 export const Search = styled.form`
   flex-grow: 1;
-  /* border: solid 1px white; */
+
   border-radius: 19px;
   margin-left: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 20px;
   background-color: #fbedd0b2;
   flex-grow: 1;
   font-size: 16px;
   color: #5b3a1a;
-  margin-right: 5px;
-  font-family: "DonggukFont";
-  width: 300px;
 
-  @media (max-width: 320px) {
-    margin-left: 10px;
-    width: 70%;
-  }
+  font-family: "DonggukFont";
+  /* width: 300px; */
 
   input::placeholder {
     color: #745b45;
@@ -43,6 +39,4 @@ export const Input = styled.input`
   font-family: "DonggukFont";
 `;
 
-export const SearchIcon = styled.div`
-  margin-left: 100px;
-`;
+export const SearchIcon = styled.div``;
