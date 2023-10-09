@@ -4,7 +4,7 @@ import DetailLantern from "../../components/irumiView/DetailLantern";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import BackBtn from "../../components/common/backBtn/BackBtn";
 import { API } from "../../api/axios";
-import MyDetailBackBtn from "../../components/common/backBtn/LanternsBackBtn";
+// import MyDetailBackBtn from "../../components/common/backBtn/MyDetailBackBtn";
 
 function IrumiView() {
   const { detailId } = useParams();
@@ -44,7 +44,8 @@ function IrumiView() {
     <>
       <S.IrumiViewWrapper>
         <S.Header>
-          <MyDetailBackBtn />
+          {/* <MyDetailBackBtn /> */}
+          <BackBtn />
         </S.Header>
 
         {isLoading ? ( // 데이터 로딩 중인지 확인
