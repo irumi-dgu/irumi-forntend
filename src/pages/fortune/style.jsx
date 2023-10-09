@@ -106,7 +106,7 @@ export const FortuneContents = styled.div`
   font-size: 19px;
   text-align: center;
   line-height: 100%;
-  width: 170px;
+  width: 245px;
   height: 54%;
   justify-content: center;
   align-items: center;
