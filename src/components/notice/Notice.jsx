@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as S from "./style";
 
 import React from "react";
@@ -76,7 +76,7 @@ function Notice(props) {
         {props.type == "main" ? (
           <S.ModalBtn onClick={clickBtn}>확인</S.ModalBtn>
         ) : (
-          <Link to="/">
+          <Link to="/main">
             <S.ModalBtn>이루미 시작하기</S.ModalBtn>
           </Link>
         )}

@@ -26,6 +26,8 @@ import Notice from "../../components/notice/Notice";
 
 function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [hasVisitedIntro, setHasVisitedIntro] = useState(false);
+
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -34,21 +36,28 @@ function Main() {
   };
   const navigate = useNavigate();
   // 페이지가 로드될 때 실행되는 함수
-  const checkFirstVisit = () => {
-    // localStorage에서 isFirst 값을 가져옴
-    const isFirstVisit = localStorage.getItem("isFirst");
+  // const checkFirstVisit = () => {
+  //   // localStorage에서 isFirst 값을 가져옴
+  //   // const isFirstVisit = localStorage.getItem("isFirst");
 
-    if (!isFirstVisit) {
-      // isFirst 값이 없으면(처음 들어오는 유저라면) 처리
-      localStorage.setItem("isFirst", "true"); // isFirst 값을 저장
-      navigate("/intro"); // '/about' 페이지로 이동
-    }
-  };
+  //   // if (!isFirstVisit) {
+  //   //   // isFirst 값이 없으면(처음 들어오는 유저라면) 처리
+  //   //   localStorage.setItem("isFirst", "true"); // isFirst 값을 저장
+  //   //   navigate("/intro"); // '/about' 페이지로 이동
+  //   // }
+
+  //   if (!hasVisitedIntro) {
+  //     navigate("/intro");
+  //     setHasVisitedIntro(true);
+  //   } else {
+  //     navigate("/");
+  //   }
+  // };
 
   // 페이지 로드될 때 checkFirstVisit 함수 실행
-  useEffect(() => {
-    checkFirstVisit();
-  }, []);
+  // useEffect(() => {
+  //   checkFirstVisit();
+  // }, []);
 
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
