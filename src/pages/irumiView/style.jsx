@@ -104,6 +104,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const FixText = styled.div`
+  font-family: DONGGUK UNIVERSITY;
   font-size: 22px;
   font-weight: 800;
   line-height: 40px;
