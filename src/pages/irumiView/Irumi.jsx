@@ -9,7 +9,6 @@ import MyDetailBackBtn from "../../components/common/backBtn/MyDetailBackBtn";
 function IrumiView() {
   const { detailId } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   // 내용
   const [lanternDetail, setLanternDetail] = useState(null);
@@ -45,7 +44,7 @@ function IrumiView() {
     <>
       <S.IrumiViewWrapper>
         <S.Header>
-          <MyDetailBackBtn location={location} />
+          <MyDetailBackBtn />
           {/* <BackBtn /> */}
         </S.Header>
 

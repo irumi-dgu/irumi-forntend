@@ -15,7 +15,7 @@ export const BackBtnBox = styled.div`
 const LanternsBackBtn = () => {
   const navigate = useNavigate();
   const handleBackClick = () => {
-    navigate("/");
+    navigate("/main");
   };
   return (
     <BackBtnBox onClick={handleBackClick}>
