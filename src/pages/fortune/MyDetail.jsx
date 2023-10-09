@@ -90,7 +90,7 @@ function MyDetail() {
           <p>이미지로 저장</p>
         </S.MyBtn>
         <S.MyBtn>
-          <img src="/my_goMain.png" onClick={() => navigate("/")} />
+          <img src="/my_goMain.png" onClick={() => navigate("/main")} />
           <p>메인페이지</p>
         </S.MyBtn>
         <S.MyBtn>
