@@ -18,7 +18,7 @@ const MyDetailBackBtn = () => {
     if (document.referrer) {
       navigate(-1);
     } else {
-      navigate("/");
+      navigate("/lanterns");
     }
     // if (location.state && location.state.from) {
     //   console.log(location.state);
