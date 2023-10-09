@@ -23,7 +23,8 @@ export const MainWrapper = styled.div`
 export const FixTitle = styled.div`
   display: flex;
   justify-content: center;
-  font-family: DONGGUK UNIVERSITY;
+  /* font-family: DONGGUK UNIVERSITY; */
+  font-family: 'DonggukFont';
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
@@ -55,5 +56,6 @@ export const FixText = styled.div`
   letter-spacing: 0em;
   text-align: center;
   color: #ffff;
-  font-family: DONGGUK UNIVERSITY;
+  /* font-family: DONGGUK UNIVERSITY; */
+  font-family: 'DonggukFont';
 `;
