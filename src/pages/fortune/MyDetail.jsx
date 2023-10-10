@@ -54,12 +54,22 @@ function MyDetail() {
   // 링크복사
   const handleCopyLink = () => {
     const textArea = LinkRef.current;
+    const currentURL = textArea.value;
+
+    // 항상 "http://"를 주소 앞에 추가합니다.
+    textArea.value = "http://" + currentURL;
+
     textArea.select();
     textArea.setSelectionRange(0, 99999);
     document.execCommand("copy");
     textArea.setSelectionRange(0, 0);
+
+    // 복사가 완료되면 원래의 주소로 다시 변경합니다.
+    textArea.value = currentURL;
+
     alert("클립보드에 주소가 복사되었습니다.");
 
+    // 복사 이벤트 추적
     gtag("event", "copy_link", {
       event_category: "copy_link"
     });
