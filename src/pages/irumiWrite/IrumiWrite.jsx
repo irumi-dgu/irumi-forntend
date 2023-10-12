@@ -6,70 +6,6 @@ import { API } from "../../api/axios";
 import MyDetail from "../fortune/MyDetail";
 import Modal from "../../components/irumiWrite/ConfirmModal";
 
-// function IrumiWrite() {
-//   const [selectedColor, setSelectedColor] = useState("1");
-//   const [userWish, setUserWish] = useState("");
-//   const [userWishContent, setUserWishContent] = useState(""); // 사용자의 소원을 저장할 상태 변수
-//   const [password, setPassword] = useState("");
-//   const [showPassword, setShowPassword] = useState(false);
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-
-//   const [dataToShare, setDataToShare] = useState([]);
-
-//   // '작성하기' 버튼의 스타일을 동적으로 변경하기 위한 상태 변수
-//   const [submitButtonActive, setSubmitButtonActive] = useState(false);
-
-//   // 사용자가 입력한 닉네임 관련 함수
-//   const handleUserWishChange = event => {
-//     const content = event.target.value;
-//     // 공백 제거
-//     const trimmedContent = content.replace(/\s/g, "");
-//     if (trimmedContent.length <= 8) {
-//       setUserWish(trimmedContent);
-//       updateSubmitButtonStyle();
-//     }
-//   };
-
-//   //사용자가 입력한 소원 내용 관련 함수
-//   const handleUserWishContent = event => {
-//     const content = event.target.value;
-//     // 글자수가 80자를 초과하지 않도록 제한
-//     if (content.length <= 80) {
-//       setUserWishContent(content);
-//       updateSubmitButtonStyle();
-//     }
-//   };
-
-//   //비밀번호 관련 함수
-//   const handlePasswordChange = event => {
-//     const inputValue = event.target.value;
-//     if (/^[0-9]*$/.test(inputValue)) {
-//       setPassword(inputValue);
-//       updateSubmitButtonStyle();
-//     }
-//   };
-
-//   // 비밀번호 보여주기 토글 함수
-//   const toggleShowPassword = () => {
-//     setShowPassword(!showPassword);
-//   };
-
-//   const trackSubmission = () => {
-//     gtag("event", "lanterColor_submission", {
-//       event_category: "lanterColor_submission"
-//     });
-//   };
-
-//   // '작성하기' 버튼의 스타일 업데이트 함수
-//   const updateSubmitButtonStyle = () => {
-//     const userWishNotEmpty = userWish.trim() !== "";
-//     const userWishContentNotEmpty = userWishContent.trim() !== "";
-//     const passwordNotEmpty = password.trim() !== "";
-//     setSubmitButtonActive(
-//       userWishNotEmpty && userWishContentNotEmpty && passwordNotEmpty
-//     );
-//   };
-
 function IrumiWrite() {
   const [selectedColor, setSelectedColor] = useState("1");
   const [userWish, setUserWish] = useState("");
@@ -78,41 +14,39 @@ function IrumiWrite() {
   const [showPassword, setShowPassword] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [dataToShare, setDataToShare] = useState([]);
+
   // '작성하기' 버튼의 스타일을 동적으로 변경하기 위한 상태 변수
   const [submitButtonActive, setSubmitButtonActive] = useState(false);
 
   // 사용자가 입력한 닉네임 관련 함수
   const handleUserWishChange = event => {
     const content = event.target.value;
-    // 입력 필터링을 수행
-    const sanitizedContent = sanitizeInput(content);
     // 공백 제거
-    const trimmedContent = sanitizedContent.trim();
+    const trimmedContent = content.replace(/\s/g, "");
     if (trimmedContent.length <= 8) {
       setUserWish(trimmedContent);
       updateSubmitButtonStyle();
     }
   };
 
-  // 사용자가 입력한 소원 내용 관련 함수
+  //사용자가 입력한 소원 내용 관련 함수
   const handleUserWishContent = event => {
     const content = event.target.value;
-    // 입력 필터링을 수행
-    const sanitizedContent = sanitizeInput(content);
     // 글자수가 80자를 초과하지 않도록 제한
-    if (sanitizedContent.length <= 80) {
-      setUserWishContent(sanitizedContent);
+    if (content.length <= 80) {
+      setUserWishContent(content);
       updateSubmitButtonStyle();
     }
   };
 
-  // 비밀번호 관련 함수
+  //비밀번호 관련 함수
   const handlePasswordChange = event => {
     const inputValue = event.target.value;
-    // 숫자 4자리만 허용 (숫자 이외의 문자는 제거)
-    const sanitizedInput = inputValue.replace(/[^0-9]/g, "").slice(0, 4);
-    setPassword(sanitizedInput);
-    updateSubmitButtonStyle();
+    if (/^[0-9]*$/.test(inputValue)) {
+      setPassword(inputValue);
+      updateSubmitButtonStyle();
+    }
   };
 
   // 비밀번호 보여주기 토글 함수
@@ -134,12 +68,6 @@ function IrumiWrite() {
     setSubmitButtonActive(
       userWishNotEmpty && userWishContentNotEmpty && passwordNotEmpty
     );
-  };
-
-  // 입력 필터링 함수
-  const sanitizeInput = input => {
-    // 특수 문자나 스크립트 제거 또는 이스케이핑을 수행
-    return input.replace(/<script>|<\/script>/gi, "");
   };
 
   // 예시: 연등 컴포넌트 내에서 이벤트 추적 함수 호출
