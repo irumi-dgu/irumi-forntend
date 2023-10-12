@@ -109,12 +109,10 @@ function IrumiWrite() {
   // 비밀번호 관련 함수
   const handlePasswordChange = event => {
     const inputValue = event.target.value;
-    // 입력 필터링을 수행
-    const sanitizedInput = sanitizeInput(inputValue);
-    if (/^[0-9]*$/.test(sanitizedInput) && sanitizedInput.length === 4) {
-      setPassword(sanitizedInput);
-      updateSubmitButtonStyle();
-    }
+    // 숫자 4자리만 허용 (숫자 이외의 문자는 제거)
+    const sanitizedInput = inputValue.replace(/[^0-9]/g, "").slice(0, 4);
+    setPassword(sanitizedInput);
+    updateSubmitButtonStyle();
   };
 
   // 비밀번호 보여주기 토글 함수
